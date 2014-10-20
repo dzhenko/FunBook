@@ -1,13 +1,11 @@
 ﻿namespace FunBook.Models
 {
-    public class JokeView
+    public class View
     {
         public int Id { get; set; }
 
         public bool? Liked { get; set; }
 
-        public int JokeId { get; set; }
-
-        public virtual Joke Joke { get; set; }
+        public string UserId { get; set; }
     }
 }

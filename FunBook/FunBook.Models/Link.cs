@@ -5,13 +5,13 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Joke
+    public class Link
     {
         private ICollection<Tag> tags;
         private ICollection<View> views;
         private ICollection<Comment> comments;
 
-        public Joke()
+        public Link()
         {
             this.Id = Guid.NewGuid();
             this.tags = new HashSet<Tag>();
@@ -22,7 +22,7 @@
         public Guid Id { get; set; }
         
         [Required]
-        public string Text { get; set; }
+        public string URL { get; set; }
 
         [MinLength(3)]
         [Required]

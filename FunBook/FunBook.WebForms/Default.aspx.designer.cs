@@ -11,7 +11,7 @@ namespace FunBook.WebForms
 {
 
 
-    public partial class _Default
+    public partial class Default
     {
     }
 }

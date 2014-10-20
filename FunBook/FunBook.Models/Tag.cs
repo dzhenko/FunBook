@@ -2,13 +2,13 @@
 {
     using System.Collections.Generic;
 
-    public class Category
+    public class Tag
     {
         private ICollection<Joke> jokes;
         private ICollection<Link> links;
         private ICollection<Picture> pictures;
 
-        public Category()
+        public Tag()
         {
             this.jokes = new HashSet<Joke>();
             this.links = new HashSet<Link>();
@@ -19,7 +19,7 @@
 
         public string Name { get; set; }
 
-        public virtual ICollection<Joke> Jokes
+        public virtual ICollection<Joke> Jokes 
         {
             get { return this.jokes; }
             set { this.jokes = value; }

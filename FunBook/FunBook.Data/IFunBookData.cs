@@ -10,9 +10,15 @@
     {
         IRepository<Joke> Jokes { get; }
 
+        IRepository<Picture> Pictures { get; }
+
+        IRepository<Link> Links { get; }
+
+        IRepository<Tag> Tags { get; }
+
         IRepository<Comment> Comments { get; }
 
-        IRepository<JokeView> JokeViews { get; }
+        IRepository<View> Views { get; }
 
         IRepository<Category> Categories { get; }
 

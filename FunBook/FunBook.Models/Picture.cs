@@ -5,13 +5,13 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Joke
+    public class Picture
     {
         private ICollection<Tag> tags;
         private ICollection<View> views;
         private ICollection<Comment> comments;
 
-        public Joke()
+        public Picture()
         {
             this.Id = Guid.NewGuid();
             this.tags = new HashSet<Tag>();
@@ -21,8 +21,17 @@
 
         public Guid Id { get; set; }
         
-        [Required]
-        public string Text { get; set; }
+        // content
+        [Required] 
+        public string Base64String { get; set; }
+
+        // original file name
+        [Required] 
+        public string FileName { get; set; }
+
+        // unique file name (path on server + guid)
+        [Required] 
+        public string FilePath { get; set; }
 
         [MinLength(3)]
         [Required]

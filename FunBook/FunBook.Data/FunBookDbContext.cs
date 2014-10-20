@@ -4,18 +4,27 @@
     using System.Data.Entity;
 
     using FunBook.Models;
+    using FunBook.Data.Migrations;
 
     public class FunBookDbContext : DbContext
     {
         public FunBookDbContext()
             : base("FunBookConnection")
         {
-            //Database.SetInitializer<MasterChefDbContext>(new MigrateDatabaseToLatestVersion<MasterChefDbContext, Configuration>());
+            Database.SetInitializer<FunBookDbContext>(new MigrateDatabaseToLatestVersion<FunBookDbContext, Configuration>());
         }
 
-        public IDbSet<Joke> PreparationSteps { get; set; }
+        public IDbSet<Joke> Jokes { get; set; }
 
-        public IDbSet<JokeView> JokeView { get; set; }
+        public IDbSet<Picture> Pictures { get; set; }
+
+        public IDbSet<Link> Links { get; set; }
+
+        public IDbSet<View> Views { get; set; }
+
+        public IDbSet<Tag> Tags { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
     }

@@ -31,6 +31,30 @@
             }
         }
 
+        public IRepository<Picture> Pictures
+        {
+            get
+            {
+                return this.GetRepository<Picture>();
+            }
+        }
+
+        public IRepository<Link> Links
+        {
+            get
+            {
+                return this.GetRepository<Link>();
+            }
+        }
+
+        public IRepository<Tag> Tags
+        {
+            get
+            {
+                return this.GetRepository<Tag>();
+            }
+        }
+
         public IRepository<Comment> Comments
         {
             get
@@ -39,11 +63,11 @@
             }
         }
 
-        public IRepository<JokeView> JokeViews
+        public IRepository<View> Views
         {
             get
             {
-                return this.GetRepository<JokeView>();
+                return this.GetRepository<View>();
             }
         }
 

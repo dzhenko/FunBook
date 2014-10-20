@@ -10,23 +10,20 @@ namespace FunBook.Data.Migrations
         public Configuration()
         {
             this.AutomaticMigrationsEnabled = true;
-            this.AutomaticMigrationDataLossAllowed = false;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(FunBook.Data.FunBookDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (!context.Categories.Any())
+            {
+                context.Categories.Add(new Models.Category() { Name = "Blonds" });
+                context.Categories.Add(new Models.Category() { Name = "Big Brother" });
+                context.Categories.Add(new Models.Category() { Name = "Microsoft" });
+                context.Categories.Add(new Models.Category() { Name = "Animals" });
+                context.Categories.Add(new Models.Category() { Name = "Dirty" });
+                context.Categories.Add(new Models.Category() { Name = "Chuck Noris" });
+            }
         }
     }
 }
