@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminsMasterPage.master.cs" Inherits="FunBook.WebForms.AdminAreaPages.AdminsMasterPage" %>
+
+<asp:Content ID="AdminContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <header id="admin-area">
+        Admin Area Header   
+        <a href="./ManageUsers.aspx">Users Management</a>
+        <a href="./ManageItems.aspx">Content/Items Management</a>
+
+    </header>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
+
+</asp:Content>

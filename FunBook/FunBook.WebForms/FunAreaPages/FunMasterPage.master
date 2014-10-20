@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FunMasterPage.master.cs" Inherits="FunBook.WebForms.FunAreaPages.FunMasterPage" %>
+
+<asp:Content ID="FunContent" ContentPlaceHolderID="MainContent" runat="server">
+    <header id="fun-area">Jokes Area Header</header>
+    <aside class="categories-menu">
+        <strong>Categories:</strong>
+        <br />
+        <a href="./JokesByCategory.aspx">Category name</a><span> (10) <small>number of jokes in this category</small> </span>
+        <asp:Repeater runat="server" ID="categories">
+            <ItemTemplate>
+                <a>Category name</a><span>10 (number of jokes in this category )</span>
+            </ItemTemplate>
+        </asp:Repeater>
+    </aside>
+    <div class="jokes-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
+    </div>
+    <aside class="tags-menu">
+        <strong>Tags:</strong>
+        <div>Tag cloud</div>
+    </aside>
+</asp:Content>

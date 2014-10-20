@@ -32,7 +32,34 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
+.jokes-content{
+    display:inline-block;
+    padding:20px;
+}
+
+aside {
+    display: block;
+    margin-bottom: 10px;
+}
+
+    aside.categories-menu {
+        float: left;
+        background-color: #ffddcc;
+        width: 150px;
+    }
+
+    aside.tags-menu {
+        float: right;
+        background-color: #ffddcc;
+        width: 150px;
+    }
+
+    aside.categories-menu, aside.tags-menu, #fun-area, #admin-area {
+        border: solid 1px gray;
+        padding:10px;
+    }
