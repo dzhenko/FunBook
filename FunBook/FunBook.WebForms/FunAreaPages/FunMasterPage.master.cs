@@ -12,10 +12,23 @@ namespace FunBook.WebForms.FunAreaPages
     public partial class FunMasterPage : MasterPage
     {
         FunBookData db = FunBookData.Create();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            categories.DataSource = db.Categories.All().ToList();
+            BindCategories();
+        }
+
+        private void BindCategories()
+        {
+            var catList = db.Categories.All().Select(c => new
+            {
+                Name = c.Name,
+                Count = c.Jokes.Count() + c.Links.Count() + c.Pictures.Count(),
+                Id = c.Id
+            });
+
+            categories.DataSource = catList.ToList();
+
             categories.DataBind();
         }
     }

@@ -23,9 +23,9 @@
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>
             <br />
-            <asp:Repeater runat="server" ID="categories" ItemType="FunBook.Models.Category">
+            <asp:Repeater runat="server" ID="categories" >
                 <ItemTemplate>
-                    <a class="navItem" href="~/FunAreaPages/Content.aspx" runat="server"><%#: Item.Name %></a>                   
+                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?categoryId="+ Eval("Id") %>' runat="server"><%#: Eval("Name") %> (<%#: Eval("Count") %>)</asp:HyperLink>                   
                 </ItemTemplate>
             </asp:Repeater>
         </aside>
