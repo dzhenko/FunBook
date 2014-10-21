@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using FunBook.Models;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using FunBook.WebForms.Models;
 
 namespace FunBook.WebForms.Account
 {
@@ -13,8 +13,8 @@ namespace FunBook.WebForms.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
+            var user = new User() { UserName = Email.Text, Email = Email.Text };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

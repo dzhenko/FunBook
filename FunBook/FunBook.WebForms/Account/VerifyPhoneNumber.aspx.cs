@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
@@ -13,7 +11,7 @@ namespace FunBook.WebForms.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var phonenumber = Request.QueryString["PhoneNumber"];
             var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), phonenumber);           
             PhoneNumber.Value = phonenumber;
@@ -27,7 +25,7 @@ namespace FunBook.WebForms.Account
                 return;
             }
 
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
             var result = manager.ChangePhoneNumber(User.Identity.GetUserId(), PhoneNumber.Value, Code.Text);
 

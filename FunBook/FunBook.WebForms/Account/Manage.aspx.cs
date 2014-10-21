@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Owin;
-using FunBook.WebForms.Models;
 
 namespace FunBook.WebForms.Account
 {
@@ -20,7 +15,7 @@ namespace FunBook.WebForms.Account
             private set;
         }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        private bool HasPassword(UserManager manager)
         {
             return manager.HasPassword(User.Identity.GetUserId());
         }
@@ -35,7 +30,7 @@ namespace FunBook.WebForms.Account
 
         protected void Page_Load()
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
@@ -92,7 +87,7 @@ namespace FunBook.WebForms.Account
         // Remove phonenumber from user
         protected void RemovePhone_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var result = manager.SetPhoneNumber(User.Identity.GetUserId(), null);
             if (!result.Succeeded)
             {
@@ -109,7 +104,7 @@ namespace FunBook.WebForms.Account
         // DisableTwoFactorAuthentication
         protected void TwoFactorDisable_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), false);
 
             Response.Redirect("/Account/Manage");
@@ -118,7 +113,7 @@ namespace FunBook.WebForms.Account
         //EnableTwoFactorAuthentication 
         protected void TwoFactorEnable_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
 
             Response.Redirect("/Account/Manage");

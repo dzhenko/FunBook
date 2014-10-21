@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using System.Threading.Tasks;
-using FunBook.WebForms.Models;
 
 namespace FunBook.WebForms.Account
 {
@@ -15,7 +10,7 @@ namespace FunBook.WebForms.Account
     {
         protected void PhoneNumber_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), PhoneNumber.Text);
             if (manager.SmsService != null)
             {

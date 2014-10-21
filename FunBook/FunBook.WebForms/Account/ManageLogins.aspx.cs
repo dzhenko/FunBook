@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
@@ -22,14 +21,14 @@ namespace FunBook.WebForms.Account
             private set;
         }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        private bool HasPassword(UserManager manager)
         {
             return manager.HasPassword(User.Identity.GetUserId());
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             CanRemoveExternalLogins = manager.GetLogins(User.Identity.GetUserId()).Count() > 1;
 
             SuccessMessage = String.Empty;
@@ -38,7 +37,7 @@ namespace FunBook.WebForms.Account
 
         public IEnumerable<UserLoginInfo> GetLogins()
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var accounts = manager.GetLogins(User.Identity.GetUserId());
             CanRemoveExternalLogins = accounts.Count() > 1 || HasPassword(manager);
             return accounts;
@@ -46,7 +45,7 @@ namespace FunBook.WebForms.Account
 
         public void RemoveLogin(string loginProvider, string providerKey)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var result = manager.RemoveLogin(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
             string msg = String.Empty;
             if (result.Succeeded)

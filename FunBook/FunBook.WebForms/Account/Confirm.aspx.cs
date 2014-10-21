@@ -1,13 +1,12 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using FunBook.WebForms.Models;
-
-namespace FunBook.WebForms.Account
+﻿namespace FunBook.WebForms.Account
 {
+    using System;
+    using System.Web;
+    using System.Web.UI;
+    using FunBook.WebForms.Providers;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+
     public partial class Confirm : Page
     {
         protected string StatusMessage
@@ -22,7 +21,7 @@ namespace FunBook.WebForms.Account
             string userId = IdentityHelper.GetUserIdFromRequest(Request);
             if (code != null && userId != null)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var result = manager.ConfirmEmail(userId, code);
                 if (result.Succeeded)
                 {

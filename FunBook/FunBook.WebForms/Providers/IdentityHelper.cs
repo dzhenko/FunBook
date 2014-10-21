@@ -1,55 +1,17 @@
-﻿using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using FunBook.WebForms.Models;
-
-namespace FunBook.WebForms.Models
+﻿namespace FunBook.WebForms.Providers
 {
-    // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
-    {
-        public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
-        {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-            var userIdentity = manager.CreateIdentity(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
-            return userIdentity;
-        }
+    using System;
+    using System.Web;
+    using FunBook.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.Owin.Security;
 
-        public Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
-        {
-            return Task.FromResult(GenerateUserIdentity(manager));
-        }
-    }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("FunBookConnection", throwIfV1Schema: false)
-        {
-        }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-    }
-}
-
-#region Helpers
-namespace FunBook.WebForms
-{
     public static class IdentityHelper
     {
         // Used for XSRF when linking external logins
         public const string XsrfKey = "XsrfId";
 
-        public static void SignIn(ApplicationUserManager manager, ApplicationUser user, bool isPersistent)
+        public static void SignIn(UserManager manager, User user, bool isPersistent)
         {
             IAuthenticationManager authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
             authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
@@ -105,4 +67,3 @@ namespace FunBook.WebForms
         }
     }
 }
-#endregion

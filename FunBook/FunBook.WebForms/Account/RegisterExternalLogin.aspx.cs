@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
+using FunBook.Models;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
-using FunBook.WebForms.Models;
 
 namespace FunBook.WebForms.Account
 {
@@ -38,7 +38,7 @@ namespace FunBook.WebForms.Account
             }
             if (!IsPostBack)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
                 var loginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo();
                 if (loginInfo == null)
                 {
@@ -90,8 +90,8 @@ namespace FunBook.WebForms.Account
             {
                 return;
             }
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var user = new ApplicationUser() { UserName = email.Text, Email = email.Text };
+            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
+            var user = new User() { UserName = email.Text, Email = email.Text };
             IdentityResult result = manager.Create(user);
             if (result.Succeeded)
             {

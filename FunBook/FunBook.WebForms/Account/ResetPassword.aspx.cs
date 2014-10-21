@@ -2,10 +2,9 @@
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using FunBook.WebForms.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using FunBook.WebForms.Models;
 
 namespace FunBook.WebForms.Account
 {
@@ -22,7 +21,7 @@ namespace FunBook.WebForms.Account
             string code = IdentityHelper.GetCodeFromRequest(Request);
             if (code != null)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
                 var user = manager.FindByName(Email.Text);
                 if (user == null)
