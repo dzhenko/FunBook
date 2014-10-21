@@ -22,7 +22,7 @@
 
         IRepository<Category> Categories { get; }
 
-        // IRepository<User> Users { get; }
+        IRepository<User> Users { get; }
 
         void SaveChanges();
     }

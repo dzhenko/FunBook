@@ -13,17 +13,17 @@ namespace FunBook.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var data = FunBookData.Create();
-            data.Jokes.Add(new Joke() 
-            { 
-                CategoryId = 1, 
-                Text = "First Joke Ever", 
-                UserId="aaa100b9-0d30-4d15-bad3-71325e33646f",
-                Title = "First Joke",
-                IsAnonymous = false,
+            //var data = FunBookData.Create();
+            //data.Jokes.Add(new Joke()
+            //{
+            //    CategoryId = 1,
+            //    Text = "Very funny stuff here", 
+            //    UserId=data.Users.All().FirstOrDefault().Id,
+            //    Title = "First Joke",
+            //    IsAnonymous = false,
 
-            });
-            data.SaveChanges();
+            //});
+            //data.SaveChanges();
         }
     }
 }
