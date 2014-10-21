@@ -172,9 +172,10 @@
     <Content Include="Controls\HoverDetails\resources\jquery.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
-    <Content Include="FunAreaPages\OwnFun.aspx" />
+    <Content Include="FunAreaPages\PrivateFun.aspx" />
     <Content Include="FunAreaPages\Home.aspx" />
     <Content Include="FunAreaPages\Content.aspx" />
+    <Content Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -370,6 +371,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
@@ -388,12 +390,12 @@
     <Compile Include="FunAreaPages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FunAreaPages\OwnFun.aspx.cs">
-      <DependentUpon>OwnFun.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\PrivateFun.aspx.cs">
+      <DependentUpon>PrivateFun.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FunAreaPages\OwnFun.aspx.designer.cs">
-      <DependentUpon>OwnFun.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\PrivateFun.aspx.designer.cs">
+      <DependentUpon>PrivateFun.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -408,6 +410,13 @@
     </Compile>
     <Compile Include="FunAreaPages\Content.aspx.designer.cs">
       <DependentUpon>Content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx.cs">
+      <DependentUpon>JokeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx.designer.cs">
+      <DependentUpon>JokeDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

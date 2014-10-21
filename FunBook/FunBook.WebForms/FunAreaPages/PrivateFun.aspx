@@ -2,7 +2,7 @@
     Language="C#" 
     MasterPageFile="~/FunAreaPages/FunMasterPage.master" 
     AutoEventWireup="true" 
-    CodeBehind="OwnFun.aspx.cs" 
+    CodeBehind="PrivateFun.aspx.cs" 
     Inherits="FunBook.WebForms.FunAreaPages.Create" %>
 
 <asp:Content ID="OwnFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
@@ -26,7 +26,8 @@
  
                 <ItemTemplate>
                     <div class="joke-item">
-                        <h4><%#: Item.Title %></h4>
+                        <h4><asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonJoke_Command"
+                                    CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton></h4>
                         <p><%#: Item.Category.Name %></p>
                     </div>
                 </ItemTemplate>
