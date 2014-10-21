@@ -11,11 +11,11 @@ namespace FunBook.WebForms.FunAreaPages
 {
     public partial class FunMasterPage : MasterPage
     {
-        FunBookDbContext db = new FunBookDbContext();
-
+        FunBookData db = FunBookData.Create();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            categories.DataSource = db.Categories.ToList();
+            categories.DataSource = db.Categories.All().ToList();
             categories.DataBind();
         }
     }
