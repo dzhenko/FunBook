@@ -1,7 +1,23 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿@font-face {
+    font-family: Salsa-Regular;
+    src: url('../fonts/Salsa-Regular.ttf') format('truetype');
+}
+/* Move down content because we have a fixed navbar that is 50px tall */
+html{
+     height: 100%;
+}
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background: rgb(234,245,247);
+    background: -moz-linear-gradient(top, rgba(234,245,247,1) 1%, rgba(252,249,229,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(234,245,247,1)), color-stop(100%,rgba(252,249,229,1)));
+    background: -webkit-linear-gradient(top, rgba(234,245,247,1) 1%,rgba(252,249,229,1) 100%);
+    background: -o-linear-gradient(top, rgba(234,245,247,1) 1%,rgba(252,249,229,1) 100%);
+    background: -ms-linear-gradient(top, rgba(234,245,247,1) 1%,rgba(252,249,229,1) 100%);
+    background: linear-gradient(to bottom, rgba(234,245,247,1) 1%,rgba(252,249,229,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaf5f7', endColorstr='#fcf9e5',GradientType=0 );
 }
 
 /* Wrapping element */
@@ -37,9 +53,16 @@ input[type="select"] {
         padding: 0;
     }
 }
-.jokes-content{
-    display:inline-block;
-    padding:20px;
+
+.jokes-content {
+    padding: 0 20px;
+}
+
+.popular, .recent {
+    display: inline-block;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 aside {
@@ -47,19 +70,51 @@ aside {
     margin-bottom: 10px;
 }
 
+    aside.categories-menu, aside.tags-menu {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
     aside.categories-menu {
         float: left;
-        background-color: #ffddcc;
-        width: 150px;
     }
 
     aside.tags-menu {
         float: right;
-        background-color: #ffddcc;
-        width: 150px;
     }
 
-    aside.categories-menu, aside.tags-menu, #fun-area, #admin-area {
-        border: solid 1px gray;
-        padding:10px;
+.categories-menu-title {
+    color: #afca57;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+}
+
+.menu {
+    background-color: #ee3963;
+    border-radius: 10px;
+    font-family: Salsa-Regular,Arial,Helvetica,sans-serif !important;
+}
+
+ul.main-menu > li {
+    border-right-style: dotted;
+    border-right-color: #FF809E;
+    border-bottom-width: 2px;
+    color: white;
+}
+
+    ul.main-menu > li > a {
+        color: white;
+        font-size: 1.2em;
     }
+
+        ul.main-menu > li > a:hover {
+            background-color: rgba(255, 250, 250, 0.55);
+        }
+
+.custom-container {
+    margin-top: 20px;
+}

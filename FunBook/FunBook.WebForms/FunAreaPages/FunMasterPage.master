@@ -1,22 +1,40 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FunMasterPage.master.cs" Inherits="FunBook.WebForms.FunAreaPages.FunMasterPage" %>
 
 <asp:Content ID="FunContent" ContentPlaceHolderID="MainContent" runat="server">
-    <header id="fun-area">Jokes Area Header</header>
-    <aside class="categories-menu">
-        <strong>Categories:</strong>
-        <br />
-        <a href="./JokesByCategory.aspx">Category name</a><span> (10) <small>number of jokes in this category</small> </span>
-        <asp:Repeater runat="server" ID="categories">
-            <ItemTemplate>
-                <a>Category name</a><span>10 (number of jokes in this category )</span>
-            </ItemTemplate>
-        </asp:Repeater>
-    </aside>
-    <div class="jokes-content">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
+    <div class="container menu">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav main-menu">
+                <li><a runat="server" href="~/">Home</a></li>
+                <li><a runat="server" href="~/FunAreaPages/Create">Add fun</a></li>
+                <li><a runat="server" href="~/FunAreaPages/About">About</a></li>
+                <li><a runat="server" href="~/AdminAreaPages/Home">Admin</a></li>
+            </ul>
+        </div>
     </div>
-    <aside class="tags-menu">
-        <strong>Tags:</strong>
-        <div>Tag cloud</div>
-    </aside>
+    <div class="container custom-container">
+        <aside class="categories-menu col-sm-2">
+            <strong class="categories-menu-title">Categories:</strong>
+            <br />
+            <a runat="server" href="~/FunAreaPages/Content.aspx">Category name</a><span> (10) </span>
+            <asp:Repeater runat="server" ID="categories">
+                <ItemTemplate>
+                    <a>Category name</a><span>10 (number of jokes in this category )</span>
+                </ItemTemplate>
+            </asp:Repeater>
+        </aside>
+        <div class="jokes-content col-sm-8">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
+        </div>
+        <aside class="tags-menu col-sm-2">
+            <strong>Tags:</strong>
+            <div>Tag cloud</div>
+        </aside>
+    </div>
 </asp:Content>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FunBook.WebForms
+namespace FunBook.WebForms.FunAreaPages
 {
 
 

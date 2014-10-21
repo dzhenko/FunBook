@@ -11,7 +11,7 @@ namespace FunBook.WebForms.FunAreaPages
 {
 
 
-    public partial class JokesByCategory
+    public partial class Create
     {
     }
 }
