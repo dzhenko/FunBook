@@ -166,6 +166,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\HoverDetails\HoverDetails.ascx" />
+    <Content Include="Controls\HoverDetails\resources\hoverDetails.css" />
+    <Content Include="Controls\HoverDetails\resources\hoverDetails.js" />
+    <Content Include="Controls\HoverDetails\resources\jquery.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
     <Content Include="FunAreaPages\Create.aspx" />
@@ -364,6 +368,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controls\HoverDetails\HoverDetails.ascx.cs">
+      <DependentUpon>HoverDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
+      <DependentUpon>HoverDetails.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

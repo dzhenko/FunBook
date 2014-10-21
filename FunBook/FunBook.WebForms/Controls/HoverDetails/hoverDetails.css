@@ -1,0 +1,11 @@
+﻿#HoverDetailsHolder table td {
+    padding:0!important;
+}
+
+#HoverDetailsHolder table div {
+    margin:0!important;
+}
+
+#HoverDetailsHolder {
+    position:absolute;
+}
