@@ -7,6 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
         </div>
         <div class="navbar-collapse collapse">
@@ -22,10 +23,9 @@
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>
             <br />
-            <a runat="server" href="~/FunAreaPages/Content.aspx">Category name</a><span> (10) </span>
-            <asp:Repeater runat="server" ID="categories">
+            <asp:Repeater runat="server" ID="categories" ItemType="FunBook.Models.Category">
                 <ItemTemplate>
-                    <a>Category name</a><span>10 (number of jokes in this category )</span>
+                    <a class="navItem" href="~/FunAreaPages/Content.aspx" runat="server"><%#: Item.Name %></a>                   
                 </ItemTemplate>
             </asp:Repeater>
         </aside>

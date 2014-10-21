@@ -118,3 +118,7 @@ ul.main-menu > li {
 .custom-container {
     margin-top: 20px;
 }
+
+.navItem{
+    display:block;
+}
