@@ -12,6 +12,11 @@
         private FunBookDbContext context;
         private IDictionary<Type, object> repositories;
 
+        public static FunBookData Create()
+        {
+            return new FunBookData();
+        }
+
         public FunBookData(FunBookDbContext context)
         {
             this.context = context;
