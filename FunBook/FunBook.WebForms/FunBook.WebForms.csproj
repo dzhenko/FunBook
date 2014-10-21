@@ -168,7 +168,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
-    <Content Include="FunAreaPages\Create.aspx" />
+    <Content Include="FunAreaPages\OwnFun.aspx" />
     <Content Include="FunAreaPages\Home.aspx" />
     <Content Include="FunAreaPages\Content.aspx" />
     <Content Include="packages.config" />
@@ -378,12 +378,12 @@
     <Compile Include="FunAreaPages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FunAreaPages\Create.aspx.cs">
-      <DependentUpon>Create.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\OwnFun.aspx.cs">
+      <DependentUpon>OwnFun.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FunAreaPages\Create.aspx.designer.cs">
-      <DependentUpon>Create.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\OwnFun.aspx.designer.cs">
+      <DependentUpon>OwnFun.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
