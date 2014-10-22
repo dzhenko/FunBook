@@ -95,6 +95,11 @@ aside {
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
 }
 
+.content-title, .content-empty {
+    font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+    color:  #afca57;
+}
+
 .menu {
     background-color: #ee3963;
     border-radius: 10px;

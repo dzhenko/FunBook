@@ -25,7 +25,7 @@
             <br />
             <asp:Repeater runat="server" ID="categories">
                 <ItemTemplate>
-                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?categoryId="+ Eval("Id") %>' runat="server">
+                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=category&id="+ Eval("Id") %>' runat="server">
                         <%#: Eval("Name") %> (<%#: Eval("Count") %>)
                     </asp:HyperLink>
                 </ItemTemplate>
@@ -37,7 +37,7 @@
         <aside id="tags-container" class="tags-menu col-sm-2">
             <asp:Repeater runat="server" ID="tagsCloud">
                 <ItemTemplate>
-                    <asp:HyperLink class="tagItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?tagId="+ Eval("Id") %>' runat="server">
+                    <asp:HyperLink class="tagItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=tag&id="+ Eval("Id") %>' runat="server">
                         <%#: Eval("Name") %> 
                         <span class="tagCount"><%#: Eval("Count") %></span>
                     </asp:HyperLink>
