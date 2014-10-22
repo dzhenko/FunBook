@@ -187,7 +187,7 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
 }
 
     #fun-content p {
-        padding: 0;
+        padding: 10px;
         margin: 0;
     }
 
@@ -238,15 +238,18 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
     max-height: 1200px;
 }
 
-#open-link{
+#open-link {
     font-size: 22px;
     font-weight: bold;
     background-color: white;
     color: #ee3963;
     padding: 30px 0 30px 0;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
     #open-link:hover{
-        background-color: #ee3963;
-        color: white;
+        background-color: #F7F9ED;
     }
