@@ -63,6 +63,14 @@ input[type="select"] {
     border-radius: 10px;
 }
 
+a{
+    text-decoration:none;
+}
+
+    a:hover{
+        text-decoration: none;
+    }
+
 aside {
     display: block;
     margin-bottom: 10px;
@@ -159,37 +167,37 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
     font-style: italic;
 }
 
-.joke-main-container, .link-main-container, .pic-main-container {
+.joke-main-container, .link-main-container, .fun-main-container {
     vertical-align: middle;
     text-align: center;
     margin: 15px;
 }
 
-    .joke-main-container h3, .link-main-container h3, .pic-main-container h3{
+    .joke-main-container h3, .link-main-container h3, .fun-main-container h3{
         display: inline-block;
         color: #428bd2;
         font-weight: bold;
         font-size: 25px;
     }
 
-#joke-text {
+#fun-content {
     padding: 25px 10px 25px 10px;
     background-color: white;
     border-radius: 15px;
 }
 
-    #joke-text p {
+    #fun-content p {
         padding: 0;
         margin: 0;
     }
 
-#joke-info {
+.joke-info {
     text-align: center;
     vertical-align: middle;
     margin: 15px;
 }
 
-    #joke-info ul {
+    .joke-info ul {
         display: inline-block;
     }
 

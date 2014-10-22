@@ -5,7 +5,7 @@
         <h3><%= CurrentLink.Title %></h3>
         <%--<p class="button"><span id="open-link" class="badge"><a href="<%= CurrentLink.URL %>" target="_blank">Open Link</a></span></p>--%>
         <p><a href="<%= CurrentLink.URL %>" target="_blank" id="open-link" class="btn btn-default btn-lg btn-block">Open Link</a></p>
-        <section id="joke-info">
+        <section class="joke-info">
             <ul class="nav nav-pills">
                 <li class="button"><a>Views <span class="badge"><%= CurrentLink.Views.Count %></span></a></li>
                 <li class="button"><a>Category <span class="badge"><%= CurrentLink.Category.Name %></span></a></li>

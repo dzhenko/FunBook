@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <section class="joke-main-container">
         <h3><%= CurrentJoke.Title %></h3>
-        <section id="joke-text">
+        <section id="fun-content">
             <p><%= CurrentJoke.Text %></p>
         </section>
         <section class="joke-comments" id="jokeComments" runat="server">
@@ -16,7 +16,7 @@
                 </asp:Repeater>
             </ul>
         </section>
-        <section id="joke-info">
+        <section class="joke-info">
             <ul class="nav nav-pills">
                 <li class="button"><a>Views <span class="badge"><%= CurrentJoke.Views.Count %></span></a></li>
                 <li class="button"><a>Category <span class="badge"><%= CurrentJoke.Category.Name %></span></a></li>
