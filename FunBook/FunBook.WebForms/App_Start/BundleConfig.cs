@@ -34,6 +34,10 @@ namespace FunBook.WebForms
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
+            //Add custom scripts
+            bundles.Add(new ScriptBundle("~/bundles/CustomJs").Include(
+                    "~/Scripts/WebForms/tags-cloud.js"));
+
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = true;
