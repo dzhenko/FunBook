@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="Content.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.Content" %>
 
 <asp:Content ID="MainItemsContent" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-
+    <ul class="nav nav-tabs">
         <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
         <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
         <li class="disabled"><a>Disabled</a></li>
@@ -30,6 +30,8 @@
         </div>
     </div>
     <h3 class="content-title" id="JokesHeader">Jokes</h3>
+
+    <h3 class="content-title">Jokes</h3>
     <asp:ListView ID="JokesView" runat="server"
         SelectMethod="JokesView_GetData"
         ItemType="FunBook.Models.Joke"

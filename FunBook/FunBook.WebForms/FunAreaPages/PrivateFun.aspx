@@ -25,12 +25,21 @@
                 </ItemSeparatorTemplate>
 
                 <ItemTemplate>
-                    <div class="joke-item">
-                        <h4>
-                            <asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonJoke_Command"
-                                CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton></h4>
-                        <p><%#: Item.Category.Name %></p>
-                    </div>
+                    <section class="fun-main-container">
+                        <h3><%#: Item.Title %></h3>
+                        <p>
+                            <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
+                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%# Item.Text %></span>
+                            </asp:LinkButton>
+                        </p>
+                        <section class="joke-info">
+                            <ul class="nav nav-pills">
+                                <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
+                                <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
+                                <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                            </ul>
+                        </section>
+                    </section>
                 </ItemTemplate>
             </asp:ListView>
 
@@ -61,13 +70,20 @@
                 </ItemSeparatorTemplate>
 
                 <ItemTemplate>
-                    <div class="link-item">
-                        <h4>
-                            <asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonLike_Command"
-                                CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton>
-                        </h4>
-                        <p><%#: Item.Category.Name %></p>
-                    </div>
+                    <section class="fun-main-container">
+                        <p>
+                            <asp:LinkButton ID="LinkButton4" OnCommand="LinkButtonLike_Command" CommandArgument="<%# Item.Id %>" runat="server">
+                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%#: Item.Title %></span>
+                            </asp:LinkButton>
+                        </p>
+                        <section class="joke-info">
+                            <ul class="nav nav-pills">
+                                <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
+                                <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
+                                <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                            </ul>
+                        </section>
+                    </section>
                 </ItemTemplate>
             </asp:ListView>
 
@@ -98,14 +114,26 @@
                 </ItemSeparatorTemplate>
 
                 <ItemTemplate>
-                    <div class="link-item">
-                        <h4>
-                            <asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonPicture_Command"
+                    <section class="fun-main-container">
+                        <h3>
+                            <asp:LinkButton ID="LinkButton1" OnCommand="LinkButtonPicture_Command"
                                 CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton>
-                        </h4>
-                        <img src="<%#: Item.UrlPath %>" />
-                        <p><%#: Item.Category.Name %></p>
-                    </div>
+                        </h3>
+                        <section id="fun-content">
+                            <p>
+                                <asp:LinkButton ID="LinkButton2" OnCommand="LinkButtonPicture_Command"
+                                    CommandArgument="<%# Item.Id %>" runat="server"><span id="open-link">
+                                <img id="picture-details-image" alt="Picture Details Page" src="<%#: Item.UrlPath %>" /></span></asp:LinkButton>
+                            </p>
+                            <section class="joke-info">
+                                <ul class="nav nav-pills">
+                                    <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
+                                    <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
+                                    <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                                </ul>
+                            </section>
+                        </section>
+                    </section>
                 </ItemTemplate>
             </asp:ListView>
 
