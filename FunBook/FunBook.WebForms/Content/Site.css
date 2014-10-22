@@ -5,7 +5,7 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 body {
-    padding-top: 50px;
+    
     padding-bottom: 20px;
     background-repeat: no-repeat;
     background: rgb(234,245,247);
@@ -242,3 +242,23 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
         background-color: #ee3963;
         color: white;
     }
+
+#headerHolder {
+    background-image:url(Images/back.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    min-height:15em;
+}
+
+#headerHolder a {
+    background-color: #ee3963;
+    color:#ffffff;
+    margin-top:3em;
+    margin-right:2em;
+}
+
+#headerHolder h1 {
+    margin-right:0.5em;
+    font-size: 4em;
+    color: #ee3963;
+}

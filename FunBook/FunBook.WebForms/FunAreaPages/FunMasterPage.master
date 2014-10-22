@@ -38,8 +38,7 @@
             <asp:Repeater runat="server" ID="tagsCloud">
                 <ItemTemplate>
                     <asp:HyperLink class="tagItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=tag&id="+ Eval("Id") %>' runat="server">
-                        <%#: Eval("Name") %> 
-                        <span class="tagCount"><%#: Eval("Count") %></span>
+                        <%#: Eval("Name") %>(<span class="tagCount"><%#: Eval("Count") %></span>)
                     </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>

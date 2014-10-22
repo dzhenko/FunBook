@@ -13,6 +13,9 @@ namespace FunBook.WebForms.FunAreaPages
     {
         FunBookData db = FunBookData.Create();
 
+        private int minFontSize = 0;
+        private int maxFontSize = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             BindCategories();
@@ -25,17 +28,22 @@ namespace FunBook.WebForms.FunAreaPages
             {
                 return;
             }
+
             var tagList = db.Tags.All()
-               // .OrderByDescending(a=> a.Jokes.Count() + a.Links.Count() + a.Pictures.Count())
+                .Where(t => t.Name.Length > 4)
+                .OrderByDescending(a=> a.Jokes.Count() + a.Links.Count() + a.Pictures.Count())
                 .Take(50)
                 .Select(t => new
-            {
-                Name = t.Name,
-                Count = t.Jokes.Count() + t.Links.Count() + t.Pictures.Count(),
-                Id = t.Id
-            });
+                {
+                    Name = t.Name,
+                    Count = t.Jokes.Count() + t.Links.Count() + t.Pictures.Count(),
+                    Id = t.Id
+                }).ToList();
 
-            tagsCloud.DataSource = tagList.ToList();
+            tagsCloud.DataSource = tagList;
+
+            this.minFontSize = tagList[tagList.Count - 1].Count;
+            this.maxFontSize = tagList[0].Count;
 
             tagsCloud.DataBind();
         }
