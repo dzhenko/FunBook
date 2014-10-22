@@ -1,15 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.Home" %>
 
 <asp:Content ID="ContentHome" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <div class="recent col-sm-6">
-        <asp:GridView runat="server" ID="recentItemsGrid" CssClass="items-grid" AutoGenerateColumns="false">
+    <div class="recent container">
+        <asp:GridView runat="server" ID="recentItemsGrid" CssClass="items-grid"
+            AutoGenerateColumns="false" ItemType="FunBook.WebForms.DataModels.HomeItemDataModel">
             <Columns>
                 <asp:TemplateField HeaderText="Most Recent">
                     <ItemTemplate>
-                        <asp:Label CssClass="item-title" runat="server"><%# Eval("Title") %></asp:Label>
+                        <asp:HyperLink NavigateUrl='<%# Eval("Id", "~/Details.aspx/{0}") %>'
+                            CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                         <asp:Label CssClass="item-text" runat="server">
-                            <%# Eval("Text") %>
-                            <small class="date"><%# Eval("Created") %></small>
+                            <%# Item.Content %>
+                            <small class="date"><%# Item.Created %></small>
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
@@ -17,15 +19,17 @@
         </asp:GridView>
     </div>
 
-    <div class="popular col-sm-6">
-        <asp:GridView runat="server" ID="popularItemsGrid" CssClass="items-grid" AutoGenerateColumns="false">
+    <div class="popular container">
+        <asp:GridView runat="server" ID="popularItemsGrid" CssClass="items-grid"
+            AutoGenerateColumns="false" ItemType="FunBook.WebForms.DataModels.HomeItemDataModel">
             <Columns>
                 <asp:TemplateField HeaderText="Most Popular">
                     <ItemTemplate>
-                        <asp:Label CssClass="item-title" runat="server"><%# Eval("Title") %></asp:Label>
+                        <asp:HyperLink NavigateUrl='<%# Eval("Id", "~/Details.aspx/{0}") %>'
+                            CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                         <asp:Label CssClass="item-text" runat="server">
-                            <%# Eval("Text") %>
-                            <small class="date"><%# Eval("Created") %></small>
+                            <%# Item.Content %>
+                            <small class="date"><%# Item.Created %></small>
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>

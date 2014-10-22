@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.UI;
 
 using FunBook.Data;
+using FunBook.WebForms.DataModels;
 
 namespace FunBook.WebForms.FunAreaPages
 {
@@ -13,27 +14,46 @@ namespace FunBook.WebForms.FunAreaPages
 
         public void BindRecentItems()
         {
-            var mostRecentJoke = this.db.Jokes.All().OrderByDescending(j => j.Created).FirstOrDefault();
-           // var mostRecentLink = this.db.Links.All().OrderByDescending(j => j.Created).FirstOrDefault();
-          //  var mostRecentPicture = this.db.Pictures.All().OrderByDescending(j => j.Created).FirstOrDefault();
+            var mostRecentJoke = this.db.Jokes.All()
+                .OrderByDescending(j => j.Created)
+                .Take(1)
+                .Select(HomeItemDataModel.FromJoke)
+                .FirstOrDefault();
+            var mostRecentLink = this.db.Links.All()
+                .OrderByDescending(l => l.Created)
+                .Take(1)
+                .Select(HomeItemDataModel.FromLink)
+                .FirstOrDefault();
+            var mostRecentPicture = this.db.Pictures.All()
+                .OrderByDescending(j => j.Created)
+                .Take(1)
+                .Select(HomeItemDataModel.FromPicture)
+                .FirstOrDefault();
 
-           // List<object> recentItems = this.AppendItems(mostRecentJoke, mostRecentLink, mostRecentPicture);
-             List<object> recentItems = this.AppendItems(mostRecentJoke);
+            this.recentItemsGrid.DataSource = new List<HomeItemDataModel>() { mostRecentJoke, mostRecentLink, mostRecentPicture };
 
-            this.recentItemsGrid.DataSource = recentItems.ToList();
             this.recentItemsGrid.DataBind();
         }
 
         public void BindPopularItems()
         {
-            var mostPopularJoke = this.db.Jokes.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
-           // var mostPopularLink =  this.db.Links.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
-           // var mostPopularPicture = this.db.Pictures.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
+            var mostPopularJoke = this.db.Jokes.All()
+                .OrderByDescending(j => j.Views.Count)
+                .Take(1)
+                .Select(HomeItemDataModel.FromJoke)
+                .FirstOrDefault();
+            var mostPopularLink = this.db.Links.All()
+                .OrderByDescending(l => l.Views.Count)
+                .Take(1)
+                .Select(HomeItemDataModel.FromLink)
+                .FirstOrDefault();
+            var mostPopularPicture = this.db.Pictures.All()
+                .OrderByDescending(j => j.Views.Count)
+                .Take(1)
+                .Select(HomeItemDataModel.FromPicture)
+                .FirstOrDefault();
 
-           // List<object> popularItems = this.AppendItems(mostPopularJoke, mostPopularLink, mostPopularPicture);
-             List<object> popularItems = this.AppendItems(mostPopularJoke);
-
-            this.popularItemsGrid.DataSource = popularItems.ToList();
+            this.popularItemsGrid.DataSource = new List<HomeItemDataModel>() { mostPopularJoke, mostPopularLink, mostPopularPicture };
             this.popularItemsGrid.DataBind();
         }
 
@@ -41,20 +61,6 @@ namespace FunBook.WebForms.FunAreaPages
         {
             this.BindRecentItems();
             this.BindPopularItems();
-        }
-
-        private List<object> AppendItems(params object[] items)
-        {
-            List<object> recentItems = new List<object>();
-            foreach (var item in items)
-            {
-                if (item != null)
-                {
-                    recentItems.Add(item);
-                }
-            }
-
-            return recentItems;
         }
     }
 }

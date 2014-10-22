@@ -42,7 +42,9 @@
         <div class="navbar container" id="headerHolder">
             <div class="row">
                 <div class="pull-right">
-                    <h1>FUNBOOK</h1>
+                    <a href="/">
+                        <h1><span>F</span><span>U</span><span>N</span><span>B</span><span>O</span><span>O</span><span>K</span></h1>
+                    </a>
                 </div>
             </div>
             <div class="row">
@@ -50,15 +52,15 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a  class="btn btn-lg btn-primary" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a  class="btn btn-lg btn-primary" runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a  class="btn btn-lg" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a  class="btn btn-lg" runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="btn btn-lg" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a class="btn btn-lg" runat="server" href="~/Account/Manage" title="Manage your account"><%: new string[] {"Hello", "Hi", "Watsup","Comesta","Zdrastvui","Bonjour","Sokeres","Opppa","Greetings","Welcome"}[(new Random()).Next(0,10)] %>, <%: Context.User.Identity.GetUserName().Substring(0, Context.User.Identity.GetUserName().IndexOf('@'))  %> :) </a></li>
                                 <li>
-                                    <asp:LoginStatus class="btn btn-lg" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    <asp:LoginStatus class="btn btn-lg" runat="server" LogoutAction="Redirect" LogoutText="Log off :(" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>
                         </LoggedInTemplate>
@@ -71,7 +73,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer class="text-center footer">
-                <p>&copy; Team William Faulkner ASP NET Web Forms Teamwork</p>
+                <p><a href="https://github.com/fast4y/FunBook">&copy; Team William Faulkner ASP NET Web Forms Teamwork</a></p>
             </footer>
         </div>
     </form>
