@@ -23,15 +23,7 @@
         
         // content
         [Required] 
-        public string Base64String { get; set; }
-
-        // original file name
-        [Required] 
-        public string FileName { get; set; }
-
-        // unique file name (path on server + guid)
-        [Required] 
-        public string FilePath { get; set; }
+        public string UrlPath { get; set; }
 
         [MinLength(3)]
         [Required]
