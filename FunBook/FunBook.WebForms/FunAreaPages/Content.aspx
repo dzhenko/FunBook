@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="Content.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.Content" %>
 
 <asp:Content ID="MainItemsContent" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
+
     <h3 class="content-title">Jokes</h3>
     <asp:ListView ID="JokesView" runat="server"
         SelectMethod="JokesView_GetData"
@@ -8,6 +9,14 @@
         AllowPaging="True" AllowSorting="True"
         DataKeyNames="Id"
         AutoGenerateColumns="false">
+        <LayoutTemplate>
+            <div class="sort-link">
+                <asp:LinkButton runat="server" ID="SortByTitle" CommandName="Sort" CommandArgument="Title">Sort by Title</asp:LinkButton>
+                |
+            <asp:LinkButton runat="server" ID="SortByDate" CommandName="Sort" CommandArgument="Created">Sort by Date</asp:LinkButton>
+            </div>
+            <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
+        </LayoutTemplate>
         <ItemTemplate runat="server">
             <asp:Label CssClass="item-title" runat="server">
                 <%# Item.Title %>
@@ -36,6 +45,14 @@
         AllowPaging="True" PageSize="4" AllowSorting="True"
         DataKeyNames="Id"
         AutoGenerateColumns="false">
+        <LayoutTemplate>
+            <div class="sort-link">
+                <asp:LinkButton runat="server" ID="SortByTitle" CommandName="Sort" CommandArgument="Title">Sort by Title</asp:LinkButton>
+                |
+            <asp:LinkButton runat="server" ID="SortByDate" CommandName="Sort" CommandArgument="Created">Sort by Date</asp:LinkButton>
+            </div>
+            <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
+        </LayoutTemplate>
         <ItemTemplate>
             <asp:Label CssClass="item-title" runat="server">
                 <%# Item.Title %>
@@ -64,6 +81,14 @@
         AllowPaging="True" PageSize="4" AllowSorting="True"
         DataKeyNames="Id"
         AutoGenerateColumns="false">
+        <LayoutTemplate>
+            <div class="sort-link">
+                <asp:LinkButton runat="server" ID="SortByTitle" CommandName="Sort" CommandArgument="Title">Sort by Title</asp:LinkButton>
+                |
+            <asp:LinkButton runat="server" ID="SortByDate" CommandName="Sort" CommandArgument="Created">Sort by Date</asp:LinkButton>
+            </div>
+            <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
+        </LayoutTemplate>
         <ItemTemplate>
             <asp:Label CssClass="item-title" runat="server">
                 <%# Item.Title %>
