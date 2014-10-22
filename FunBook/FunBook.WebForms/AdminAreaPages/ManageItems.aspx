@@ -34,9 +34,9 @@
                         <td runat="server">
                             <asp:DataPager ID="DataPager1" runat="server" PageSize="5">
                                 <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"/>
                                     <asp:NumericPagerField />
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"/>
                                 </Fields>
                             </asp:DataPager>
                         </td>
@@ -60,22 +60,6 @@
                 </td>
             </tr>
         </ItemTemplate>
-        <AlternatingItemTemplate>
-            <tr>
-                <td>
-                    <asp:Label runat="server" ID="TextLabel" Text='<%#: Item.Text %>'></asp:Label>
-
-                </td>
-                <td>
-                    <asp:Label runat="server" ID="TitleLabel" Text='<%#: Item.Title %>'></asp:Label>
-
-                </td>
-                <td class="info">
-                    <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit">Edit</asp:LinkButton>
-
-                </td>
-            </tr>
-        </AlternatingItemTemplate>
         <EditItemTemplate>
             </tr>
                     <td>
