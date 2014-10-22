@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-6">
                 <div class="col-md-3">
-                    <p>Dimitar Penev</p>
+                    <p>Dzhenko Penev</p>
                     <a href="https://github.com/fast4y">Github account</a>
                 </div>
                 <div class="col-md-9">
