@@ -8,7 +8,6 @@
         SelectMethod="ListView1_GetData"
         UpdateMethod="ListView1_UpdateItem"
         DeleteMethod="ListView1_DeleteItem">
-        <%--DataSourceID="SqlDataSourceItems"--%>
         <LayoutTemplate>
             <div class="container">
                 <table runat="server" class="table table-hover">
@@ -80,10 +79,10 @@
         <EditItemTemplate>
             </tr>
                     <td>
-                        <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: Item.Text %>' />
+                        <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: BindItem.Text %>' />
                     </td>
             <td>
-                <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: Item.Title %>' />
+                <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: BindItem.Title %>' />
             </td>
             <td class="info">
                 <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="Update">Update</asp:LinkButton>
@@ -101,7 +100,9 @@
         <InsertItemTemplate>
             <tr>
                 <td>
-                    <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: Item.Text %>'></asp:TextBox></td>
+                    <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: Item.Text %>'></asp:TextBox>
+
+                </td>
                 <td>
                     <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: Item.Title %>' />
                 </td>
@@ -111,18 +112,5 @@
                 </td>
             </tr>
         </InsertItemTemplate>
-
-        <SelectedItemTemplate>
-            <tr>
-                <td>
-                    <asp:Label ID="TextLabel" runat="server" Text='<%#: Item.Text %>' />
-                </td>
-                <td>
-                    <asp:Label ID="TitleLabel" runat="server" Text='<%#: Item.Title %>' />
-                </td>
-            </tr>
-        </SelectedItemTemplate>
-
     </asp:ListView>
-    <%--<asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=FunBook;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Jokes]"></asp:SqlDataSource>--%>
 </asp:Content>
