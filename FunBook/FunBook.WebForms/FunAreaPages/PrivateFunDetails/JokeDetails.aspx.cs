@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FunBook.WebForms.FunAreaPages.PrivateFun
+namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
     public partial class JokeDetails : System.Web.UI.Page
     {
@@ -19,6 +19,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFun
             this.CurrentJoke = joke;
         }
 
-        public Joke CurrentJoke { get; private set; }
+        public Joke CurrentJoke { get; set; }
     }
 }

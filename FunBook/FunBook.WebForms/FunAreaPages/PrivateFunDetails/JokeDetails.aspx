@@ -1,12 +1,6 @@
-﻿<%@ Page 
-    Title="" 
-    Language="C#"
-    MasterPageFile="~/FunAreaPages/FunMasterPage.master" 
-    AutoEventWireup="true" 
-    CodeBehind="JokeDetails.aspx.cs" 
-    Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.JokeDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="JokeDetails.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.JokeDetails" %>
 
-<asp:Content ID="ContentJoke" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <section class="joke-main-container">
         <header>
             <h3><%= CurrentJoke.Title %></h3>
