@@ -2,54 +2,34 @@
 
 <asp:Content ID="ContentHome" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="recent col-sm-6">
-        <asp:GridView runat="server" ID="recentItemsGrid"
-            DataKeyNames="Id"
-            ItemType="FunBook.Models.Joke"
-            SelectMethod="RecentItems_GetData"
-            AutoGenerateColumns="false">
+        <asp:GridView runat="server" ID="recentItemsGrid" CssClass="items-grid" AutoGenerateColumns="false">
             <Columns>
-                <asp:TemplateField HeaderText="Title">
+                <asp:TemplateField HeaderText="Most Recent">
                     <ItemTemplate>
-                        <asp:Label Text="<%# Item.Text %>" runat="server" />
+                        <asp:Label CssClass="item-title" runat="server"><%# Eval("Title") %></asp:Label>
+                        <asp:Label CssClass="item-text" runat="server">
+                            <%# Eval("Text") %>
+                            <small class="date"><%# Eval("Created") %></small>
+                        </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
-        <p>
-            <strong>Most recent joke:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
-        <p>
-            <strong>Most recent link:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
-        <p>
-            <strong>Most recent picture:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
     </div>
 
     <div class="popular col-sm-6">
-        <p>
-            <strong>Most popular joke:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
-
-        <p>
-            <strong>Most popular link:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
-        <p>
-            <strong>Most popular picture:</strong>
-            sdhfveiru
-        </p>
-        <button>View</button>
+        <asp:GridView runat="server" ID="popularItemsGrid" CssClass="items-grid" AutoGenerateColumns="false">
+            <Columns>
+                <asp:TemplateField HeaderText="Most Popular">
+                    <ItemTemplate>
+                        <asp:Label CssClass="item-title" runat="server"><%# Eval("Title") %></asp:Label>
+                        <asp:Label CssClass="item-text" runat="server">
+                            <%# Eval("Text") %>
+                            <small class="date"><%# Eval("Created") %></small>
+                        </asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
     </div>
-
 </asp:Content>

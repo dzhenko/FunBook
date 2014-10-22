@@ -1,36 +1,57 @@
-﻿using FunBook.Data;
-using FunBook.Models;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
+using FunBook.Data;
 
 namespace FunBook.WebForms.FunAreaPages
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class Home : Page
     {
-        FunBookData db = FunBookData.Create();
+        private FunBookData db = FunBookData.Create();
+
+        public void BindRecentItems()
+        {
+            var mostRecentJoke = this.db.Jokes.All().OrderByDescending(j => j.Created).FirstOrDefault();
+            var mostRecentLink = this.db.Links.All().OrderByDescending(j => j.Created).FirstOrDefault();
+            var mostRecentPicture = this.db.Pictures.All().OrderByDescending(j => j.Created).FirstOrDefault();
+
+            List<object> recentItems = this.AppendItems(mostRecentJoke, mostRecentLink, mostRecentPicture);
+
+            this.recentItemsGrid.DataSource = recentItems.ToList();
+            this.recentItemsGrid.DataBind();
+        }
+
+        public void BindPopularItems()
+        {
+            var mostPopularJoke = this.db.Jokes.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
+            var mostPopularLink = this.db.Links.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
+            var mostPopularPicture = this.db.Pictures.All().OrderByDescending(j => j.Views.Count).FirstOrDefault();
+
+            List<object> popularItems = this.AppendItems(mostPopularJoke, mostPopularLink, mostPopularPicture);
+
+            this.popularItemsGrid.DataSource = popularItems.ToList();
+            this.popularItemsGrid.DataBind();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.BindRecentItems();
+            this.BindPopularItems();
         }
 
-        public IEnumerable<Joke> RecentItems_GetData()
+        private List<object> AppendItems(params object[] items)
         {
-            if (!db.Jokes.All().Any())
+            List<object> recentItems = new List<object>();
+            foreach (var item in items)
             {
-                return new List<Joke>();
+                if (item != null)
+                {
+                    recentItems.Add(item);
+                }
             }
 
-            List<Joke> recentItems = new List<Joke>();
-
-            var mostRecentJoke = db.Jokes.All().OrderBy(j => j.Id).Take(1).ToList();
-
-            recentItems.Add(mostRecentJoke[0]);
             return recentItems;
         }
     }
