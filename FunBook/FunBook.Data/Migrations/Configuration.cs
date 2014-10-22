@@ -1,5 +1,7 @@
 namespace FunBook.Data.Migrations
 {
+    using FunBook.Data.InitialDataGenerators;
+    using FunBook.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -13,16 +15,11 @@ namespace FunBook.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(FunBook.Data.FunBookDbContext context)
+        protected override void Seed(FunBookDbContext context)
         {
             if (!context.Categories.Any())
             {
-                context.Categories.Add(new Models.Category() { Name = "Blonds" });
-                context.Categories.Add(new Models.Category() { Name = "Big Brother" });
-                context.Categories.Add(new Models.Category() { Name = "Microsoft" });
-                context.Categories.Add(new Models.Category() { Name = "Animals" });
-                context.Categories.Add(new Models.Category() { Name = "Dirty" });
-                context.Categories.Add(new Models.Category() { Name = "Chuck Noris" });
+                (new JokesGenerator()).Generate(context);
             }
         }
     }
