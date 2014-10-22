@@ -390,6 +390,8 @@
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DataModels\FunMasterCategoryItemDataModel.cs" />
+    <Compile Include="DataModels\FunMasterTagItemDataModel.cs" />
     <Compile Include="DataModels\HomeItemDataModel.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

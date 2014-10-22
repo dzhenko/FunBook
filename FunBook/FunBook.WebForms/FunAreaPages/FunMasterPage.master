@@ -23,10 +23,11 @@
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>
             <br />
-            <asp:Repeater runat="server" ID="categories">
+            <asp:Repeater runat="server" ID="categories" ItemType="FunBook.WebForms.DataModels.FunMasterCategoryItemDataModel">
                 <ItemTemplate>
-                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=category&id="+ Eval("Id") %>' runat="server">
-                        <%#: Eval("Name") %> (<%#: Eval("Count") %>)
+                    <asp:HyperLink class="navItem"  runat="server"
+                        NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=category&id="+ Item.Id %>'>
+                        <%#: Item.Name + "(" + Item.Count + ")" %>)
                     </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>
@@ -40,10 +41,11 @@
             </div>
         </div>
         <aside id="tags-container" class="tags-menu col-sm-2">
-            <asp:Repeater runat="server" ID="tagsCloud">
+            <asp:Repeater runat="server" ID="tagsCloud" ItemType="FunBook.WebForms.DataModels.FunMasterTagItemDataModel">
                 <ItemTemplate>
-                    <asp:HyperLink class="tagItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=tag&id="+ Eval("Id") %>' runat="server">
-                        <%#: Eval("Name") %>(<span class="tagCount"><%#: Eval("Count") %></span>)
+                    <asp:HyperLink class="tagItem" runat="server"
+                        NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=tag&id="+ Eval("Id") %>'>
+                        <%#: Item.Name %>(<span class="tagCount"><%#: Item.Count %></span>)
                     </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>
