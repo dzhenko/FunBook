@@ -22,12 +22,13 @@
     generateTagCloud(tagsCount, 12, 25, maxOccurance);
 
     function generateTagCloud(array, min, max, numberOfOccurance) {
-        var delta = 0 | ((min * numberOfOccurance) / max);
+       // var delta = 0 | ((min * numberOfOccurance) / max);
 
         for (var i = 0, len = array.length; i < len ; i++) {
             array[i].tag.style.margin = '3px';
             array[i].tag.style.cssFloat = 'left';
-            array[i].tag.style.fontSize = (min + delta * array[i].value) + 'px';
+            // array[i].tag.style.fontSize = (min + delta * array[i].value/20) + 'px';
+            array[i].tag.style.fontSize = (min + array[i].value / 10) + 'px';
         }
     }
 })();

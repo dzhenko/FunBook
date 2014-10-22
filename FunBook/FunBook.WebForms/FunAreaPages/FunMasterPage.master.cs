@@ -25,7 +25,10 @@ namespace FunBook.WebForms.FunAreaPages
             {
                 return;
             }
-            var tagList = db.Tags.All().Select(t => new
+            var tagList = db.Tags.All()
+               // .OrderByDescending(a=> a.Jokes.Count() + a.Links.Count() + a.Pictures.Count())
+                .Take(50)
+                .Select(t => new
             {
                 Name = t.Name,
                 Count = t.Jokes.Count() + t.Links.Count() + t.Pictures.Count(),
