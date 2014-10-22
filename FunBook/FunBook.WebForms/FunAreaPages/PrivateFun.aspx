@@ -9,7 +9,7 @@
     <h1>Created by <%: Context.User.Identity.GetUserName().Split('@')[0]  %> </h1>
 
     <ul class="nav nav-tabs">
-        <li class="active" runat="server" id="liJoke"><a href="#home" data-toggle="tab">Pokes</a></li>
+        <li class="active" runat="server" id="liJoke"><a href="#home" data-toggle="tab">Jokes</a></li>
         <li class="" runat="server" id="liLink"><a href="#links" data-toggle="tab">Links</a></li>
         <li class="" runat="server" id="liPic"><a href="#pics" data-toggle="tab">Pics</a></li>
     </ul>
@@ -27,11 +27,10 @@
                 <ItemTemplate>
                     <section class="fun-main-container">
                         <h3><%#: Item.Title %></h3>
-                        <p>
+                        <br />
                             <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
-                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%# Item.Text %></span>
+                            <p><span id="open-link"><%# Item.Text %></span></p>
                             </asp:LinkButton>
-                        </p>
                         <section class="joke-info">
                             <ul class="nav nav-pills">
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
@@ -44,7 +43,7 @@
             </asp:ListView>
 
             <asp:DataPager ID="DataPagerJokes" runat="server"
-                PagedControlID="ListViewJokes" PageSize="4"
+                PagedControlID="ListViewJokes" PageSize="3"
                 QueryStringField="page">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true"

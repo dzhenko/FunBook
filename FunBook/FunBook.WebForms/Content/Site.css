@@ -179,7 +179,6 @@ footer {
 .joke-main-container, .link-main-container, .fun-main-container {
     vertical-align: middle;
     text-align: center;
-    margin: 15px;
 }
 
     .joke-main-container h3, .link-main-container h3, .fun-main-container h3 {
@@ -203,7 +202,6 @@ footer {
 .joke-info {
     text-align: center;
     vertical-align: middle;
-    margin: 15px;
 }
 
     .joke-info ul {
@@ -248,11 +246,16 @@ footer {
 }
 
 #open-link {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 17px;
     background-color: white;
-    color: #ee3963;
-    padding: 30px 0 30px 0;
+    color: black ;
+    display: block;
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
     #open-link:hover {
