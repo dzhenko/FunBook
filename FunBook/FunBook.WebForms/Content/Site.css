@@ -5,7 +5,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 body {
-    
     padding-bottom: 20px;
     background-repeat: no-repeat;
     background: rgb(234,245,247);
@@ -118,6 +117,7 @@ aside {
 .content-title, .content-empty {
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
     color: #afca57;
+    margin:5px 5px 2px 5px;
 }
 
 .sort-link {
@@ -177,7 +177,7 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
 }
 
 footer {
-    color : #ee3963;
+    color: #ee3963;
 }
 
 .item-title, .item-text {
@@ -275,22 +275,22 @@ footer {
     }
 
 #headerHolder {
-    background-image:url(Images/back.jpg);
-    background-size:cover;
-    background-repeat:no-repeat;
-    min-height:15em;
+    background-image: url(Images/back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 15em;
 }
 
-#headerHolder a {
-    background-color: #ee3963;
-    color:#ffffff;
-    margin-top:2em;
-    margin-right:2em;
-}
+    #headerHolder a {
+        background-color: #ee3963;
+        color: #ffffff;
+        margin-top: 2em;
+        margin-right: 2em;
+    }
 
-#headerHolder h1 {
-    font-family:'Comic Sans MS', cursive;
-    margin-right:0.5em;
-    font-size: 5em;
-    color: #ee3963;
-}
+    #headerHolder h1 {
+        font-family: 'Comic Sans MS', cursive;
+        margin-right: 0.5em;
+        font-size: 5em;
+        color: #ee3963;
+    }
