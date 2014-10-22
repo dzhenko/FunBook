@@ -5,7 +5,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 body {
-    
     padding-bottom: 20px;
     background-repeat: no-repeat;
     background: rgb(234,245,247);
@@ -44,7 +43,9 @@ input[type="select"] {
 .center{
     text-align:center;
 }
-
+img{
+    border-radius:10px
+}
 .about-funbook h2{
     color:purple;
 }
@@ -118,6 +119,7 @@ aside {
 .content-title, .content-empty {
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
     color: #afca57;
+    margin:5px 5px 2px 5px;
 }
 
 .sort-link {
@@ -177,7 +179,7 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
 }
 
 footer {
-    color : #ee3963;
+    color: #ee3963;
 }
 
 .item-title, .item-text {
@@ -193,7 +195,6 @@ footer {
 .joke-main-container, .link-main-container, .fun-main-container {
     vertical-align: middle;
     text-align: center;
-    margin: 15px;
 }
 
     .joke-main-container h3, .link-main-container h3, .fun-main-container h3 {
@@ -217,7 +218,6 @@ footer {
 .joke-info {
     text-align: center;
     vertical-align: middle;
-    margin: 15px;
 }
 
     .joke-info ul {
@@ -262,11 +262,16 @@ footer {
 }
 
 #open-link {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 17px;
     background-color: white;
-    color: #ee3963;
-    padding: 30px 0 30px 0;
+    color: black ;
+    display: block;
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 
     #open-link:hover {
@@ -275,29 +280,29 @@ footer {
     }
 
 #headerHolder {
-    background-image:url(Images/back.jpg);
-    background-size:cover;
-    background-repeat:no-repeat;
-    min-height:15em;
+    background-image: url(Images/back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 15em;
 }
 
-#headerHolder a {
-    background-color: #ee3963;
-    color:#ffffff;
-    margin-right:2em;
-}
+    #headerHolder a {
+        background-color: #ee3963;
+        color: #ffffff;
+        margin-right: 2em;
+    }
 
 #headerHolder a:hover {
     color:#428bca;
 }
 
-#headerHolder h1 {
-    font-family:'Comic Sans MS', cursive;
-    margin-right:0.5em;
-    font-size: 5em;
-    color: #ee3963;
+    #headerHolder h1 {
+        font-family: 'Comic Sans MS', cursive;
+        margin-right: 0.5em;
+        font-size: 5em;
+        color: #ee3963;
 }
 
 #headerHolder > div > div > a > h1 > span:hover{
     color:#428bca;
-}
+    }
