@@ -17,6 +17,9 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             Joke joke = data.Jokes.Find(id);
 
             this.CurrentJoke = joke;
+            this.RepeaterTags.DataSource = joke.Tags;
+            this.RepeaterComments.DataSource = joke.Comments;
+            this.DataBind();
         }
 
         public Joke CurrentJoke { get; set; }
