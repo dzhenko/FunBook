@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap>
+  <siteMapNode title="Home" description="Home" url="~/" >
+    <siteMapNode title="Admin" description="Home"
+      url="~/AdminAreaPages/Home">
+    </siteMapNode>
+    <siteMapNode title="About" description="About"
+    url="~/FunAreaPages/About">
+    </siteMapNode>
+    <siteMapNode title="Content" description="Content"
+     url="~/FunAreaPages/Content">
+    </siteMapNode>
+    <siteMapNode title="PrivateFun" description="Private Fun"
+        url="~/FunAreaPages/PrivateFun" />
+  </siteMapNode>
+</siteMap>

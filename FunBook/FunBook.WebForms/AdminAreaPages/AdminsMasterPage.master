@@ -18,6 +18,6 @@
             </ul>
         </div>
     </div>
-
+    <asp:SiteMapPath ID="SiteMap1" runat="server"></asp:SiteMapPath>
     <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
 </asp:Content>

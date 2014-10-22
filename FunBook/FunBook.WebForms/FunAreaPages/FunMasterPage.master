@@ -32,6 +32,7 @@
             </asp:Repeater>
         </aside>
         <div class="jokes-content col-sm-8">
+            <asp:SiteMapPath ID="SiteMap1" runat="server"></asp:SiteMapPath>
             <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
         </div>
         <aside id="tags-container" class="tags-menu col-sm-2">
