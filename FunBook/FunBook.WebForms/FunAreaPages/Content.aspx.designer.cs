@@ -22,6 +22,15 @@ namespace FunBook.WebForms.FunAreaPages {
         protected global::System.Web.UI.WebControls.ListView JokesView;
         
         /// <summary>
+        /// DataPagerJokes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPagerJokes;
+        
+        /// <summary>
         /// LinksView control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace FunBook.WebForms.FunAreaPages {
         protected global::System.Web.UI.WebControls.ListView LinksView;
         
         /// <summary>
+        /// DataPagerLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPagerLinks;
+        
+        /// <summary>
         /// PicturesView control.
         /// </summary>
         /// <remarks>
@@ -38,5 +56,14 @@ namespace FunBook.WebForms.FunAreaPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView PicturesView;
+        
+        /// <summary>
+        /// DataPagerPictures control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager DataPagerPictures;
     }
 }
