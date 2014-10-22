@@ -162,6 +162,10 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
     margin-bottom: 10px;
 }
 
+footer {
+    color : #ee3963;
+}
+
 .item-title, .item-text {
     display: block;
 }
@@ -266,12 +270,13 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
 #headerHolder a {
     background-color: #ee3963;
     color:#ffffff;
-    margin-top:3em;
+    margin-top:2em;
     margin-right:2em;
 }
 
 #headerHolder h1 {
+    font-family:'Comic Sans MS', cursive;
     margin-right:0.5em;
-    font-size: 4em;
+    font-size: 5em;
     color: #ee3963;
 }

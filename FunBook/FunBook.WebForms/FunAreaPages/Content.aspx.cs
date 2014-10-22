@@ -13,6 +13,10 @@ namespace FunBook.WebForms.FunAreaPages
 
         public IQueryable<Joke> JokesView_GetData([QueryString] string type, [QueryString] int? id)
         {
+            if (id==null)
+            {
+                id = 1;
+            }
             IQueryable<Joke> result;
             if (type == "category")
             {
@@ -28,6 +32,10 @@ namespace FunBook.WebForms.FunAreaPages
 
         public IQueryable<Link> LinksView_GetData([QueryString] string type, [QueryString] int? id)
         {
+            if (id == null)
+            {
+                id = 1;
+            }
             IQueryable<Link> result;
             if (type == "category")
             {
@@ -43,6 +51,10 @@ namespace FunBook.WebForms.FunAreaPages
 
         public IQueryable<Picture> PicturesView_GetData([QueryString] string type, [QueryString] int? id)
         {
+            if (id == null)
+            {
+                id = 1;
+            }
             IQueryable<Picture> result;
             if (type == "category")
             {
