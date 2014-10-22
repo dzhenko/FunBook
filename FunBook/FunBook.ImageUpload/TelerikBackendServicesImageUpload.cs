@@ -6,7 +6,7 @@
     using Telerik.Everlive.Sdk.Core;
     using Telerik.Everlive.Sdk.Core.Query.Definition.FormData;
 
-    public class TelerikBackendServicesImageUpload : IImageUploader
+    public class TelerikBackendServicesImageUpload
     {
         private const string EverliveAppKey = "yTpcS8cIlRXlVS2a";
         
