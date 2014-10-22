@@ -39,6 +39,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             this.DataBind();
         }
 
-        public Joke CurrentJoke { get; set; }
+        public Joke CurrentJoke { get; private set; }
     }
 }

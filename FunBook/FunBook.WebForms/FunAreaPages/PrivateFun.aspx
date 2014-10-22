@@ -62,7 +62,10 @@
 
                 <ItemTemplate>
                     <div class="link-item">
-                        <h4><%#: Item.Title %></h4>
+                        <h4>
+                            <asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonLike_Command"
+                                CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton>
+                        </h4>
                         <p><%#: Item.Category.Name %></p>
                     </div>
                 </ItemTemplate>

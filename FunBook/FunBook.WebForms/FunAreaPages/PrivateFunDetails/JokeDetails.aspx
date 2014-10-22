@@ -20,6 +20,7 @@
             <ul class="nav nav-pills">
                 <li class="button"><a>Views <span class="badge"><%= CurrentJoke.Views.Count %></span></a></li>
                 <li class="button"><a>Category <span class="badge"><%= CurrentJoke.Category.Name %></span></a></li>
+                <li class="button"><a>Created <span class="badge"><%= CurrentJoke.Created %></span></a></li>
             </ul>
         </section>
     </section>

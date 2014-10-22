@@ -50,5 +50,11 @@ namespace FunBook.WebForms.FunAreaPages
             var jokeId = e.CommandArgument;
             this.Response.Redirect("PrivateFunDetails/JokeDetails.aspx?jokeId=" + jokeId);
         }
+
+        protected void LinkButtonLike_Command(object sender, CommandEventArgs e)
+        {
+            var likeId = e.CommandArgument;
+            this.Response.Redirect("PrivateFunDetails/LinkDetails.aspx?linkId=" + likeId);
+        }
     }
 }

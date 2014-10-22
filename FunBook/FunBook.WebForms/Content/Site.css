@@ -219,3 +219,8 @@ table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td 
         .joke-comments .active:hover {
             background-color: #ee3963;
         }
+
+#open-link{
+    font-size: 22px;
+    font-weight: bold;
+}
