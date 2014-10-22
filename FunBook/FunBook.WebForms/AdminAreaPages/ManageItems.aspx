@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     <asp:ListView ID="ListView1" runat="server"
         OnSorting="ListView1_Sorting"
-        OnItemCommand="ListView1_ItemCommand" DataKeyNames="Id" 
+        DataKeyNames="Id" 
         ItemType="FunBook.Models.Joke"
         SelectMethod="ListView1_GetData"
         UpdateMethod="ListView1_UpdateItem"
@@ -51,15 +51,21 @@
         <AlternatingItemTemplate>
             <tr style="background-color: #FFF8DC">
                 <td>
-                    <asp:Label runat="server" ID="TextLabel" Text='<%#: Item.Text %>'></asp:Label></td>
+                    <asp:Label runat="server" ID="TextLabel" Text='<%#: Item.Text %>'></asp:Label>
+
+                </td>
                 <td>
-                    <asp:Label runat="server" ID="TitleLabel" Text='<%#: Item.Title %>'></asp:Label></td>
+                    <asp:Label runat="server" ID="TitleLabel" Text='<%#: Item.Title %>'></asp:Label>
+
+                </td>
                 <td>
-                    <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit">Edit</asp:LinkButton></td>
+                    <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit">Edit</asp:LinkButton>
+
+                </td>
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            </tr style="background-color:#008A8C;color: #FFFFFF;">
+            </tr>
                     <td>
                         <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: Item.Text %>' />
                     </td>
