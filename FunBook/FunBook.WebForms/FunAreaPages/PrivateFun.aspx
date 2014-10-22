@@ -26,9 +26,10 @@
 
                 <ItemTemplate>
                     <section class="fun-main-container">
+                        <h3><%#: Item.Title %></h3>
                         <p>
                             <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
-                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%#: Item.Title %></span>
+                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%# Item.Text %></span>
                             </asp:LinkButton>
                         </p>
                         <section class="joke-info">
