@@ -20,6 +20,16 @@ namespace FunBook.Data.Migrations
             {
                 (new JokesGenerator()).Generate(context);
             }
+
+            if (!context.Links.Any())
+            {
+                (new LinksGenerator()).Generate(context);
+            }
+
+            if (!context.Pictures.Any())
+            {
+                (new PicturesGenerator()).Generate(context);
+            }
         }
     }
 }

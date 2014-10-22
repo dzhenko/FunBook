@@ -55,8 +55,9 @@
     <Compile Include="FunBookData.cs" />
     <Compile Include="FunBookDbContext.cs" />
     <Compile Include="IFunBookData.cs" />
-    <Compile Include="InitialDataGenerators\ImagesGenerator.cs" />
+    <Compile Include="InitialDataGenerators\PicturesGenerator.cs" />
     <Compile Include="InitialDataGenerators\JokesGenerator.cs" />
+    <Compile Include="InitialDataGenerators\LinksGenerator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFRepository.cs" />
@@ -67,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FunBook.ImageUpload\FunBook.ImageUpload.csproj">
+      <Project>{9ec48eae-79e7-4bd5-85d3-937fcccf2c5e}</Project>
+      <Name>FunBook.ImageUpload</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FunBook.Models\FunBook.Models.csproj">
       <Project>{f14e699a-fede-484b-bd6e-f108fafae623}</Project>
       <Name>FunBook.Models</Name>
