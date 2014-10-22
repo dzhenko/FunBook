@@ -13,6 +13,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
     public partial class JokeDetails {
         
         /// <summary>
+        /// jokeComments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jokeComments;
+        
+        /// <summary>
         /// RepeaterComments control.
         /// </summary>
         /// <remarks>
@@ -20,14 +29,5 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater RepeaterComments;
-        
-        /// <summary>
-        /// RepeaterTags control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterTags;
     }
 }
