@@ -21,6 +21,10 @@ namespace FunBook.WebForms.FunAreaPages
 
         private void BindTags()
         {
+            if(!db.Tags.All().Any())
+            {
+                return;
+            }
             var tagList = db.Tags.All().Select(t => new
             {
                 Name = t.Name,
@@ -35,6 +39,10 @@ namespace FunBook.WebForms.FunAreaPages
 
         private void BindCategories()
         {
+            if (!db.Categories.All().Any())
+            {
+                return;
+            }
             var catList = db.Categories.All().Select(c => new
             {
                 Name = c.Name,

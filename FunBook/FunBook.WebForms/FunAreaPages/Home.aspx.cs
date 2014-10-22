@@ -21,6 +21,11 @@ namespace FunBook.WebForms.FunAreaPages
 
         public IEnumerable<Joke> RecentItems_GetData()
         {
+            if (!db.Jokes.All().Any())
+            {
+                return new List<Joke>();
+            }
+
             List<Joke> recentItems = new List<Joke>();
 
             var mostRecentJoke = db.Jokes.All().OrderBy(j => j.Id).Take(1).ToList();
