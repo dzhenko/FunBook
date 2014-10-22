@@ -14,9 +14,12 @@
         public Joke()
         {
             this.Id = Guid.NewGuid();
+
             this.tags = new HashSet<Tag>();
             this.views = new HashSet<View>();
             this.comments = new HashSet<Comment>();
+
+            this.Created = DateTime.Now;
         }
 
         public Guid Id { get; set; }
@@ -27,6 +30,8 @@
         [MinLength(3)]
         [Required]
         public string Title { get; set; }
+
+        public DateTime Created { get; set; }
 
         //user id
         [Required]

@@ -14,9 +14,12 @@
         public Link()
         {
             this.Id = Guid.NewGuid();
+
             this.tags = new HashSet<Tag>();
             this.views = new HashSet<View>();
             this.comments = new HashSet<Comment>();
+
+            this.Created = DateTime.Now;
         }
 
         public Guid Id { get; set; }
@@ -38,6 +41,8 @@
         public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public DateTime Created { get; set; }
 
         public virtual ICollection<Tag> Tags
         {
