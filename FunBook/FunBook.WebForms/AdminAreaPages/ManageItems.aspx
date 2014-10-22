@@ -7,7 +7,8 @@
         ItemType="FunBook.Models.Joke"
         SelectMethod="ListView1_GetData"
         UpdateMethod="ListView1_UpdateItem"
-        DeleteMethod="ListView1_DeleteItem">
+        DeleteMethod="ListView1_DeleteItem"
+        InsertMethod="ListView1_InsertItem">
         <LayoutTemplate>
             <div class="container">
                 <table runat="server" class="table table-hover">

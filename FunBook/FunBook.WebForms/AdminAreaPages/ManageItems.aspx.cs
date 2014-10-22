@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -13,6 +14,11 @@ namespace FunBook.WebForms.AdminAreaPages
         FunBookData data;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (this.User == null || !this.User.Identity.IsAuthenticated || !Roles.IsUserInRole("admin"))
+            {
+                Server.Transfer("~/FunAreaPages/Home.aspx", true);
+            }
+
             this.data = FunBookData.Create();
         }
 
@@ -57,6 +63,17 @@ namespace FunBook.WebForms.AdminAreaPages
 
             this.data.Jokes.Delete(item);
             this.data.SaveChanges();
+        }
+
+        public void ListView1_InsertItem()
+        {
+            var item = new FunBook.Models.Joke();
+            TryUpdateModel(item);
+            if (ModelState.IsValid)
+            {
+                // Save changes here
+
+            }
         }
     }
 }
