@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 
 namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
@@ -16,9 +17,25 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             var data = FunBook.Data.FunBookData.Create();
             Joke joke = data.Jokes.Find(id);
 
+            var view = new FunBook.Models.View();
+            view.Liked = true;
+            view.UserId = Context.User.Identity.GetUserId();
+            joke.Views.Add(view);
+            data.Jokes.Update(joke);
+            data.Views.Add(view);
+            data.SaveChanges();
+
             this.CurrentJoke = joke;
-            this.RepeaterTags.DataSource = joke.Tags;
-            this.RepeaterComments.DataSource = joke.Comments;
+
+            if (joke.Comments.Count == 0)
+            {
+                this.jokeComments.InnerHtml = "";
+            }
+            else
+            {
+                this.RepeaterComments.DataSource = joke.Comments;
+            }
+
             this.DataBind();
         }
 
