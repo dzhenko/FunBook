@@ -23,18 +23,28 @@
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>
             <br />
-            <asp:Repeater runat="server" ID="categories" >
+            <asp:Repeater runat="server" ID="categories">
                 <ItemTemplate>
-                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?categoryId="+ Eval("Id") %>' runat="server"><%#: Eval("Name") %> (<%#: Eval("Count") %>)</asp:HyperLink>                   
+                    <asp:HyperLink class="navItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?categoryId="+ Eval("Id") %>' runat="server">
+                        <%#: Eval("Name") %> (<%#: Eval("Count") %>)
+                    </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>
         </aside>
         <div class="jokes-content col-sm-8">
             <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
         </div>
-        <aside class="tags-menu col-sm-2">
-            <strong>Tags:</strong>
-            <div>Tag cloud</div>
+        <aside id="tags-container" class="tags-menu col-sm-2">
+            <asp:Repeater runat="server" ID="tagsCloud">
+                <ItemTemplate>
+                    <asp:HyperLink class="tagItem" NavigateUrl='<%# "~/FunAreaPages/Content.aspx?tagId="+ Eval("Id") %>' runat="server">
+                        <%#: Eval("Name") %> 
+                        <span class="tagCount"><%#: Eval("Count") %></span>
+                    </asp:HyperLink>
+                </ItemTemplate>
+            </asp:Repeater>
         </aside>
     </div>
+    <script src="../Scripts/tags-cloud.js"></script>
 </asp:Content>
+

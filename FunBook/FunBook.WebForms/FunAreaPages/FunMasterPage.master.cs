@@ -16,10 +16,33 @@ namespace FunBook.WebForms.FunAreaPages
         protected void Page_Load(object sender, EventArgs e)
         {
             BindCategories();
+            BindTags();
+        }
+
+        private void BindTags()
+        {
+            if(!db.Tags.All().Any())
+            {
+                return;
+            }
+            var tagList = db.Tags.All().Select(t => new
+            {
+                Name = t.Name,
+                Count = t.Jokes.Count() + t.Links.Count() + t.Pictures.Count(),
+                Id = t.Id
+            });
+
+            tagsCloud.DataSource = tagList.ToList();
+
+            tagsCloud.DataBind();
         }
 
         private void BindCategories()
         {
+            if (!db.Categories.All().Any())
+            {
+                return;
+            }
             var catList = db.Categories.All().Select(c => new
             {
                 Name = c.Name,

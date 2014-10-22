@@ -3,9 +3,10 @@
     src: url('../fonts/Salsa-Regular.ttf') format('truetype');
 }
 /* Move down content because we have a fixed navbar that is 50px tall */
-html{
-     height: 100%;
+html {
+    height: 100%;
 }
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -76,6 +77,10 @@ aside {
         padding: 20px;
     }
 
+        aside.categories-menu a:hover, aside.tags-menu a:hover {
+            text-decoration: none;
+        }
+
     aside.categories-menu {
         float: left;
     }
@@ -119,6 +124,6 @@ ul.main-menu > li {
     margin-top: 20px;
 }
 
-.navItem{
-    display:block;
+.navItem {
+    display: block;
 }

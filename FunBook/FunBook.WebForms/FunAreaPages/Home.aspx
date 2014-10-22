@@ -2,6 +2,20 @@
 
 <asp:Content ID="ContentHome" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="recent col-sm-6">
+        <asp:GridView runat="server" ID="recentItemsGrid"
+            DataKeyNames="Id"
+            ItemType="FunBook.Models.Joke"
+            SelectMethod="RecentItems_GetData"
+            AutoGenerateColumns="false">
+            <Columns>
+                <asp:TemplateField HeaderText="Title">
+                    <ItemTemplate>
+                        <asp:Label Text="<%# Item.Text %>" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+
         <p>
             <strong>Most recent joke:</strong>
             sdhfveiru
@@ -31,7 +45,7 @@
             sdhfveiru
         </p>
         <button>View</button>
-         <p>
+        <p>
             <strong>Most popular picture:</strong>
             sdhfveiru
         </p>
