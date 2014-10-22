@@ -44,7 +44,9 @@ input[type="select"] {
 .center{
     text-align:center;
 }
-
+img{
+    border-radius:10px
+}
 .about-funbook h2{
     color:purple;
 }
