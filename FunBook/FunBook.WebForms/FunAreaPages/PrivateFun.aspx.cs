@@ -56,5 +56,11 @@ namespace FunBook.WebForms.FunAreaPages
             var likeId = e.CommandArgument;
             this.Response.Redirect("PrivateFunDetails/LinkDetails.aspx?linkId=" + likeId);
         }
+
+        protected void LinkButtonPicture_Command(object sender, CommandEventArgs e)
+        {
+            var picId = e.CommandArgument;
+            this.Response.Redirect("PrivateFunDetails/PictureDetails.aspx?picId=" + picId);
+        }
     }
 }

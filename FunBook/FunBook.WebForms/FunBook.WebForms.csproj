@@ -177,6 +177,7 @@
     <Content Include="FunAreaPages\Content.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx" />
+    <Content Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -426,6 +427,13 @@
     </Compile>
     <Compile Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx.designer.cs">
       <DependentUpon>LinkDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx.cs">
+      <DependentUpon>PictureDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx.designer.cs">
+      <DependentUpon>PictureDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

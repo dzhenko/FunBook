@@ -99,7 +99,10 @@
 
                 <ItemTemplate>
                     <div class="link-item">
-                        <h4><%#: Item.Title %></h4>
+                        <h4>
+                            <asp:LinkButton ID="LinkButtonJoke" OnCommand="LinkButtonPicture_Command"
+                                CommandArgument="<%# Item.Id %>" runat="server"><%#: Item.Title %></asp:LinkButton>
+                        </h4>
                         <img src="<%#: Item.UrlPath %>" />
                         <p><%#: Item.Category.Name %></p>
                     </div>
