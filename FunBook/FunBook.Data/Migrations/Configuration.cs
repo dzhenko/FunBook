@@ -1,11 +1,10 @@
 namespace FunBook.Data.Migrations
 {
-    using FunBook.Data.InitialDataGenerators;
-    using FunBook.Models;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+
+    using FunBook.Data.InitialDataGenerators;
 
     internal sealed class Configuration : DbMigrationsConfiguration<FunBook.Data.FunBookDbContext>
     {
@@ -17,7 +16,7 @@ namespace FunBook.Data.Migrations
 
         protected override void Seed(FunBookDbContext context)
         {
-            if (!context.Categories.Any())
+            if (!context.Jokes.Any())
             {
                 (new JokesGenerator()).Generate(context);
             }
