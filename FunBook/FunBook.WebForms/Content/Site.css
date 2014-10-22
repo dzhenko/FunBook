@@ -127,3 +127,71 @@ ul.main-menu > li {
 .navItem {
     display: block;
 }
+
+.joke-main-container{
+    vertical-align: middle;
+    text-align: center;
+    margin: 15px;
+}
+
+.joke-main-container h3{
+    display: inline-block;
+    color: #428bd2;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#joke-text {
+    padding: 25px 10px 25px 10px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+#joke-text p{
+    padding: 0; 
+    margin: 0;
+}
+
+#joke-info{
+    text-align:center;
+    vertical-align: middle;
+    margin: 15px;
+}
+
+#joke-info ul{
+    display: inline-block;
+}
+
+.button{
+    
+}
+   
+    .button a{
+        background-color: #ee3963;
+        color: white;
+    }
+
+    .button:hover a:hover{
+        background-color: #ee3963;
+    }
+
+    .button .badge{
+        border-radius: 15px;
+        background-color: white;
+        color: #428bd2;
+    }
+
+.joke-comments{
+    margin: 15px 0 15px 0;
+}
+
+    .joke-comments .active{
+        padding: 15px;
+        border: none;
+        background-color: #ee3963;
+    }
+
+    .joke-comments .active:hover {
+        background-color: #ee3963;
+    }
+
