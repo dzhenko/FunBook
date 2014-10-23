@@ -1,14 +1,16 @@
-﻿using System;
-using System.Linq;
-using System.Web.UI.WebControls;
-using FunBook.Data;
-using Microsoft.AspNet.Identity.EntityFramework;
-using FunBook.Models;
-using Microsoft.AspNet.Identity;
-using FunBook.WebForms.DataModels;
-
-namespace FunBook.WebForms.AdminAreaPages
+﻿namespace FunBook.WebForms.AdminAreaPages
 {
+    using System;
+    using System.Linq;
+    using System.Web.UI.WebControls;
+
+    using FunBook.Data;
+    using FunBook.Models;
+    using FunBook.WebForms.DataModels;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     public partial class ManageUsers : System.Web.UI.Page
     {
         private FunBookData data;

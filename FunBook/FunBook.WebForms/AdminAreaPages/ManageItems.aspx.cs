@@ -1,15 +1,12 @@
-﻿using FunBook.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using FunBook.WebForms.DataModels;
-
-namespace FunBook.WebForms.AdminAreaPages
+﻿namespace FunBook.WebForms.AdminAreaPages
 {
+    using System;
+    using System.Linq;
+    using System.Web.UI.WebControls;
+
+    using FunBook.Data;
+    using FunBook.WebForms.DataModels;
+
     public partial class ManageItems : System.Web.UI.Page
     {
         FunBookData data;
