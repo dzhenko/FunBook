@@ -22,22 +22,13 @@
             </ul>
             <asp:UpdatePanel runat="server" ChildrenAsTriggers="true" >
                 <ContentTemplate>
-                    <div class="navbar-form navbar-left" id="refreshFocusHolder">
-                        <asp:TextBox type="text" AutoPostBack="true" OnTextChanged="TbSearch_TextChanged"
-                             CssClass="form-control col-lg-8" placeholder="Search recipe" runat="server" ID="TbSearch" />
-                        <asp:HyperLink runat="server" NavigateUrl="~/" ID="SearchHyperLink">Search</asp:HyperLink>
+                    <div class="navbar-form navbar-left">
+                        <input type="hidden" id="SearchBtnStarter" />
+                        <asp:TextBox type="text" AutoPostBack="true" CssClass="form-control col-lg-8" placeholder="Search Fun" runat="server" ID="TbSearch" />
+                        <asp:LinkButton runat="server" OnClick="SearchHyperLink_Click" ID="SearchBtn" Text="Search"></asp:LinkButton>                            
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
-
-            <%--  <asp:Panel runat="server" CssClass="pull-right">
-                <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                <a>kihhyig</a>
-                <asp:HyperLink runat="server" ID="btnSearch" Text="Search"
-                    NavigateUrl='<%# "~/FunAreaPages/All.aspx?search="+ tbSearch.Text %>'>
-                Search
-                </asp:HyperLink>
-            </asp:Panel>--%>
         </div>
     </div>
     <div class="container custom-container">
@@ -73,5 +64,8 @@
         </aside>
     </div>
     <script src="../Scripts/tags-cloud.js"></script>
+    <script>
+        $('#SearchBtnStarter > button').on('click', function() { console.log(1) })
+    </script>
 </asp:Content>
 

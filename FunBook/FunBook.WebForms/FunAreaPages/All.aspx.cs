@@ -14,17 +14,13 @@ namespace FunBook.WebForms.FunAreaPages
     {
         private FunBookData db = FunBookData.Create();
 
-        public IQueryable<HomeItemDataModel> GridViewAll_GetData()
-        {
-            var allJoke = this.db.Jokes.All().Select(HomeItemDataModel.FromJoke);
-            var allLink = this.db.Links.All().Select(HomeItemDataModel.FromLink);
-            var allPicture = this.db.Pictures.All().Select(HomeItemDataModel.FromPicture);
-
-            return allJoke.Union(allLink).Union(allPicture);
-        }
-
         public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString] string search)
         {
+            if (search == null)
+            {
+                search = string.Empty;
+            }
+
             var allJoke = this.db.Jokes.All()
                 .Where(j => j.Text.Contains(search) || j.Title.Contains(search))
                 .Select(HomeItemDataModel.FromJoke);
