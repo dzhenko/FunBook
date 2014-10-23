@@ -12,11 +12,16 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
     public partial class PictureDetails : System.Web.UI.Page
     {
+        private IFunBookData data;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            this.data = new FunBookData();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid id = Guid.Parse(Request.QueryString["picId"]);
-            var data = FunBookData.Create();
-            var pic = data.Pictures.Find(id);
+            var pic = GetCurrentPicture();
 
             var view = new FunBook.Models.View();
             view.Liked = true;
@@ -27,6 +32,24 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             data.SaveChanges();
 
             this.CurrentPicture = pic;
+        }
+
+        protected void LinkButtonEditPicture_Command(object sender, EventArgs e)
+        {
+            // TODO:
+        }
+
+        protected void LinkButtonDeletePicture_Command(object sender, EventArgs e)
+        {
+            this.data.Pictures.Delete(GetCurrentPicture());
+            this.data.SaveChanges();
+            this.Response.Redirect("../PrivateFun.aspx");
+        }
+
+        private Picture GetCurrentPicture()
+        {
+            var id = Guid.Parse(Request.QueryString["picId"]);
+            return data.Pictures.Find(id);
         }
 
         public Picture CurrentPicture { get; private set; }
