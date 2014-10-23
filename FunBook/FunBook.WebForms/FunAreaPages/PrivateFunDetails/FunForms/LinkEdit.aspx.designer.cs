@@ -22,15 +22,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleLink;
         
         /// <summary>
-        /// RequiredFieldValidator6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-        
-        /// <summary>
         /// urlLink control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlLink;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// isAnonymous control.

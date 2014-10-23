@@ -47,6 +47,11 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms
             data.Pictures.Update(picture);
             data.SaveChanges();
 
+            if (FileUploadControl.HasFile)
+            {
+                // TODO:
+            }
+
             this.Response.Redirect("../../PrivateFun.aspx");
         }
 
