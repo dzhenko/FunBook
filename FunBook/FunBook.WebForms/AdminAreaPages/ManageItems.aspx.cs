@@ -22,12 +22,12 @@ namespace FunBook.WebForms.AdminAreaPages
         {
         }
 
-        protected void ListView1_Sorting(object sender, ListViewSortEventArgs e)
+        protected void ListView_Sorting(object sender, ListViewSortEventArgs e)
         {
 
         }
 
-        public IQueryable<FunBook.Models.Joke> ListView1_GetData()
+        public IQueryable<FunBook.Models.Joke> ListView_GetData()
         {
             string idStr = Request.QueryString["q"];
             if (idStr == null)
@@ -40,7 +40,7 @@ namespace FunBook.WebForms.AdminAreaPages
             }
         }
 
-        public void ListView1_UpdateItem(object id)
+        public void ListView_UpdateItem(object id)
         {
             FunBook.Models.Joke item = null;
 
@@ -58,7 +58,7 @@ namespace FunBook.WebForms.AdminAreaPages
             }
         }
 
-        public void ListView1_DeleteItem(object id)
+        public void ListView_DeleteItem(object id)
         {
             FunBook.Models.Joke item = null;
 
@@ -75,7 +75,7 @@ namespace FunBook.WebForms.AdminAreaPages
 
         protected void LinkButtonSearch_Click(object sender, EventArgs e)
         {
-            TextBox textbox = (TextBox)ListView1.FindControl("TextBoxSearch");
+            TextBox textbox = (TextBox)this.ListView.FindControl("TextBoxSearch");
             string query = string.Format("?q={0}", textbox.Text);
             Response.Redirect("~/AdminAreaPages/ManageItems" + query);
         }

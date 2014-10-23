@@ -171,6 +171,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\back.jpg" />
+    <Content Include="Content\Images\Creators\10388119_762577167107654_6387298093960230587_n.jpg" />
+    <Content Include="Content\Images\Creators\10446490_746686535381760_4069692579621278848_n.jpg" />
+    <Content Include="Content\Images\Creators\10580767_10204054652960275_6716628473550351430_o.jpg" />
+    <Content Include="Content\Images\Creators\1506855_10202939380631818_1924950813_n.jpg" />
+    <Content Include="Content\Images\Creators\5741004.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\HoverDetails\HoverDetails.ascx" />
     <Content Include="Controls\HoverDetails\hoverDetails.css" />
