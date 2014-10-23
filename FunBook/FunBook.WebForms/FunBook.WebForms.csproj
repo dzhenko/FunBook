@@ -173,11 +173,15 @@
     <Content Include="Content\Images\back.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\HoverDetails\HoverDetails.ascx" />
-    <Content Include="Controls\HoverDetails\resources\hoverDetails.css" />
-    <Content Include="Controls\HoverDetails\resources\hoverDetails.js" />
-    <Content Include="Controls\HoverDetails\resources\jquery.min.js" />
+    <Content Include="Controls\HoverDetails\hoverDetails.css" />
+    <Content Include="Controls\HoverDetails\HoverDetails.js" />
+    <Content Include="Controls\HoverDetails\TestHoverDetails.aspx" />
+    <Content Include="Controls\ModalWindow\ModalWindow.ascx" />
+    <Content Include="Controls\ModalWindow\modalWindow.js" />
+    <Content Include="Controls\ModalWindow\TestModalWindow.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
+    <Content Include="FunAreaPages\All.aspx" />
     <Content Include="FunAreaPages\PrivateFun.aspx" />
     <Content Include="FunAreaPages\Home.aspx" />
     <Content Include="FunAreaPages\Content.aspx" />
@@ -403,6 +407,24 @@
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\HoverDetails\TestHoverDetails.aspx.cs">
+      <DependentUpon>TestHoverDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HoverDetails\TestHoverDetails.aspx.designer.cs">
+      <DependentUpon>TestHoverDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalWindow\ModalWindow.ascx.cs">
+      <DependentUpon>ModalWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalWindow\ModalWindow.ascx.designer.cs">
+      <DependentUpon>ModalWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalWindow\TestModalWindow.aspx.cs">
+      <DependentUpon>TestModalWindow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ModalWindow\TestModalWindow.aspx.designer.cs">
+      <DependentUpon>TestModalWindow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataGenerators\DataConfig.cs" />
     <Compile Include="DataGenerators\IDataGenerator.cs" />
     <Compile Include="DataGenerators\JokesGenerator.cs" />
@@ -426,6 +448,13 @@
     </Compile>
     <Compile Include="FunAreaPages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FunAreaPages\All.aspx.cs">
+      <DependentUpon>All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunAreaPages\All.aspx.designer.cs">
+      <DependentUpon>All.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\PrivateFun.aspx.cs">
       <DependentUpon>PrivateFun.aspx</DependentUpon>

@@ -53,5 +53,16 @@ namespace FunBook.WebForms.FunAreaPages
 
             categories.DataBind();
         }
+
+        protected void SearchHyperLink_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.TbSearch.Text))
+            {
+                // error msg!
+                return;
+            }
+
+            Response.Redirect(string.Format("~/FunAreaPages/All.aspx?search={0}", this.TbSearch.Text));
+        }
     }
 }
