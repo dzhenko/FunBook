@@ -62,12 +62,11 @@
             </tr>
         </ItemTemplate>
         <EditItemTemplate>
-            </tr>
-                    <td>
-                        <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: BindItem.Text %>' />
-                    </td>
             <td>
-                <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: BindItem.Title %>' />
+                <asp:TextBox ID="TextTextBox"  TextMode="multiline" Columns="50" Rows="5" class="form-control" runat="server" Text='<%#: BindItem.Text %>' />
+            </td>
+            <td>
+                <asp:TextBox ID="TitleTextBox" class="form-control"  runat="server" Text='<%#: BindItem.Title %>' />
             </td>
             <td class="info">
                 <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="Update">Update</asp:LinkButton>

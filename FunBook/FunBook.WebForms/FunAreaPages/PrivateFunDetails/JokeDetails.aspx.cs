@@ -6,16 +6,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using FunBook.Data;
 
 namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
     public partial class JokeDetails : System.Web.UI.Page
     {
+        private IFunBookData data;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            this.data = new FunBookData();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid id = Guid.Parse(Request.QueryString["jokeId"]);
-            var data = FunBook.Data.FunBookData.Create();
-            Joke joke = data.Jokes.Find(id);
+            var joke = GetCurrentJoke();
+            this.CurrentJoke = joke;
 
             var view = new FunBook.Models.View();
             view.Liked = true;
@@ -24,8 +31,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             data.Jokes.Update(joke);
             data.Views.Add(view);
             data.SaveChanges();
-
-            this.CurrentJoke = joke;
 
             if (joke.Comments.Count == 0)
             {
@@ -37,6 +42,24 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             }
 
             this.DataBind();
+        }
+
+        protected void LinkButtonEditJoke_Command(object sender, EventArgs e)
+        {
+            // TODO:
+        }
+
+        protected void LinkButtonDeleteJoke_Command(object sender, EventArgs e)
+        {
+            this.data.Jokes.Delete(GetCurrentJoke());
+            this.data.SaveChanges();
+            this.Response.Redirect("../PrivateFun.aspx");
+        }
+
+        private Joke GetCurrentJoke()
+        {
+            var id = Guid.Parse(Request.QueryString["jokeId"]);
+            return data.Jokes.Find(id);
         }
 
         public Joke CurrentJoke { get; private set; }

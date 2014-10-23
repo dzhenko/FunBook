@@ -7,7 +7,13 @@
 
 <asp:Content ID="OwnFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <h1>Created by <%: Context.User.Identity.GetUserName().Split('@')[0]  %> </h1>
-
+    <ul class="nav nav-pills">
+        <li class="button"> 
+            <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonAddFun_Command" runat="server">
+                Add
+            </asp:LinkButton>
+        </li>
+    </ul>
     <ul class="nav nav-tabs">
         <li class="active" runat="server" id="liJoke"><a href="#home" data-toggle="tab">Jokes</a></li>
         <li class="" runat="server" id="liLink"><a href="#links" data-toggle="tab">Links</a></li>
@@ -28,9 +34,9 @@
                     <section class="fun-main-container">
                         <h3><%#: Item.Title %></h3>
                         <br />
-                            <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
+                        <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
                             <p><span id="open-link"><%# Item.Text %></span></p>
-                            </asp:LinkButton>
+                        </asp:LinkButton>
                         <section class="joke-info">
                             <ul class="nav nav-pills">
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>

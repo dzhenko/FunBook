@@ -184,6 +184,7 @@
     <Content Include="FunAreaPages\Content.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx" />
+    <Content Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
@@ -194,6 +195,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="AdminAreaPages\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="AdminAreaPages\Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="AdminAreaPages\Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -391,6 +401,13 @@
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DataGenerators\DataConfig.cs" />
+    <Compile Include="DataGenerators\IDataGenerator.cs" />
+    <Compile Include="DataGenerators\JokesGenerator.cs" />
+    <Compile Include="DataGenerators\LinksGenerator.cs" />
+    <Compile Include="DataGenerators\PicturesGenerator.cs" />
+    <Compile Include="DataGenerators\RolesGenerator.cs" />
+    <Compile Include="DataGenerators\UsersGenerator.cs" />
     <Compile Include="DataModels\FunMasterCategoryItemDataModel.cs" />
     <Compile Include="DataModels\FunMasterTagItemDataModel.cs" />
     <Compile Include="DataModels\HomeItemDataModel.cs" />
@@ -450,6 +467,13 @@
     <Compile Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx.designer.cs">
       <DependentUpon>LinkDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx.cs">
+      <DependentUpon>ManageFun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx.designer.cs">
+      <DependentUpon>ManageFun.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx.cs">
       <DependentUpon>PictureDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,6 +523,10 @@
     <ProjectReference Include="..\FunBook.Data\FunBook.Data.csproj">
       <Project>{545c0c18-5e86-42a8-a204-48de9ee203d2}</Project>
       <Name>FunBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunBook.ImageUpload\FunBook.ImageUpload.csproj">
+      <Project>{9ec48eae-79e7-4bd5-85d3-937fcccf2c5e}</Project>
+      <Name>FunBook.ImageUpload</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunBook.Models\FunBook.Models.csproj">
       <Project>{f14e699a-fede-484b-bd6e-f108fafae623}</Project>

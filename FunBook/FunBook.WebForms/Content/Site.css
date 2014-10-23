@@ -318,4 +318,12 @@ footer {
         color: #428bca;
     }
 
-    
+.form-control{
+    width: 281px;
+    margin: 5px;
+}
+
+.nav-pills{
+    margin-bottom: 10px;
+}
+
