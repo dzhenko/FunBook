@@ -325,7 +325,7 @@ footer {
         }
 
     #headerHolder h1 {
-        font-family: 'Comic Sans MS', cursive;
+        font-family: Salsa-Regular,'Comic Sans MS', cursive;
         margin-right: 0.5em;
         font-size: 5em;
         color: #ee3963;
@@ -342,5 +342,20 @@ footer {
 
 .nav-pills {
     margin-bottom: 10px;
+}
+
+.pink {
+    color: #ee3963;
+    font-family: Salsa-Regular,'Comic Sans MS', cursive;
+}
+
+.blue {
+    color: #428bd2;
+    font-family: Salsa-Regular,'Comic Sans MS', cursive;
+}
+
+.middleButtonAdminArea {
+    margin-top:20px;
+    margin-bottom:20px;
 }
 

@@ -1,32 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminAreaPages/AdminsMasterPage.master" AutoEventWireup="true" CodeBehind="ManageItems.aspx.cs" Inherits="FunBook.WebForms.AdminAreaPages.ManageItems" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
-    <asp:ListView ID="ListView1" runat="server"
-        OnSorting="ListView1_Sorting"
+    <asp:ListView ID="ListView" runat="server"
+        OnSorting="ListView_Sorting"
         DataKeyNames="Id"
         ItemType="FunBook.Models.Joke"
-        SelectMethod="ListView1_GetData"
-        UpdateMethod="ListView1_UpdateItem"
-        DeleteMethod="ListView1_DeleteItem">
+        SelectMethod="ListView_GetData"
+        UpdateMethod="ListView_UpdateItem"
+        DeleteMethod="ListView_DeleteItem">
         <LayoutTemplate>
             <div class="container">
-                <div class="row center-block">
-                    <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control col-md-8" />
-                    <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg" />
+                <div class="row center-block pull-right pink">
+                    <div class="col-md-3">
+                        <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg" />
+                    </div>
+                    <div class="col-md-9">
+                        <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control" />
+                    </div>
                 </div>
 
                 <table runat="server" class="table table-hover">
-                    <tr runat="server" class="active">
+                    <tr runat="server">
                         <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" class="table table-striped">
+                            <table id="itemPlaceholderContainer" runat="server" class="table">
                                 <tr runat="server" class="active">
                                     <th runat="server" class="col-md-9">
-                                        <asp:LinkButton ID="lnkText" runat="server" CommandName="Sort" CommandArgument="Text">Text</asp:LinkButton>
-
+                                        <asp:LinkButton ID="lnkText" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Text">Text</asp:LinkButton>
                                     </th>
                                     <th runat="server" class="col-md-2">
-                                        <asp:LinkButton ID="lnkTitle" runat="server" CommandName="Sort" CommandArgument="Title">Title</asp:LinkButton>
-
+                                        <asp:LinkButton ID="lnkTitle" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Title">Title</asp:LinkButton>
                                     </th>
                                     <th class="col-md-1"></th>
                                 </tr>
@@ -37,7 +39,7 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server">
-                            <asp:DataPager ID="DataPager1" runat="server" PageSize="5">
+                            <asp:DataPager runat="server" PageSize="5">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary" />
                                     <asp:NumericPagerField />
@@ -59,8 +61,8 @@
                     <asp:Label runat="server" ID="TitleLabel" Text='<%#: Item.Title %>'></asp:Label>
 
                 </td>
-                <td class="info">
-                    <asp:LinkButton ID="lnkEdit" runat="server" CommandName="Edit">Edit</asp:LinkButton>
+                <td>
+                    <asp:LinkButton CssClass="btn btn-sm btn-primary" ID="lnkEdit" runat="server" CommandName="Edit">Edit</asp:LinkButton>
 
                 </td>
             </tr>
@@ -72,10 +74,10 @@
             <td>
                 <asp:TextBox ID="TitleTextBox" class="form-control" runat="server" Text='<%#: BindItem.Title %>' />
             </td>
-            <td class="info">
-                <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="Update">Update</asp:LinkButton>
-                <asp:LinkButton ID="lnkDelete" runat="server" CommandName="Delete">Delete</asp:LinkButton>
-                <asp:LinkButton ID="lnkCancel" runat="server" CommandName="Cancel">Cancel</asp:LinkButton>
+            <td>
+                <asp:LinkButton ID="lnkUpdate" CssClass="btn btn-sm btn-success" runat="server" CommandName="Update">Update</asp:LinkButton>
+                <asp:LinkButton ID="lnkDelete" CssClass="btn btn-sm btn-danger middleButtonAdminArea" runat="server" CommandName="Delete">Delete</asp:LinkButton>
+                <asp:LinkButton ID="lnkCancel" CssClass="btn btn-sm btn-primary" runat="server" CommandName="Cancel">Cancel</asp:LinkButton>
             </td>
         </EditItemTemplate>
         <EmptyDataTemplate>
@@ -98,7 +100,7 @@
                 <td>
                     <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: Item.Title %>' />
                 </td>
-                <td class="info">
+                <td>
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                 </td>

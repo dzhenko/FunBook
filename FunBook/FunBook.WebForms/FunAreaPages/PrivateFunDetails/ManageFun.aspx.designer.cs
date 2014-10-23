@@ -85,6 +85,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleJoke;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// jokeText control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea jokeText;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
         /// isAnonymous control.
@@ -121,6 +139,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleLink;
         
         /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// urlLink control.
         /// </summary>
         /// <remarks>
@@ -128,6 +155,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlLink;
+        
+        /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
         /// PanelPicture control.
@@ -148,6 +184,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitlePicture;
         
         /// <summary>
+        /// RequiredFieldValidator5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        
+        /// <summary>
         /// urlPic control.
         /// </summary>
         /// <remarks>
@@ -155,5 +200,14 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlPic;
+        
+        /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
     }
 }

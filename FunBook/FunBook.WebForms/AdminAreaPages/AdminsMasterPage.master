@@ -12,14 +12,15 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav main-menu">
-                <li><a runat="server" href="~/">Home</a></li>
+                <li><a runat="server" href="~/AdminAreaPages/Home.aspx">Admin</a></li>
                 <li><a runat="server" href="~/AdminAreaPages/ManageItems">Manage Jokes</a></li>
                 <li><a runat="server" href="~/AdminAreaPages/ManageUsers">Manage Users</a></li>
+                <li><a runat="server" href="~/FunAreaPages/Home.aspx">Normal view</a></li>
             </ul>
         </div>
     </div>
-    <div>
-        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+    <div class="row site-map">
+        <asp:SiteMapPath runat="server"></asp:SiteMapPath>
     </div>
     <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
 </asp:Content>

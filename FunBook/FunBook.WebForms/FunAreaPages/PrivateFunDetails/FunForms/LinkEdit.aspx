@@ -7,12 +7,14 @@
             <label for="inputTitleLink" class="col-lg-2 control-label">Title</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="inputTitleLink" placeholder="Title" runat="server">
+                <asp:RequiredFieldValidator ControlToValidate="inputTitleLink" Display="Dynamic" ID="RequiredFieldValidator6" runat="server" ErrorMessage="You have to enter at least 3 symbols"></asp:RequiredFieldValidator>
             </div>
         </div>
         <div class="form-group">
             <label for="urlLink" class="col-lg-2 control-label">Url</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" runat="server" id="urlLink" />
+                <asp:RequiredFieldValidator ControlToValidate="urlLink" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="You have to enter at least 3 symbols"></asp:RequiredFieldValidator>
                 <div class="checkbox">
                     <label>
                         <input id="isAnonymous" runat="server" type="checkbox">

@@ -34,7 +34,7 @@
 
     <div class="container custom-container">
         <div class="row site-map">
-            <asp:SiteMapPath ID="SiteMap1" runat="server"></asp:SiteMapPath>
+            <asp:SiteMapPath runat="server"></asp:SiteMapPath>
         </div>
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>
