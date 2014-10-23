@@ -7,7 +7,7 @@
             <Columns>
                 <asp:TemplateField HeaderText="Most Recent">
                     <ItemTemplate>
-                        <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/JokeDetails?jokeId=" + Item.Id %>'
+                        <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
                             CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                         <asp:Label CssClass="item-text" runat="server">
                             <%# Item.Content %>
@@ -25,7 +25,7 @@
             <Columns>
                 <asp:TemplateField HeaderText="Most Popular">
                     <ItemTemplate>
-                        <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/JokeDetails?jokeId=" + Item.Id %>'
+                        <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
                             CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                         <asp:Label CssClass="item-text" runat="server">
                             <%# Item.Content %>

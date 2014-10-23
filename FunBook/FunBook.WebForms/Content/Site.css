@@ -332,7 +332,7 @@ footer {
     }
 
     #headerHolder > div > div > a > h1 > span:hover {
-        color:#afca57;
+        color: #afca57;
     }
 
 .form-control {
@@ -343,3 +343,4 @@ footer {
 .nav-pills {
     margin-bottom: 10px;
 }
+
