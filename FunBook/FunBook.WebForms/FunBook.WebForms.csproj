@@ -420,12 +420,14 @@
     </Compile>
     <Compile Include="Controls\ModalWindow\ModalWindow.ascx.cs">
       <DependentUpon>ModalWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\ModalWindow\ModalWindow.ascx.designer.cs">
       <DependentUpon>ModalWindow.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ModalWindow\TestModalWindow.aspx.cs">
       <DependentUpon>TestModalWindow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\ModalWindow\TestModalWindow.aspx.designer.cs">
       <DependentUpon>TestModalWindow.aspx</DependentUpon>
@@ -437,6 +439,7 @@
     <Compile Include="DataGenerators\PicturesGenerator.cs" />
     <Compile Include="DataGenerators\RolesGenerator.cs" />
     <Compile Include="DataGenerators\UsersGenerator.cs" />
+    <Compile Include="DataModels\AdminUserDataModel.cs" />
     <Compile Include="DataModels\FunMasterCategoryItemDataModel.cs" />
     <Compile Include="DataModels\FunMasterTagItemDataModel.cs" />
     <Compile Include="DataModels\HomeItemDataModel.cs" />

@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminAreaPages/AdminsMasterPage.master" AutoEventWireup="true" CodeBehind="ManageUsers.aspx.cs" Inherits="FunBook.WebForms.AdminAreaPages.ManageUsers" %>
 
+<%@ Register TagPrefix="uc" TagName="ModalWindow" Src="~/Controls/ModalWindow/ModalWindow.ascx"  %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     <asp:ListView ID="ListView" runat="server"
         OnSorting="ListView_Sorting"
         DataKeyNames="Id"
-        ItemType="FunBook.Models.User"
+        ItemType="FunBook.WebForms.DataModels.AdminUserDataModel"
         SelectMethod="ListView_GetData"
         UpdateMethod="ListView_UpdateItem"
         DeleteMethod="ListView_DeleteItem">
@@ -25,11 +27,11 @@
                             <table id="itemPlaceholderContainer" runat="server" class="table table-striped">
                                 <tr runat="server" class="active">
                                     <th runat="server" class="col-md-9">
-                                        <asp:LinkButton ID="lnkUsername" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Username">Username</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkUsername" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Username">Email</asp:LinkButton>
 
                                     </th>
                                     <th runat="server" class="col-md-2">
-                                        <asp:LinkButton ID="lnkEmail" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Email">Email</asp:LinkButton>
+                                        <asp:LinkButton ID="lnkEmail" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Email">Is Admin</asp:LinkButton>
 
                                     </th>
                                     <th class="col-md-1"></th>
@@ -56,11 +58,11 @@
         <ItemTemplate>
             <tr>
                 <td>
-                    <asp:Label runat="server" ID="UserNameLabel" Text='<%#: Item.UserName %>'></asp:Label>
+                    <asp:Label runat="server" ID="EmailLabel" Text='<%#: Item.Email %>'></asp:Label>
 
                 </td>
-                <td>
-                    <asp:Label runat="server" ID="EmailLabel" Text='<%#: Item.Email %>'></asp:Label>
+                <td>                                                      
+                    <asp:CheckBox runat="server" ID="IsAdminValue" Enabled="false" Checked='<%# Eval("IsAdmin") %>'></asp:CheckBox>
 
                 </td>
                 <td>
@@ -71,14 +73,15 @@
         </ItemTemplate>
         <EditItemTemplate>
             <td>
-                <asp:TextBox ID="UserNameTextBox" class="form-control" runat="server" Text='<%#: BindItem.UserName %>' />
-            </td>
-            <td>
                 <asp:TextBox ID="EmailTextBox" class="form-control" runat="server" Text='<%#: BindItem.Email %>' />
             </td>
             <td>
+                <asp:CheckBox ID="IsAdminCheckBox" class="form-control" runat="server" Checked='<%# Eval("IsAdmin") %>' />
+            </td>
+            <td>
                 <asp:LinkButton ID="lnkUpdate" CssClass="btn btn-sm btn-success" runat="server" CommandName="Update">Update</asp:LinkButton>
-                <asp:LinkButton ID="lnkDelete" CssClass="btn btn-sm btn-danger middleButtonAdminArea" runat="server" CommandName="Delete">Delete</asp:LinkButton>
+                <asp:LinkButton ID="lnkDelete" CssClass="btn btn-sm btn-danger middleButtonAdminArea" 
+                    runat="server" CommandName="Delete">Delete</asp:LinkButton>
                 <asp:LinkButton ID="lnkCancel" CssClass="btn btn-sm btn-primary" runat="server" CommandName="Cancel">Cancel</asp:LinkButton>
             </td>
         </EditItemTemplate>
@@ -96,11 +99,10 @@
         <InsertItemTemplate>
             <tr>
                 <td>
-                    <asp:TextBox ID="UserNameTextBox" runat="server" Text='<%#: Item.UserName %>'></asp:TextBox>
-
+                    <asp:TextBox ID="EmailTextBox" runat="server" Text='<%#: Item.Email %>' />
                 </td>
                 <td>
-                    <asp:TextBox ID="EmailTextBox" runat="server" Text='<%#: Item.Email %>' />
+                    <asp:CheckBox ID="IsAdminCheckBox" runat="server" Checked='<%# Eval("IsAdmin") %>' />
                 </td>
                 <td>
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
@@ -109,4 +111,7 @@
             </tr>
         </InsertItemTemplate>
     </asp:ListView>
+    <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
+    <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" ModalWindowText="Are you sure you want to delete this user? This action is irreversible!" OnOKButtonClicked="ModalWindow_OKButtonClicked" />
+    <script src="../Controls/ModalWindow/modalWindow.js"></script>
 </asp:Content>

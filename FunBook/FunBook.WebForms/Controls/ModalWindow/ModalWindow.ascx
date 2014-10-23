@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ModalWindow.ascx.cs" Inherits="TestASCX.ModalWindow" %>
 
-<asp:ScriptManager runat="server"></asp:ScriptManager>
-
 <asp:UpdatePanel runat="server">
     <ContentTemplate>
         <div id="modalWindowControlHolder" hidden="hidden">
@@ -29,5 +27,4 @@
             </div>
         </div>
     </div>
-    <script src="modalWindow.js"></script>
 </div>

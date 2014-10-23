@@ -3,12 +3,10 @@
     using System;
     using System.Linq;
 
-    using System.Web;
-    using FunBook.Data;
-    using FunBook.WebForms;
-    using Microsoft.AspNet.Identity.Owin;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    using FunBook.Data;
     using FunBook.Models;
 
     public class RolesGenerator : IDataGenerator
