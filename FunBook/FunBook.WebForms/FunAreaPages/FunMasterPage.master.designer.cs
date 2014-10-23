@@ -31,15 +31,6 @@ namespace FunBook.WebForms.FunAreaPages {
         protected global::System.Web.UI.WebControls.LinkButton SearchBtn;
         
         /// <summary>
-        /// categories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater categories;
-        
-        /// <summary>
         /// SiteMap1 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace FunBook.WebForms.FunAreaPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMap1;
+        
+        /// <summary>
+        /// categories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater categories;
         
         /// <summary>
         /// ContentPlaceHolderFunArea control.

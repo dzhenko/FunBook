@@ -8,6 +8,9 @@
     <siteMapNode title="About" description="About"
     url="~/FunAreaPages/About">
     </siteMapNode>
+    <siteMapNode title="All" description="All"
+   url="~/FunAreaPages/All">
+    </siteMapNode>
     <siteMapNode title="Content" description="Content"
      url="~/FunAreaPages/Content">
     </siteMapNode>

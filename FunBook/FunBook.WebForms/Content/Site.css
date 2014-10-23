@@ -76,7 +76,7 @@ img {
 
 .popular, .recent {
     display: inline-block;
-    padding: 20px;
+    padding: 5px 0px 20px 20px;
 }
 
 a {
@@ -149,21 +149,38 @@ ul.main-menu > li {
     color: white;
 }
 
-    ul.main-menu > li > a {
+    ul.main-menu > li > a, .search-btn {
         color: white;
         font-size: 1.2em;
     }
 
-        ul.main-menu > li > a:hover {
+        ul.main-menu > li > a:hover, .search-btn:hover {
             background-color: rgba(255, 250, 250, 0.55);
+            color: white;
         }
 
+.search-btn {
+    background-color: transparent;
+    margin-top: 10px;
+    display: inline-block;
+}
+
 .custom-container {
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.site-map {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: #428bca;
 }
 
 .navItem {
     display: block;
+}
+
+.navbar-right {
+    margin: 3px;
 }
 
 table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td {
@@ -303,8 +320,8 @@ footer {
     }
 
         #headerHolder a:hover {
-            color: #428bca;
-             text-shadow: 0 0 8px white;
+            color: #afca57;
+            /*text-shadow: 0 0 10px white;*/
         }
 
     #headerHolder h1 {
@@ -315,15 +332,14 @@ footer {
     }
 
     #headerHolder > div > div > a > h1 > span:hover {
-        color: #428bca;
+        color:#afca57;
     }
 
-.form-control{
+.form-control {
     width: 281px;
     margin: 5px;
 }
 
-.nav-pills{
+.nav-pills {
     margin-bottom: 10px;
 }
-
