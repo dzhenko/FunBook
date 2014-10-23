@@ -61,7 +61,7 @@ namespace FunBook.WebForms
                 if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
                     || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
                 {
-                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+                    // throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
                 }
             }
         }

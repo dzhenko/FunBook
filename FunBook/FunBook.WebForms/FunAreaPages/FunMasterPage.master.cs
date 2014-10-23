@@ -18,6 +18,8 @@ namespace FunBook.WebForms.FunAreaPages
         {
             BindCategories();
             BindTags();
+
+            this.AdminLink.Visible = this.Context.User.IsInRole("admin");
         }
 
         private void BindTags()

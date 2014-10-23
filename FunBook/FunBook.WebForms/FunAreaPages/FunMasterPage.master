@@ -16,11 +16,10 @@
             <ul class="nav navbar-nav main-menu">
                 <li><a runat="server" href="~/">Home</a></li>
                 <li><a runat="server" href="~/FunAreaPages/All">All Fun</a></li> 
-                <li><a runat="server" href="~/FunAreaPages/PrivateFunDetails/ManageFun">Create Fun</a></li>
+                <li><a runat="server" href="~/FunAreaPages/PrivateFunDetails/AddFun">Create Fun</a></li>
                 <li><a runat="server" href="~/FunAreaPages/PrivateFun">Manage Fun</a></li>
-                <li><a runat="server" href="~/FunAreaPages/PrivateFunDetails/AddFun">Add Fun</a></li>
                 <li><a runat="server" href="~/FunAreaPages/About">About</a></li>
-                <li><a runat="server" href="~/AdminAreaPages/Home">Admin</a></li>
+                <li><a runat="server" id="AdminLink" href="~/AdminAreaPages/Home">Admin</a></li>
             </ul>
             <asp:UpdatePanel runat="server" ChildrenAsTriggers="true">
                 <ContentTemplate>
