@@ -8,12 +8,14 @@
                 <label for="inputTitleJoke" class="col-lg-2 control-label">Title</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" id="inputTitleJoke" runat="server">
+                    <asp:RequiredFieldValidator ControlToValidate="inputTitleJoke" Display="Dynamic" ID="RequiredFieldValidator6" runat="server" ErrorMessage="You have to enter at least 3 symbols"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="form-group">
                 <label for="jokeText" class="col-lg-2 control-label">Textarea</label>
                 <div class="col-lg-10">
                     <textarea class="form-control" rows="3" id="jokeText" runat="server"></textarea>
+                    <asp:RequiredFieldValidator ControlToValidate="jokeText" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="You have to enter at least 3 symbols"></asp:RequiredFieldValidator>
                     <div class="checkbox">
                         <label>
                             <input id="isAnonymous" runat="server" type="checkbox">
