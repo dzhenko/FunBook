@@ -332,7 +332,7 @@ footer {
     }
 
     #headerHolder > div > div > a > h1 > span:hover {
-        color:#afca57;
+        color: #afca57;
     }
 
 .form-control {
@@ -358,3 +358,4 @@ footer {
     margin-top:20px;
     margin-bottom:20px;
 }
+

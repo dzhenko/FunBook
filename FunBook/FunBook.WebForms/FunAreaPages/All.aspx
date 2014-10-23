@@ -19,12 +19,13 @@
                 </div>
             </LayoutTemplate>
             <ItemTemplate runat="server">
-                <asp:Label CssClass="col-sm-3" runat="server">
-                <%# Item.Title%>
-                </asp:Label>
-                <asp:HyperLink CssClass="col-sm-7" runat="server">
-                <%# Item.Content.Substring(0, Math.Min(100, Item.Content.Length)) %>...
+                <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
+                    CssClass="col-sm-3" runat="server">
+                    <%# Item.Title %>
                 </asp:HyperLink>
+                <asp:Label CssClass="col-sm-7" runat="server">
+                <%# Item.Content.Substring(0, Math.Min(100, Item.Content.Length)) %>...
+                </asp:Label>
                 <asp:Label CssClass="date col-sm-2" runat="server"><%# Item.Created %></asp:Label>
             </ItemTemplate>
             <EmptyDataTemplate runat="server">
@@ -32,12 +33,13 @@
             </EmptyDataTemplate>
         </asp:ListView>
     </div>
-    <asp:DataPager ID="DataPagerAll" PagedControlID="ViewAllFun" PageSize="10" runat="server">
-        <Fields>
-            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary btn-xs" />
-            <asp:NumericPagerField />
-            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary btn-xs" />
-        </Fields>
-    </asp:DataPager>
-
+    <div class="jokes-content">
+        <asp:DataPager ID="DataPagerAll" PagedControlID="ViewAllFun" PageSize="10" runat="server">
+            <Fields>
+                <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary btn-xs" />
+                <asp:NumericPagerField />
+                <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary btn-xs" />
+            </Fields>
+        </asp:DataPager>
+    </div>
 </asp:Content>

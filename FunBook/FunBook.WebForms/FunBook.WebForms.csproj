@@ -184,6 +184,7 @@
     <Content Include="Controls\ModalWindow\ModalWindow.ascx" />
     <Content Include="Controls\ModalWindow\modalWindow.js" />
     <Content Include="Controls\ModalWindow\TestModalWindow.aspx" />
+    <Content Include="Errors\GeneralError.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
     <Content Include="FunAreaPages\All.aspx" />
@@ -414,6 +415,7 @@
     </Compile>
     <Compile Include="Controls\HoverDetails\TestHoverDetails.aspx.cs">
       <DependentUpon>TestHoverDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\HoverDetails\TestHoverDetails.aspx.designer.cs">
       <DependentUpon>TestHoverDetails.aspx</DependentUpon>
@@ -449,6 +451,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\GeneralError.aspx.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\GeneralError.aspx.designer.cs">
+      <DependentUpon>GeneralError.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>

@@ -70,6 +70,11 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             data.Jokes.Add(joke);
             data.Jokes.SaveChanges();
 
+            if (FileUploadControl.HasFile)
+            {
+                // TODO:
+            }
+
             this.Response.Redirect("../PrivateFun.aspx");
         }
 
@@ -86,7 +91,7 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
                 Category = category,
                 Created = DateTime.Now,
                 UserId = Context.User.Identity.GetUserId(),
-                IsAnonymous = this.isAnonymous.Checked
+                IsAnonymous = this.isAnonymousLink.Checked
             };
 
             data.Links.Add(link);
@@ -108,7 +113,7 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
                 Category = category,
                 Created = DateTime.Now,
                 UserId = Context.User.Identity.GetUserId(),
-                IsAnonymous = this.isAnonymous.Checked
+                IsAnonymous = this.isAnonymousPic.Checked
             };
 
             data.Pictures.Add(picture);

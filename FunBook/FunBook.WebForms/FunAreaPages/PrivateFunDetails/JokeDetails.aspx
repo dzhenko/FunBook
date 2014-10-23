@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="JokeDetails.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.JokeDetails" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <section class="joke-main-container">
         <h3><%= CurrentJoke.Title %></h3>
         <section class="fun-details-manageBtns">
             <ul class="nav nav-pills">
                 <li class="button">
-                    <asp:LinkButton ID="LinkButton1" OnCommand="LinkButtonEditJoke_Command" runat="server">Edit</asp:LinkButton>
+                    <asp:LinkButton OnCommand="LinkButtonEditJoke_Command" runat="server">Edit</asp:LinkButton>
                 </li>
                 <li class="button">
                     <asp:LinkButton ID="LinkButtonDeleteJoke" OnCommand="LinkButtonDeleteJoke_Command" runat="server">

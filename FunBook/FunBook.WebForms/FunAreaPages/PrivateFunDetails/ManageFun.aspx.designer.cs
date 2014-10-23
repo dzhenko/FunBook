@@ -130,6 +130,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlLink;
         
         /// <summary>
+        /// isAnonymousLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox isAnonymousLink;
+        
+        /// <summary>
         /// PanelPicture control.
         /// </summary>
         /// <remarks>
@@ -155,5 +164,23 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText urlPic;
+        
+        /// <summary>
+        /// FileUploadControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
+        
+        /// <summary>
+        /// isAnonymousPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox isAnonymousPic;
     }
 }
