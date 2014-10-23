@@ -22,9 +22,9 @@
                 <asp:Label CssClass="col-sm-3" runat="server">
                 <%# Item.Title%>
                 </asp:Label>
-                <asp:Label CssClass="col-sm-7" runat="server">
+                <asp:HyperLink CssClass="col-sm-7" runat="server">
                 <%# Item.Content.Substring(0, Math.Min(100, Item.Content.Length)) %>...
-                </asp:Label>
+                </asp:HyperLink>
                 <asp:Label CssClass="date col-sm-2" runat="server"><%# Item.Created %></asp:Label>
             </ItemTemplate>
             <EmptyDataTemplate runat="server">
@@ -32,7 +32,7 @@
             </EmptyDataTemplate>
         </asp:ListView>
     </div>
-    <asp:DataPager ID="DataPagerAll" PagedControlID="ViewAllFun" PageSize="6" runat="server">
+    <asp:DataPager ID="DataPagerAll" PagedControlID="ViewAllFun" PageSize="10" runat="server">
         <Fields>
             <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary btn-xs" />
             <asp:NumericPagerField />
