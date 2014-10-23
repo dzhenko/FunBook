@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminAreaPages/AdminsMasterPage.master" AutoEventWireup="true" CodeBehind="ManageItems.aspx.cs" Inherits="FunBook.WebForms.AdminAreaPages.ManageItems" ValidateRequest="false" %>
 
+<%@ Register TagPrefix="uc" TagName="ModalWindow" Src="~/Controls/ModalWindow/ModalWindow.ascx"  %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     <asp:ListView ID="ListView" runat="server"
         OnSorting="ListView_Sorting"
         DataKeyNames="Id"
-        ItemType="FunBook.Models.Joke"
+        ItemType="FunBook.WebForms.DataModels.AdminItemDataModel"
         SelectMethod="ListView_GetData"
         UpdateMethod="ListView_UpdateItem"
         DeleteMethod="ListView_DeleteItem">
@@ -20,9 +22,9 @@
                 </div>
 
                 <table runat="server" class="table table-hover">
-                    <tr runat="server">
+                    <tr runat="server" class="active">
                         <td runat="server">
-                            <table id="itemPlaceholderContainer" runat="server" class="table">
+                            <table id="itemPlaceholderContainer" runat="server" class="table table-striped">
                                 <tr runat="server" class="active">
                                     <th runat="server" class="col-md-9">
                                         <asp:LinkButton ID="lnkText" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Text">Text</asp:LinkButton>
@@ -95,7 +97,6 @@
             <tr>
                 <td>
                     <asp:TextBox ID="TextTextBox" runat="server" Text='<%#: Item.Text %>'></asp:TextBox>
-
                 </td>
                 <td>
                     <asp:TextBox ID="TitleTextBox" runat="server" Text='<%#: Item.Title %>' />
@@ -107,4 +108,7 @@
             </tr>
         </InsertItemTemplate>
     </asp:ListView>
+    <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
+    <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" ModalWindowText="Are you sure you want to delete this item? This action is irreversible!" OnOKButtonClicked="ModalWindow_OKButtonClicked" />
+    <script src="../Controls/ModalWindow/modalWindow.js"></script>
 </asp:Content>

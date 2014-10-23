@@ -28,11 +28,9 @@
                                 <tr runat="server" class="active">
                                     <th runat="server" class="col-md-9">
                                         <asp:LinkButton ID="lnkUsername" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Username">Email</asp:LinkButton>
-
                                     </th>
                                     <th runat="server" class="col-md-2">
                                         <asp:LinkButton ID="lnkEmail" runat="server" CssClass="lead" CommandName="Sort" CommandArgument="Email">Is Admin</asp:LinkButton>
-
                                     </th>
                                     <th class="col-md-1"></th>
                                 </tr>

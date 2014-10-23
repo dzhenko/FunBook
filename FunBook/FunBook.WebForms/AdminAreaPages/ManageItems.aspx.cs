@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FunBook.WebForms.DataModels;
 
 namespace FunBook.WebForms.AdminAreaPages
 {
@@ -27,16 +28,16 @@ namespace FunBook.WebForms.AdminAreaPages
 
         }
 
-        public IQueryable<FunBook.Models.Joke> ListView_GetData()
+        public IQueryable<AdminItemDataModel> ListView_GetData()
         {
             string idStr = Request.QueryString["q"];
             if (idStr == null)
             {
-                return this.data.Jokes.All();
+                return this.data.Jokes.All().Select(AdminItemDataModel.FromItem);
             }
             else
             {
-                return this.data.Jokes.All().Where(x => x.Text.Contains(idStr));
+                return this.data.Jokes.All().Where(x => x.Text.Contains(idStr)).Select(AdminItemDataModel.FromItem);
             }
         }
 
@@ -60,9 +61,18 @@ namespace FunBook.WebForms.AdminAreaPages
 
         public void ListView_DeleteItem(object id)
         {
+            this.HiddenfieldDeleteId.Text = id.ToString();
+
+            this.ModalWindow.Show();
+        }
+
+        protected void ModalWindow_OKButtonClicked(object sender, EventArgs e)
+        {
             FunBook.Models.Joke item = null;
 
-            item = this.data.Jokes.Find(id);
+            var id = this.HiddenfieldDeleteId.Text;
+
+            item = this.data.Jokes.Find(Guid.Parse(id));
             if (item == null)
             {
                 ModelState.AddModelError("", String.Format("Joke with id {0} was not found", id));
@@ -71,6 +81,8 @@ namespace FunBook.WebForms.AdminAreaPages
 
             this.data.Jokes.Delete(item);
             this.data.SaveChanges();
+
+            DataBind();
         }
 
         protected void LinkButtonSearch_Click(object sender, EventArgs e)

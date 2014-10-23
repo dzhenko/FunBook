@@ -95,7 +95,7 @@ namespace FunBook.WebForms.AdminAreaPages
             item = this.data.Users.Find(id);
             if (item == null)
             {
-                ModelState.AddModelError("", String.Format("Joke with id {0} was not found", id));
+                ModelState.AddModelError("", String.Format("User with id {0} was not found", id));
                 return;
             }
 
