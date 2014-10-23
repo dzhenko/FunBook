@@ -441,7 +441,9 @@
     <Compile Include="DataGenerators\PicturesGenerator.cs" />
     <Compile Include="DataGenerators\RolesGenerator.cs" />
     <Compile Include="DataGenerators\UsersGenerator.cs" />
+    <Compile Include="DataModels\AdminItemDataModel.cs" />
     <Compile Include="DataModels\AdminUserDataModel.cs" />
+    <Compile Include="DataModels\AllItemDataModel.cs" />
     <Compile Include="DataModels\FunMasterCategoryItemDataModel.cs" />
     <Compile Include="DataModels\FunMasterTagItemDataModel.cs" />
     <Compile Include="DataModels\HomeItemDataModel.cs" />

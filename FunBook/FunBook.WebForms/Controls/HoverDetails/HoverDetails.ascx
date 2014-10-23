@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HoverDetails.ascx.cs" Inherits="TestASCX.HoverDetails.HoverDetails" %>
 
-<asp:ScriptManager runat="server"></asp:ScriptManager>
-<link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
 <div id="HoverDetailsOptions" hidden="hidden">
     <input runat="server" type="hidden" id="HiddenHoveredItemId" value="1" />
 </div>
@@ -10,23 +8,22 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
             <div id="hover-item-details-holder">
-                <asp:DetailsView CssClass="table" runat="server" ID="HoverDetailsView" AutoGenerateRows="false" ItemType="TestASCX.HoverDetails.Joke">
+                <asp:DetailsView CssClass="table" runat="server" ID="HoverDetailsView" AutoGenerateRows="false" ItemType="FunBook.WebForms.DataModels.AllItemDataModel">
                     <HeaderTemplate>
-                        <div class="panel panel-primary">
+                       <div class="custom-box blue">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><%# Item.Title %></h3>
                             </div>
                             <div class="panel-body">
-                                <%# Item.Text.Substring(0, 30) %> ...
-                            <span class="badge alert-danger">
+                            <span class="glyphicon glyphicon-thumbs-down alert-danger">
                                 <%# Item.DownVotes %>
                             </span>
 
-                            <span class="badge alert-success">
+                            <span class="glyphicon glyphicon-thumbs-up alert-success">
                                 <%# Item.UpVotes %>
                             </span>
                                 
-                            <span class="text-primary">
+                            <span class="glyphicon glyphicon-eye-open alert-primary">
                                 Views : <%# Item.Views %>
                             </span>
                             </div>
@@ -37,5 +34,3 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 </div>
-<link href="hoverDetails.css" rel="stylesheet" />
-<script src="hoverDetails.js"></script>

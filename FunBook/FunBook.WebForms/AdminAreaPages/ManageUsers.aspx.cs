@@ -1,14 +1,16 @@
-﻿using System;
-using System.Linq;
-using System.Web.UI.WebControls;
-using FunBook.Data;
-using Microsoft.AspNet.Identity.EntityFramework;
-using FunBook.Models;
-using Microsoft.AspNet.Identity;
-using FunBook.WebForms.DataModels;
-
-namespace FunBook.WebForms.AdminAreaPages
+﻿namespace FunBook.WebForms.AdminAreaPages
 {
+    using System;
+    using System.Linq;
+    using System.Web.UI.WebControls;
+
+    using FunBook.Data;
+    using FunBook.Models;
+    using FunBook.WebForms.DataModels;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     public partial class ManageUsers : System.Web.UI.Page
     {
         private FunBookData data;
@@ -52,7 +54,9 @@ namespace FunBook.WebForms.AdminAreaPages
             var userStore = new UserStore<User>(new FunBookDbContext());
             var userManager = new UserManager<User>(userStore);
 
-            if (((CheckBox)this.ListView.FindControl("IsAdminCheckBox")).Checked)
+            var isAdmin = this.HiddenTextBoxIsAdminChecked.Text=="true";
+
+            if (isAdmin)
             {
                 userManager.AddToRole(item.Id, "admin");
             }
@@ -91,12 +95,19 @@ namespace FunBook.WebForms.AdminAreaPages
             item = this.data.Users.Find(id);
             if (item == null)
             {
-                ModelState.AddModelError("", String.Format("Joke with id {0} was not found", id));
+                ModelState.AddModelError("", String.Format("User with id {0} was not found", id));
                 return;
             }
 
             this.data.Users.Delete(item);
             this.data.SaveChanges();
+
+            DataBind();
+        }
+
+        protected void IsAdminCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.HiddenTextBoxIsAdminChecked.Text = ((CheckBox)sender).Checked ? "true" : "false";
         }
     }
 }
