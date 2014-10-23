@@ -7,10 +7,14 @@
         ItemType="FunBook.Models.Joke"
         SelectMethod="ListView1_GetData"
         UpdateMethod="ListView1_UpdateItem"
-        DeleteMethod="ListView1_DeleteItem"
-        InsertMethod="ListView1_InsertItem">
+        DeleteMethod="ListView1_DeleteItem">
         <LayoutTemplate>
             <div class="container">
+                <div class="row center-block">
+                    <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control col-md-8" />  
+                    <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg"/>
+                </div>               
+
                 <table runat="server" class="table table-hover">
                     <tr runat="server" class="active">
                         <td runat="server">
