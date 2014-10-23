@@ -27,7 +27,7 @@
                 <ItemTemplate>
                     <asp:HyperLink class="navItem"  runat="server"
                         NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=category&id="+ Item.Id %>'>
-                        <%#: Item.Name + "(" + Item.Count + ")" %>)
+                        <%#: Item.Name + "(" + Item.Count + ")" %>
                     </asp:HyperLink>
                 </ItemTemplate>
             </asp:Repeater>

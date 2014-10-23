@@ -59,8 +59,11 @@ namespace FunBook.WebForms.FunAreaPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.BindRecentItems();
-            this.BindPopularItems();
+            if (this.db.Jokes.All().Any() && this.db.Links.All().Any() && this.db.Pictures.All().Any())
+            {
+                this.BindRecentItems();
+                this.BindPopularItems();
+            }
         }
     }
 }
