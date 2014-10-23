@@ -33,7 +33,15 @@ namespace FunBook.WebForms.AdminAreaPages
 
         public IQueryable<FunBook.Models.Joke> ListView1_GetData()
         {
-            return this.data.Jokes.All();
+            string idStr = Request.QueryString["q"];
+            if (idStr == null)
+            {
+                return this.data.Jokes.All();
+            }
+            else
+            {
+                return this.data.Jokes.All().Where(x => x.Text.Contains(idStr));
+            }
         }
 
         public void ListView1_UpdateItem(object id)
@@ -69,15 +77,11 @@ namespace FunBook.WebForms.AdminAreaPages
             this.data.SaveChanges();
         }
 
-        public void ListView1_InsertItem()
+        protected void LinkButtonSearch_Click(object sender, EventArgs e)
         {
-            var item = new FunBook.Models.Joke();
-            TryUpdateModel(item);
-            if (ModelState.IsValid)
-            {
-                // Save changes here
-
-            }
+            TextBox textbox = (TextBox)ListView1.FindControl("TextBoxSearch");
+            string query = string.Format("?q={0}", textbox.Text);
+            Response.Redirect("~/AdminAreaPages/ManageItems" + query);
         }
     }
 }

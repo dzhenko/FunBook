@@ -12,11 +12,16 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
     public partial class LikeDetails : System.Web.UI.Page
     {
+        private IFunBookData data;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            this.data = new FunBookData();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid id = Guid.Parse(Request.QueryString["linkId"]);
-            var data = FunBookData.Create();
-            var link = data.Links.Find(id);
+            var link = GetCurrentLink();
 
             var view = new FunBook.Models.View();
             view.Liked = true;
@@ -27,6 +32,24 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             data.SaveChanges();
 
             this.CurrentLink = link;
+        }
+
+        protected void LinkButtonEditLink_Command(object sender, EventArgs e)
+        {
+            // TODO:
+        }
+
+        protected void LinkButtonDeleteLink_Command(object sender, EventArgs e)
+        {
+            this.data.Links.Delete(GetCurrentLink());
+            this.data.SaveChanges();
+            this.Response.Redirect("../PrivateFun.aspx");
+        }
+
+        private Link GetCurrentLink()
+        {
+            var id = Guid.Parse(Request.QueryString["linkId"]);
+            return data.Links.Find(id);
         }
 
         public Link CurrentLink { get; private set; }

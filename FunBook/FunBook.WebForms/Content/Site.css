@@ -40,21 +40,24 @@ input[type="select"] {
     max-width: 280px;
 }
 
-.center{
-    text-align:center;
-}
-img{
-    border-radius:10px
-}
-.about-funbook h2{
-    color:purple;
+.center {
+    text-align: center;
 }
 
-.about-funbook p,.about-funbook a{
-    font-size:19px
+img {
+    border-radius: 10px;
 }
-.about-funbook ul{
-    list-style-type:none;
+
+.about-funbook h2 {
+    color: purple;
+}
+
+.about-funbook p, .about-funbook a {
+    font-size: 19px;
+}
+
+.about-funbook ul {
+    list-style-type: none;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -109,6 +112,7 @@ aside {
 
 .categories-menu-title {
     color: #afca57;
+    font-size: 1.3em;
 }
 
 .navbar-brand {
@@ -119,7 +123,13 @@ aside {
 .content-title, .content-empty {
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
     color: #afca57;
-    margin:5px 5px 2px 5px;
+    margin: 5px 5px 2px 5px;
+}
+
+.content-title-all {
+    font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+    color: #afca57;
+    font-size: 1.2em;
 }
 
 .sort-link {
@@ -264,7 +274,7 @@ footer {
 #open-link {
     font-size: 17px;
     background-color: white;
-    color: black ;
+    color: black;
     display: block;
     padding: 20px;
     border-radius: 15px;
@@ -292,19 +302,20 @@ footer {
         margin-right: 2em;
     }
 
-#headerHolder a:hover {
-    color:#428bca;
-}
+        #headerHolder a:hover {
+            color: #428bca;
+             text-shadow: 0 0 8px white;
+        }
 
     #headerHolder h1 {
         font-family: 'Comic Sans MS', cursive;
         margin-right: 0.5em;
         font-size: 5em;
         color: #ee3963;
-}
+    }
 
-#headerHolder > div > div > a > h1 > span:hover{
-    color:#428bca;
+    #headerHolder > div > div > a > h1 > span:hover {
+        color: #428bca;
     }
 
 .form-control{
@@ -315,3 +326,4 @@ footer {
 .nav-pills{
     margin-bottom: 10px;
 }
+

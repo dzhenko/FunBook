@@ -181,6 +181,7 @@
     <Content Include="Controls\ModalWindow\TestModalWindow.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FunAreaPages\About.aspx" />
+    <Content Include="FunAreaPages\All.aspx" />
     <Content Include="FunAreaPages\PrivateFun.aspx" />
     <Content Include="FunAreaPages\Home.aspx" />
     <Content Include="FunAreaPages\Content.aspx" />
@@ -444,6 +445,13 @@
     </Compile>
     <Compile Include="FunAreaPages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FunAreaPages\All.aspx.cs">
+      <DependentUpon>All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FunAreaPages\All.aspx.designer.cs">
+      <DependentUpon>All.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\PrivateFun.aspx.cs">
       <DependentUpon>PrivateFun.aspx</DependentUpon>

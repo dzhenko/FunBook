@@ -3,6 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <section class="joke-main-container">
         <h3><%= CurrentJoke.Title %></h3>
+        <section class="fun-details-manageBtns">
+            <ul class="nav nav-pills">
+                <li class="button">
+                    <asp:LinkButton ID="LinkButtonEditJoke" OnCommand="LinkButtonEditJoke_Command" runat="server">
+                        Edit
+                    </asp:LinkButton></li>
+                <li class="button">
+                    <asp:LinkButton ID="LinkButtonDeleteJoke" OnCommand="LinkButtonDeleteJoke_Command" runat="server">
+                        Delete
+                    </asp:LinkButton>
+                </li>
+            </ul>
+        </section>
         <section id="fun-content">
             <p><%= CurrentJoke.Text %></p>
         </section>

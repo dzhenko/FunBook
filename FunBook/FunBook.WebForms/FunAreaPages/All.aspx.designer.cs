@@ -7,27 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
+namespace FunBook.WebForms.FunAreaPages {
     
     
-    public partial class LikeDetails {
+    public partial class All {
         
         /// <summary>
-        /// LinkButtonEditLink control.
+        /// GridViewAllFun control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonEditLink;
+        protected global::System.Web.UI.WebControls.GridView GridViewAllFun;
         
         /// <summary>
-        /// LinkButtonDeleteLink control.
+        /// DataPagerAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonDeleteLink;
+        protected global::System.Web.UI.WebControls.DataPager DataPagerAll;
     }
 }
