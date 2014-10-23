@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using FunBook.Data;
 using FunBook.WebForms.DataModels;
-
-using System.Web.ModelBinding;
-
 
 namespace FunBook.WebForms.FunAreaPages
 {
@@ -14,28 +11,29 @@ namespace FunBook.WebForms.FunAreaPages
     {
         private FunBookData db = FunBookData.Create();
 
-        public IQueryable<HomeItemDataModel> GridViewAll_GetData()
+        public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString]
+                                                                 string search)
         {
-            var allJoke = this.db.Jokes.All().Select(HomeItemDataModel.FromJoke);
-            var allLink = this.db.Links.All().Select(HomeItemDataModel.FromLink);
-            var allPicture = this.db.Pictures.All().Select(HomeItemDataModel.FromPicture);
+            if (search == null)
+            {
+                search = string.Empty;
+            }
+            else
+            {
+                search = search.ToLower();
+            }
 
-            return allJoke.Union(allLink).Union(allPicture);
-        }
-
-        public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString] string search)
-        {
             var allJoke = this.db.Jokes.All()
-                .Where(j => j.Text.Contains(search) || j.Title.Contains(search))
-                .Select(HomeItemDataModel.FromJoke);
+                              .Where(j => j.Text.ToLower().Contains(search) || j.Title.ToLower().Contains(search))
+                              .Select(HomeItemDataModel.FromJoke);
 
             var allLink = this.db.Links.All()
-                .Where(l => l.URL.Contains(search) || l.Title.Contains(search))
-                .Select(HomeItemDataModel.FromLink);
+                              .Where(l => l.URL.ToLower().Contains(search) || l.Title.ToLower().Contains(search))
+                              .Select(HomeItemDataModel.FromLink);
 
             var allPicture = this.db.Pictures.All()
-                .Where(p => p.UrlPath.Contains(search) || p.Title.Contains(search))
-                .Select(HomeItemDataModel.FromPicture);
+                                 .Where(p => p.UrlPath.ToLower().Contains(search) || p.Title.ToLower().Contains(search))
+                                 .Select(HomeItemDataModel.FromPicture);
 
             return allJoke.Union(allLink).Union(allPicture);
         }
