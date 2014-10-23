@@ -49,6 +49,15 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.WebControls.RadioButton RadioButtonPicture;
         
         /// <summary>
+        /// DropDownListCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCategory;
+        
+        /// <summary>
         /// UpdatePanelFunForms control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,33 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.WebControls.Panel PanelJoke;
         
         /// <summary>
+        /// inputTitleJoke control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleJoke;
+        
+        /// <summary>
+        /// jokeText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea jokeText;
+        
+        /// <summary>
+        /// isAnonymous control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox isAnonymous;
+        
+        /// <summary>
         /// PanelLink control.
         /// </summary>
         /// <remarks>
@@ -76,6 +112,24 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         protected global::System.Web.UI.WebControls.Panel PanelLink;
         
         /// <summary>
+        /// inputTitleLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleLink;
+        
+        /// <summary>
+        /// urlLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText urlLink;
+        
+        /// <summary>
         /// PanelPicture control.
         /// </summary>
         /// <remarks>
@@ -83,5 +137,23 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelPicture;
+        
+        /// <summary>
+        /// inputTitlePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitlePicture;
+        
+        /// <summary>
+        /// urlPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText urlPic;
     }
 }

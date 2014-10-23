@@ -10,7 +10,7 @@
     <ul class="nav nav-pills">
         <li class="button"> 
             <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonAddFun_Command" runat="server">
-                Add/Edit
+                Add
             </asp:LinkButton>
         </li>
     </ul>
