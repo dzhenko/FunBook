@@ -1,11 +1,13 @@
-﻿using System;
-using System.Linq;
-using FunBook.ImageUpload;
-using FunBook.Models;
-
-namespace FunBook.Data.InitialDataGenerators
+﻿namespace FunBook.WebForms.DataGenerators
 {
-    public class PicturesGenerator
+    using System;
+    using System.Linq;
+
+    using FunBook.Data;
+    using FunBook.ImageUpload;
+    using FunBook.Models;
+
+    public class PicturesGenerator : IDataGenerator
     {
         public void Generate(FunBookDbContext context)
         {

@@ -1,13 +1,15 @@
-﻿namespace FunBook.Data.InitialDataGenerators
+﻿namespace FunBook.WebForms.DataGenerators
 {
-    using FunBook.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
     using System.Text.RegularExpressions;
 
-    public class LinksGenerator
+    using FunBook.Data;
+    using FunBook.Models;
+
+    public class LinksGenerator : IDataGenerator
     {
         public void Generate(FunBookDbContext context)
         {

@@ -390,6 +390,13 @@
     <Compile Include="Controls\HoverDetails\HoverDetails.ascx.designer.cs">
       <DependentUpon>HoverDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DataGenerators\DataConfig.cs" />
+    <Compile Include="DataGenerators\IDataGenerator.cs" />
+    <Compile Include="DataGenerators\JokesGenerator.cs" />
+    <Compile Include="DataGenerators\LinksGenerator.cs" />
+    <Compile Include="DataGenerators\PicturesGenerator.cs" />
+    <Compile Include="DataGenerators\RolesGenerator.cs" />
+    <Compile Include="DataGenerators\UsersGenerator.cs" />
     <Compile Include="DataModels\FunMasterCategoryItemDataModel.cs" />
     <Compile Include="DataModels\FunMasterTagItemDataModel.cs" />
     <Compile Include="DataModels\HomeItemDataModel.cs" />
@@ -491,6 +498,10 @@
     <ProjectReference Include="..\FunBook.Data\FunBook.Data.csproj">
       <Project>{545c0c18-5e86-42a8-a204-48de9ee203d2}</Project>
       <Name>FunBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FunBook.ImageUpload\FunBook.ImageUpload.csproj">
+      <Project>{9ec48eae-79e7-4bd5-85d3-937fcccf2c5e}</Project>
+      <Name>FunBook.ImageUpload</Name>
     </ProjectReference>
     <ProjectReference Include="..\FunBook.Models\FunBook.Models.csproj">
       <Project>{f14e699a-fede-484b-bd6e-f108fafae623}</Project>

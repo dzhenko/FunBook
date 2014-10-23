@@ -1,10 +1,12 @@
-﻿namespace FunBook.Data.InitialDataGenerators
+﻿namespace FunBook.WebForms.DataGenerators
 {
     using System;
     using System.Linq;
+
+    using FunBook.Data;
     using FunBook.Models;
 
-    public class JokesGenerator
+    public class JokesGenerator : IDataGenerator
     {
         public void Generate(FunBookDbContext context)
         {
