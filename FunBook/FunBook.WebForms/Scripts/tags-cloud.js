@@ -28,7 +28,7 @@
             array[i].tag.style.margin = '3px';
             array[i].tag.style.cssFloat = 'left';
             // array[i].tag.style.fontSize = (min + delta * array[i].value/20) + 'px';
-            array[i].tag.style.fontSize = (min + array[i].value / 10) + 'px';
+            array[i].tag.style.fontSize = (min + array[i].value / 3) + 'px';
         }
     }
 })();

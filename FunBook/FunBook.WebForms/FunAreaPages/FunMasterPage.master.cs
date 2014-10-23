@@ -53,5 +53,10 @@ namespace FunBook.WebForms.FunAreaPages
 
             categories.DataBind();
         }
+
+        protected void TbSearch_TextChanged(object sender, EventArgs e)
+        {
+            this.SearchHyperLink.NavigateUrl = "~/FunAreaPages/All.aspx?search=" + this.TbSearch.Text;
+        }
     }
 }
