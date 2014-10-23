@@ -54,11 +54,9 @@
             var userStore = new UserStore<User>(new FunBookDbContext());
             var userManager = new UserManager<User>(userStore);
 
-            CheckBox checkbox = (CheckBox)this.ListView.FindControl("IsAdminCheckBox");
-            TextBox textbox = (TextBox)this.ListView.FindControl("TextBoxSearch");
-            var isChecked = checkbox.Checked;
+            var isAdmin = this.HiddenTextBoxIsAdminChecked.Text=="true";
 
-            if (isChecked)
+            if (isAdmin)
             {
                 userManager.AddToRole(item.Id, "admin");
             }
@@ -105,6 +103,11 @@
             this.data.SaveChanges();
 
             DataBind();
+        }
+
+        protected void IsAdminCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.HiddenTextBoxIsAdminChecked.Text = ((CheckBox)sender).Checked ? "true" : "false";
         }
     }
 }

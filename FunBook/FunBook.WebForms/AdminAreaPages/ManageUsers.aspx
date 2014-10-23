@@ -74,7 +74,7 @@
                 <asp:TextBox ID="EmailTextBox" class="form-control" runat="server" Text='<%#: BindItem.Email %>' />
             </td>
             <td>
-                <asp:CheckBox ID="IsAdminCheckBox" class="form-control" runat="server" Checked='<%# Eval("IsAdmin") %>' />
+                <asp:CheckBox ID="IsAdminCheckBox" OnCheckedChanged="IsAdminCheckBox_CheckedChanged" class="form-control" runat="server" Checked='<%# Eval("IsAdmin") %>' />
             </td>
             <td>
                 <asp:LinkButton ID="lnkUpdate" CssClass="btn btn-sm btn-success" runat="server" CommandName="Update">Update</asp:LinkButton>
@@ -109,6 +109,7 @@
             </tr>
         </InsertItemTemplate>
     </asp:ListView>
+    <asp:TextBox ID="HiddenTextBoxIsAdminChecked" runat="server" Visible="false" Text='<%# Eval("IsAdmin") %>'></asp:TextBox>
     <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
     <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" ModalWindowText="Are you sure you want to delete this user? This action is irreversible!" OnOKButtonClicked="ModalWindow_OKButtonClicked" />
     <script src="../Controls/ModalWindow/modalWindow.js"></script>
