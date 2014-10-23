@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
+namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms {
     
     
-    public partial class JokeDetails {
+    public partial class JokeEdit {
         
         /// <summary>
-        /// LinkButton1 control.
+        /// inputTitleJoke control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleJoke;
         
         /// <summary>
-        /// LinkButtonDeleteJoke control.
+        /// jokeText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonDeleteJoke;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea jokeText;
         
         /// <summary>
-        /// jokeComments control.
+        /// isAnonymous control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jokeComments;
-        
-        /// <summary>
-        /// RepeaterComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterComments;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox isAnonymous;
     }
 }

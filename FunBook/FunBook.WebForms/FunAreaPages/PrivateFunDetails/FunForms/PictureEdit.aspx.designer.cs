@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
+namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms {
     
     
-    public partial class JokeDetails {
+    public partial class PictureEdit {
         
         /// <summary>
-        /// LinkButton1 control.
+        /// inputTitlePicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitlePicture;
         
         /// <summary>
-        /// LinkButtonDeleteJoke control.
+        /// urlPic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonDeleteJoke;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText urlPic;
         
         /// <summary>
-        /// jokeComments control.
+        /// isAnonymous control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jokeComments;
-        
-        /// <summary>
-        /// RepeaterComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterComments;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox isAnonymous;
     }
 }

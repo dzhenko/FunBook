@@ -6,9 +6,8 @@
         <section class="fun-details-manageBtns">
             <ul class="nav nav-pills">
                 <li class="button">
-                    <asp:LinkButton ID="LinkButtonEditJoke" OnCommand="LinkButtonEditJoke_Command" runat="server">
-                        Edit
-                    </asp:LinkButton></li>
+                    <asp:LinkButton ID="LinkButton1" OnCommand="LinkButtonEditJoke_Command" runat="server">Edit</asp:LinkButton>
+                </li>
                 <li class="button">
                     <asp:LinkButton ID="LinkButtonDeleteJoke" OnCommand="LinkButtonDeleteJoke_Command" runat="server">
                         Delete

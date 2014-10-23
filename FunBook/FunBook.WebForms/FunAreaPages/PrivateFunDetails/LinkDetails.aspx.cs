@@ -36,7 +36,8 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         protected void LinkButtonEditLink_Command(object sender, EventArgs e)
         {
-            // TODO:
+            var linkId = GetCurrentElementId();
+            this.Response.Redirect("FunForms/LinkEdit.aspx?id=" + linkId);
         }
 
         protected void LinkButtonDeleteLink_Command(object sender, EventArgs e)
@@ -48,8 +49,13 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         private Link GetCurrentLink()
         {
-            var id = Guid.Parse(Request.QueryString["linkId"]);
+            var id = GetCurrentElementId();
             return data.Links.Find(id);
+        }
+
+        private Guid GetCurrentElementId()
+        {
+            return Guid.Parse(Request.QueryString["linkId"]);
         }
 
         public Link CurrentLink { get; private set; }

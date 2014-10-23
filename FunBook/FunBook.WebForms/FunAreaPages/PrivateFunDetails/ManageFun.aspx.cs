@@ -140,5 +140,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
                 this.PanelPicture.Visible = true;
             }
         }
+
     }
 }

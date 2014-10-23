@@ -36,7 +36,8 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         protected void LinkButtonEditPicture_Command(object sender, EventArgs e)
         {
-            // TODO:
+            var id = GetCurrentElementId();
+            this.Response.Redirect("FunForms/PictureEdit.aspx?id=" + id);
         }
 
         protected void LinkButtonDeletePicture_Command(object sender, EventArgs e)
@@ -48,8 +49,13 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         private Picture GetCurrentPicture()
         {
-            var id = Guid.Parse(Request.QueryString["picId"]);
+            var id = GetCurrentElementId();
             return data.Pictures.Find(id);
+        }
+
+        private Guid GetCurrentElementId()
+        {
+            return Guid.Parse(Request.QueryString["picId"]);
         }
 
         public Picture CurrentPicture { get; private set; }

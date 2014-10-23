@@ -46,7 +46,8 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         protected void LinkButtonEditJoke_Command(object sender, EventArgs e)
         {
-            // TODO:
+            var jokeId = GetCurrentElementId();
+            this.Response.Redirect("FunForms/JokeEdit.aspx?id=" + jokeId);
         }
 
         protected void LinkButtonDeleteJoke_Command(object sender, EventArgs e)
@@ -58,8 +59,13 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         private Joke GetCurrentJoke()
         {
-            var id = Guid.Parse(Request.QueryString["jokeId"]);
+            var id = GetCurrentElementId();
             return data.Jokes.Find(id);
+        }
+
+        private Guid GetCurrentElementId()
+        {
+            return Guid.Parse(Request.QueryString["jokeId"]);
         }
 
         public Joke CurrentJoke { get; private set; }
