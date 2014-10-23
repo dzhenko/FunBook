@@ -7,108 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FunBook.WebForms.FunAreaPages {
+namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
     
     
-    public partial class Create {
+    public partial class ManageFun {
         
         /// <summary>
-        /// LinkButtonJokeLink control.
+        /// UpdatePanelChooseFun control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonJokeLink;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelChooseFun;
         
         /// <summary>
-        /// liJoke control.
+        /// RadioButtonJoke control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liJoke;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButtonJoke;
         
         /// <summary>
-        /// liLink control.
+        /// RadioButtonLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLink;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButtonLink;
         
         /// <summary>
-        /// liPic control.
+        /// RadioButtonPicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liPic;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButtonPicture;
         
         /// <summary>
-        /// myTabContent control.
+        /// UpdatePanelFunForms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl myTabContent;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelFunForms;
         
         /// <summary>
-        /// ListViewJokes control.
+        /// PanelJoke control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewJokes;
+        protected global::System.Web.UI.WebControls.Panel PanelJoke;
         
         /// <summary>
-        /// DataPagerJokes control.
+        /// PanelLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerJokes;
+        protected global::System.Web.UI.WebControls.Panel PanelLink;
         
         /// <summary>
-        /// ListViewLinks control.
+        /// PanelPicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewLinks;
-        
-        /// <summary>
-        /// DataPagerLinks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerLinks;
-        
-        /// <summary>
-        /// ListViewPics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewPics;
-        
-        /// <summary>
-        /// DataPagerPics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerPics;
+        protected global::System.Web.UI.WebControls.Panel PanelPicture;
     }
 }
