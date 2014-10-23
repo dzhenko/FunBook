@@ -25,7 +25,7 @@
            // if (exc is HttpUnhandledException)
            // {
                 // Pass the error on to the error page.
-                Server.Transfer("~/Errors/GeneralError.aspx");
+                //Server.Transfer("~/Errors/GeneralError.aspx");
            // }
         }
     }

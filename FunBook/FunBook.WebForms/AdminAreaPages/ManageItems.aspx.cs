@@ -45,7 +45,7 @@ namespace FunBook.WebForms.AdminAreaPages
         {
             FunBook.Models.Joke item = null;
 
-            item = this.data.Jokes.Find(id);
+            item = this.data.Jokes.Find(Guid.Parse(id.ToString()));
             if (item == null)
             {
                 ModelState.AddModelError("", String.Format("Joke with id {0} was not found", id));
