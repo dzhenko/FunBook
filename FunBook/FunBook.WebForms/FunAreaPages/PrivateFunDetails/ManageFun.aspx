@@ -16,6 +16,9 @@
     </asp:UpdatePanel>
     <br />
 
+    <label for="DropDownListCategory" class="col-lg-2 control-label">Category</label>
+    <asp:DropDownList ID="DropDownListCategory" class="form-control" runat="server"></asp:DropDownList>
+
     <asp:UpdatePanel ID="UpdatePanelFunForms" runat="server">
         <ContentTemplate>
             <asp:Panel ID="PanelJoke" runat="server" Visible="false" class="managefun-panel-radio">
@@ -25,21 +28,26 @@
                         <div class="form-group">
                             <label for="inputTitleJoke" class="col-lg-2 control-label">Title</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputTitleJoke" placeholder="Title">
+                                <input type="text" class="form-control" id="inputTitleJoke" runat="server" placeholder="Title">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                            <label for="jokeText" class="col-lg-2 control-label">Textarea</label>
                             <div class="col-lg-10">
-                                <textarea class="form-control" rows="3"" id="textArea"></textarea>
+                                <textarea class="form-control" rows="3" id="jokeText" runat="server"></textarea>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="isAnonymous" runat="server" type="checkbox">
+                                        Anonymous
+                                    </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <button class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button class="btn btn-default" runat="server">Cancel</button>
+                                    <asp:LinkButton Text="Submit" runat="server" class="btn btn-primary" OnClick="jokeSubmit_Click" />    
+                                </div>
                             </div>
-                        </div>
                     </fieldset>
                 </form>
             </asp:Panel>
@@ -51,19 +59,19 @@
                         <div class="form-group">
                             <label for="inputTitleLink" class="col-lg-2 control-label">Title</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputTitleLink" placeholder="Title">
+                                <input type="text" class="form-control" id="inputTitleLink" placeholder="Title" runat="server">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="urlLink" class="col-lg-2 control-label">Url</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="urlLink"></input>
+                                <input type="text" class="form-control" runat="server" id="urlLink" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
-                                <button class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button class="btn btn-default" runat="server">Cancel</button>
+                                <asp:LinkButton Text="Submit" runat="server" class="btn btn-primary" OnClick="linkSubmit_Click" />
                             </div>
                         </div>
                     </fieldset>
@@ -77,19 +85,19 @@
                         <div class="form-group">
                             <label for="inputTitlePicture" class="col-lg-2 control-label">Title</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputTitlePicture" placeholder="Title">
+                                <input type="text" class="form-control" id="inputTitlePicture" placeholder="Title" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="urlPic" class="col-lg-2 control-label">Url path</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="urlPic"></input>
+                                <input type="text" class="form-control" id="urlPic" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
-                                <button class="btn btn-default">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button class="btn btn-default" runat="server">Cancel</button>
+                                <asp:LinkButton Text="Submit" runat="server" class="btn btn-primary" OnClick="pictureSubmit_Click" />    
                             </div>
                         </div>
                     </fieldset>
