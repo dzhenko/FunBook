@@ -20,10 +20,6 @@ namespace FunBook.WebForms.AdminAreaPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (this.User == null || !this.User.Identity.IsAuthenticated || !Roles.IsUserInRole("admin"))
-            //{
-            //    Server.Transfer("~/FunAreaPages/Home.aspx", true);
-            //}
         }
 
         protected void ListView1_Sorting(object sender, ListViewSortEventArgs e)
@@ -33,7 +29,15 @@ namespace FunBook.WebForms.AdminAreaPages
 
         public IQueryable<FunBook.Models.User> ListView1_GetData()
         {
-            return this.data.Users.All();
+            string idStr = Request.QueryString["q"];
+            if (idStr == null)
+            {
+                return this.data.Users.All();
+            }
+            else
+            {
+                return this.data.Users.All().Where(x => x.UserName.Contains(idStr));
+            }
         }
 
         // The id parameter name should match the DataKeyNames value set on the control
@@ -69,6 +73,13 @@ namespace FunBook.WebForms.AdminAreaPages
 
             this.data.Users.Delete(item);
             this.data.SaveChanges();
+        }
+
+        protected void LinkButtonSearch_Click(object sender, EventArgs e)
+        {
+            TextBox textbox = (TextBox)ListView1.FindControl("TextBoxSearch");
+            string query = string.Format("?q={0}", textbox.Text);
+            Response.Redirect("~/AdminAreaPages/ManageUsers" + query);
         }
     }
 }

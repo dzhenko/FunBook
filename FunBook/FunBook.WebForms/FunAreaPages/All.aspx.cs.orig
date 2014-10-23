@@ -11,14 +11,24 @@ namespace FunBook.WebForms.FunAreaPages
     {
         private FunBookData db = FunBookData.Create();
 
+<<<<<<< HEAD
         public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString] string search)
+=======
+        public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString]
+                                                                 string search)
+>>>>>>> 799e91446fa3625afea6b4d3bb28fa0bc5ded147
         {
             if (search == null)
             {
                 search = string.Empty;
             }
-
-            search = search.ToLower();
+<<<<<<< HEAD
+=======
+            else
+            {
+                search = search.ToLower();
+            }
+>>>>>>> 799e91446fa3625afea6b4d3bb28fa0bc5ded147
 
             var allJoke = this.db.Jokes.All()
                               .Where(j => j.Text.ToLower().Contains(search) || j.Title.ToLower().Contains(search))

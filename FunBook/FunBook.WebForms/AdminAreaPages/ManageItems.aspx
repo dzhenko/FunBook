@@ -11,9 +11,9 @@
         <LayoutTemplate>
             <div class="container">
                 <div class="row center-block">
-                    <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control col-md-8" />  
-                    <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg"/>
-                </div>               
+                    <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control col-md-8" />
+                    <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg" />
+                </div>
 
                 <table runat="server" class="table table-hover">
                     <tr runat="server" class="active">
@@ -39,9 +39,9 @@
                         <td runat="server">
                             <asp:DataPager ID="DataPager1" runat="server" PageSize="5">
                                 <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"/>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary" />
                                     <asp:NumericPagerField />
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary"/>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" ButtonCssClass="btn btn-primary" />
                                 </Fields>
                             </asp:DataPager>
                         </td>
@@ -67,10 +67,10 @@
         </ItemTemplate>
         <EditItemTemplate>
             <td>
-                <asp:TextBox ID="TextTextBox"  TextMode="multiline" Columns="50" Rows="5" class="form-control" runat="server" Text='<%#: BindItem.Text %>' />
+                <asp:TextBox ID="TextTextBox" TextMode="multiline" Columns="50" Rows="5" class="form-control" runat="server" Text='<%#: BindItem.Text %>' />
             </td>
             <td>
-                <asp:TextBox ID="TitleTextBox" class="form-control"  runat="server" Text='<%#: BindItem.Title %>' />
+                <asp:TextBox ID="TitleTextBox" class="form-control" runat="server" Text='<%#: BindItem.Title %>' />
             </td>
             <td class="info">
                 <asp:LinkButton ID="lnkUpdate" runat="server" CommandName="Update">Update</asp:LinkButton>
@@ -81,7 +81,11 @@
         <EmptyDataTemplate>
             <table runat="server">
                 <tr>
-                    <td>No data was returned.</td>
+                    <td class="text-center">
+                        <div class="container">
+                            <h2 class="menu text-center">No jokes were found.</h2>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </EmptyDataTemplate>
