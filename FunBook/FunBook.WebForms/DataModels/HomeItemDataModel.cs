@@ -17,7 +17,8 @@
                     Id = j.Id.ToString(),
                     Title = j.Title,
                     Content = j.Text,
-                    Created = j.Created
+                    Created = j.Created,
+                    DetailsUrl = "JokeDetails?jokeId=" + j.Id.ToString()
                 };
             }
         }
@@ -31,7 +32,8 @@
                     Id = l.Id.ToString(),
                     Title = l.Title,
                     Content = l.URL,
-                    Created = l.Created
+                    Created = l.Created,
+                    DetailsUrl = "LinkDetails?linkId=" + l.Id.ToString()
                 };
             }
         }
@@ -45,7 +47,8 @@
                     Id = p.Id.ToString(),
                     Title = p.Title,
                     Content = p.UrlPath,
-                    Created = p.Created
+                    Created = p.Created,
+                    DetailsUrl = "PictureDetails?picId=" + p.Id.ToString()
                 };
             }
         }
@@ -57,5 +60,7 @@
         public string Content { get; set; }
 
         public DateTime Created { get; set; }
+
+        public string DetailsUrl { get; set; }
     }
 }
