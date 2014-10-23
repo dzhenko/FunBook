@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity;
 
 namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
-    public partial class ManageFun : System.Web.UI.Page
+    public partial class AddFun : System.Web.UI.Page
     {
         private static List<string> categoriesNames;
         private IFunBookData data;

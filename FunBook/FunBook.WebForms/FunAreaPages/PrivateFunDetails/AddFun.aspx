@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#"
     MasterPageFile="~/FunAreaPages/FunMasterPage.master"
-    AutoEventWireup="true" CodeBehind="ManageFun.aspx.cs"
-    Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.ManageFun" %>
+    AutoEventWireup="true" CodeBehind="AddFun.aspx.cs"
+    Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.AddFun" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <asp:UpdatePanel ID="UpdatePanelChooseFun" runat="server" class="managefun-panel-radio" UpdateMode="Conditional">

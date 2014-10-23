@@ -10,7 +10,7 @@
 namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
     
     
-    public partial class ManageFun {
+    public partial class AddFun {
         
         /// <summary>
         /// UpdatePanelChooseFun control.

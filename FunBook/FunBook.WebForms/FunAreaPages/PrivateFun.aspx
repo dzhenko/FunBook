@@ -7,13 +7,6 @@
 
 <asp:Content ID="OwnFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <h1>Created by <%: Context.User.Identity.GetUserName().Split('@')[0]  %> </h1>
-    <ul class="nav nav-pills">
-        <li class="button"> 
-            <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonAddFun_Command" runat="server">
-                Add
-            </asp:LinkButton>
-        </li>
-    </ul>
     <ul class="nav nav-tabs">
         <li class="active" runat="server" id="liJoke"><a href="#home" data-toggle="tab">Jokes</a></li>
         <li class="" runat="server" id="liLink"><a href="#links" data-toggle="tab">Links</a></li>
@@ -39,6 +32,15 @@
                         </asp:LinkButton>
                         <section class="joke-info">
                             <ul class="nav nav-pills">
+                                <li class="button">
+                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditJoke_Command" runat="server">
+                                        Edit
+                                    </asp:LinkButton></li>
+                                <li class="button">
+                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteJoke_Command" runat="server">
+                                        Delete
+                                    </asp:LinkButton>
+                                </li>
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                 <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
                                 <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
@@ -53,14 +55,14 @@
                 QueryStringField="page">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NextPreviousPagerField NextPageText="Previous"
-                        ShowNextPageButton="false" ShowPreviousPageButton="true" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="true" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NumericPagerField />
                     <asp:NextPreviousPagerField NextPageText="Next"
-                        ShowNextPageButton="true" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="true" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NextPreviousPagerField ShowLastPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                 </Fields>
             </asp:DataPager>
         </div>
@@ -83,6 +85,16 @@
                         </p>
                         <section class="joke-info">
                             <ul class="nav nav-pills">
+                                <li class="button">
+                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditLink_Command" runat="server">
+                                        Edit
+                                    </asp:LinkButton>
+                                </li>
+                                <li class="button">
+                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteLink_Command" runat="server">
+                                        Delete
+                                    </asp:LinkButton>
+                                </li>
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                 <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
                                 <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
@@ -96,15 +108,15 @@
                 PagedControlID="ListViewLinks" PageSize="4"
                 QueryStringField="page">
                 <Fields>
-                    <asp:NextPreviousPagerField ShowFirstPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ButtonCssClass="btn btn-primary btn-xs"
+                        ShowNextPageButton="false" ShowPreviousPageButton="false"/>
                     <asp:NextPreviousPagerField NextPageText="Previous"
-                        ShowNextPageButton="false" ShowPreviousPageButton="true" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="true" ButtonCssClass="btn btn-primary btn-xs"/>
                     <asp:NumericPagerField />
                     <asp:NextPreviousPagerField NextPageText="Next"
-                        ShowNextPageButton="true" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="true" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NextPreviousPagerField ShowLastPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                 </Fields>
             </asp:DataPager>
         </div>
@@ -132,6 +144,16 @@
                             </p>
                             <section class="joke-info">
                                 <ul class="nav nav-pills">
+                                    <li class="button">
+                                        <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditPicture_Command" runat="server">
+                                        Edit
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li class="button">
+                                        <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeletePicture_Command" runat="server">
+                                        Delete
+                                        </asp:LinkButton>
+                                    </li>
                                     <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                     <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
                                     <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
@@ -147,14 +169,14 @@
                 QueryStringField="page">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NextPreviousPagerField NextPageText="Previous"
-                        ShowNextPageButton="false" ShowPreviousPageButton="true" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="true" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NumericPagerField />
                     <asp:NextPreviousPagerField NextPageText="Next"
-                        ShowNextPageButton="true" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="true" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NextPreviousPagerField ShowLastPageButton="true"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />
                 </Fields>
             </asp:DataPager>
         </div>

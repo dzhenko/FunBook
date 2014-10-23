@@ -11,23 +11,5 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails {
     
     
     public partial class LikeDetails {
-        
-        /// <summary>
-        /// LinkButtonEditLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonEditLink;
-        
-        /// <summary>
-        /// LinkButtonDeleteLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonDeleteLink;
     }
 }

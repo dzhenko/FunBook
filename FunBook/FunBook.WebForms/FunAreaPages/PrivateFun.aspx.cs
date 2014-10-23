@@ -7,13 +7,26 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using FunBook.Data;
 using Microsoft.AspNet.Identity;
+using FunBook.Models;
 
 namespace FunBook.WebForms.FunAreaPages
 {
     public partial class Create : System.Web.UI.Page
     {
+        private IFunBookData data;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            this.data = new FunBookData();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Context.User.Identity.IsAuthenticated)
+            {
+                this.Response.Redirect("Home.aspx");
+            }
+
             var data = FunBookData.Create();
             var id = Context.User.Identity.GetUserId();
             var jokes = data.Jokes.All().Where(uid => uid.UserId == id).ToList();
@@ -63,9 +76,131 @@ namespace FunBook.WebForms.FunAreaPages
             this.Response.Redirect("PrivateFunDetails/PictureDetails.aspx?picId=" + picId);
         }
 
-        protected void LinkButtonAddFun_Command(object sender, CommandEventArgs e)
+        protected void LinkButtonEditJoke_Command(object sender, CommandEventArgs e)
         {
-            this.Response.Redirect("PrivateFunDetails/ManageFun.aspx");
+            var jokeId = e.CommandArgument;
+            this.Response.Redirect("PrivateFunDetails/FunForms/JokeEdit.aspx?id=" + jokeId);
+        }
+
+        protected void LinkButtonDeleteJoke_Command(object sender, CommandEventArgs e)
+        {
+            string idAsString = e.CommandArgument.ToString();
+            var id = Guid.Parse(idAsString);
+            var joke = data.Jokes.Find(id);
+            var views = joke.Views.ToList();
+            var comments = joke.Comments.ToList();
+            var tags = joke.Tags.ToList();
+
+
+            foreach (var view in views)
+            {
+                this.data.Views.Delete(view);
+            }
+
+            foreach (Comment com in comments)
+            {
+                this.data.Comments.Delete(com);
+            }
+
+            foreach (Tag tag in tags)
+            {
+                var tagJokes = tag.Jokes.ToList();
+
+                foreach (var tagJoke in tagJokes)
+                {
+                    tag.Jokes.Remove(joke);
+                }
+            }
+
+            this.data.Jokes.Delete(joke);
+
+            this.data.SaveChanges();
+            this.Response.Redirect("PrivateFun.aspx");
+        }
+
+        protected void LinkButtonEditLink_Command(object sender, CommandEventArgs e)
+        {
+            var linkId = e.CommandArgument;
+            this.Response.Redirect("PrivateFunDetails/FunForms/LinkEdit.aspx?id=" + linkId);
+        }
+
+        protected void LinkButtonDeleteLink_Command(object sender, CommandEventArgs e)
+        {
+            string idAsString = e.CommandArgument.ToString();
+            var id = Guid.Parse(idAsString);
+            var link = data.Links.Find(id);
+            var views = link.Views.ToList();
+            var comments = link.Comments.ToList();
+            var tags = link.Tags.ToList();
+
+
+            foreach (var view in views)
+            {
+                this.data.Views.Delete(view);
+            }
+
+            foreach (Comment com in comments)
+            {
+                this.data.Comments.Delete(com);
+            }
+
+            foreach (Tag tag in tags)
+            {
+                var tagJokes = tag.Links.ToList();
+
+                foreach (var tagJoke in tagJokes)
+                {
+                    tag.Links.Remove(link);
+                }
+            }
+
+            this.data.Links.Delete(link);
+
+            this.data.SaveChanges();
+            this.Response.Redirect("PrivateFun.aspx");
+        }
+
+
+        protected void LinkButtonEditPicture_Command(object sender, CommandEventArgs e)
+        {
+            var id = Guid.Parse(e.CommandArgument.ToString());
+            this.Response.Redirect("PrivateFunDetails/FunForms/PictureEdit.aspx?id=" + id);
+        }
+
+        protected void LinkButtonDeletePicture_Command(object sender, CommandEventArgs e)
+        {
+            string idAsString = e.CommandArgument.ToString();
+            var id = Guid.Parse(idAsString);
+            var picture = data.Pictures.Find(id);
+            var views = picture.Views.ToList();
+            var comments = picture.Comments.ToList();
+            var tags = picture.Tags.ToList();
+
+
+            foreach (var view in views)
+            {
+                this.data.Views.Delete(view);
+            }
+
+            foreach (Comment com in comments)
+            {
+                this.data.Comments.Delete(com);
+            }
+
+            foreach (Tag tag in tags)
+            {
+                var tagJokes = tag.Pictures.ToList();
+
+                foreach (var tagJoke in tagJokes)
+                {
+                    tag.Pictures.Remove(picture);
+                }
+            }
+
+            this.data.Pictures.Delete(picture);
+
+            this.data.SaveChanges();
+            this.Response.Redirect("PrivateFun.aspx");
         }
     }
 }

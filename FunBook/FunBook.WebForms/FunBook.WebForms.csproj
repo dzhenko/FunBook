@@ -196,7 +196,7 @@
     <Content Include="FunAreaPages\PrivateFunDetails\FunForms\PictureEdit.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\JokeDetails.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx" />
-    <Content Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx" />
+    <Content Include="FunAreaPages\PrivateFunDetails\AddFun.aspx" />
     <Content Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="Account\Web.config" />
@@ -529,12 +529,12 @@
     <Compile Include="FunAreaPages\PrivateFunDetails\LinkDetails.aspx.designer.cs">
       <DependentUpon>LinkDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx.cs">
-      <DependentUpon>ManageFun.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\PrivateFunDetails\AddFun.aspx.cs">
+      <DependentUpon>AddFun.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FunAreaPages\PrivateFunDetails\ManageFun.aspx.designer.cs">
-      <DependentUpon>ManageFun.aspx</DependentUpon>
+    <Compile Include="FunAreaPages\PrivateFunDetails\AddFun.aspx.designer.cs">
+      <DependentUpon>AddFun.aspx</DependentUpon>
     </Compile>
     <Compile Include="FunAreaPages\PrivateFunDetails\PictureDetails.aspx.cs">
       <DependentUpon>PictureDetails.aspx</DependentUpon>
