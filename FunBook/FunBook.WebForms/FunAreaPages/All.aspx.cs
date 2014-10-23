@@ -11,7 +11,7 @@ namespace FunBook.WebForms.FunAreaPages
     {
         private FunBookData db = FunBookData.Create();
 
-        public IQueryable<HomeItemDataModel> GridViewAll_GetData([QueryString] string search)
+        public IQueryable<AllItemDataModel> GridViewAll_GetData([QueryString] string search)
         {
             if (search == null)
             {
@@ -22,21 +22,22 @@ namespace FunBook.WebForms.FunAreaPages
 
             var allJoke = this.db.Jokes.All()
                               .Where(j => j.Text.ToLower().Contains(search) || j.Title.ToLower().Contains(search))
-                              .Select(HomeItemDataModel.FromJoke);
+                              .Select(AllItemDataModel.FromJoke);
 
             var allLink = this.db.Links.All()
                               .Where(l => l.URL.ToLower().Contains(search) || l.Title.ToLower().Contains(search))
-                              .Select(HomeItemDataModel.FromLink);
+                              .Select(AllItemDataModel.FromLink);
 
             var allPicture = this.db.Pictures.All()
                                  .Where(p => p.UrlPath.ToLower().Contains(search) || p.Title.ToLower().Contains(search))
-                                 .Select(HomeItemDataModel.FromPicture);
+                                 .Select(AllItemDataModel.FromPicture);
 
             return allJoke.Union(allLink).Union(allPicture);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.HoverDetails.ItemsToShow = this.GridViewAll_GetData(null);
         }
     }
 }

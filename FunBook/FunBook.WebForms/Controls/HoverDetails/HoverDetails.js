@@ -1,11 +1,13 @@
 ﻿(function () {
     document.addEventListener("DOMContentLoaded", function () {
         var $holder = $('#HoverDetailsHolder');
-        
+
         $('.hoveredItem').on("mouseenter", function (el) {
-            $('#HoverDetailsOptions input').val(el.currentTarget.dataset.id);
+            var target = el.currentTarget;
+            $('#HoverDetailsOptions input').val(target.dataset.id);
             __doPostBack($('#HoverDetailsHolder > div').attr('id'));
-            $holder.css({ top: el.clientY + 20, left: el.clientX + 20 }).fadeIn("fast");
+            var position = $(target).offset();
+            $holder.css({ top: position.top - 290, left: position.left - 220 }).fadeIn("fast");
         });
 
         $holder.on("mouseover", function () {

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="JokeEdit.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms.JokeEdit" %>
 
-<asp:Content= ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="form-horizontal">
         <fieldset>
             <legend>Edit Joke</legend>
@@ -33,4 +33,4 @@
             </div>
         </fieldset>
     </div>
-</asp:Content=>
+</asp:Content>

@@ -13,7 +13,7 @@ namespace TestASCX.HoverDetails
         {
             if (this.ItemsToShow != null)
             {
-                this.HoverDetailsView.PageIndex = int.Parse(this.HiddenHoveredItemId.Value) - 1;
+                this.HoverDetailsView.PageIndex = int.Parse(this.HiddenHoveredItemId.Value);
                 if (this.HoverDetailsView.DataSource == null)
                 {
                     this.HoverDetailsView.DataSource = this.ItemsToShow.ToList();
