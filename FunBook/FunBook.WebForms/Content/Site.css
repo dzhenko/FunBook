@@ -355,19 +355,32 @@ footer {
 }
 
 .middleButtonAdminArea {
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #HoverDetailsHolder table td {
-    padding:0!important;
+    padding: 0 !important;
 }
 
 #HoverDetailsHolder table div {
-    margin:0!important;
+    margin: 0 !important;
 }
 
 #HoverDetailsHolder {
-    position:absolute;
+    position: absolute;
+}
+.custom-box {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px #428bd2;
+    background-color: transparent;
 }
 
+.panel-heading {
+    background-color: rgba(239, 246, 242, 0.9);
+}
+
+.panel-body {
+    background-color: rgba(255,255,255,0.9);
+}

@@ -10,7 +10,7 @@
             <div id="hover-item-details-holder">
                 <asp:DetailsView CssClass="table" runat="server" ID="HoverDetailsView" AutoGenerateRows="false" ItemType="FunBook.WebForms.DataModels.AllItemDataModel">
                     <HeaderTemplate>
-                        <div class="panel panel-primary">
+                       <div class="custom-box blue">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><%# Item.Title %></h3>
                             </div>
