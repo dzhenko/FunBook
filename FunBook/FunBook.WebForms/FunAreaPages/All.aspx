@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="All.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.All" %>
-
+<%@ Register TagPrefix="uc" TagName="HoverDetails" Src="~/Controls/HoverDetails/HoverDetails.ascx" %>
 <asp:Content ID="ContentAllFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="row jokes-content">
         <asp:ListView ID="ViewAllFun" runat="server"
             SelectMethod="GridViewAll_GetData"
-            ItemType="FunBook.WebForms.DataModels.HomeItemDataModel"
+            ItemType="FunBook.WebForms.DataModels.AllItemDataModel"
             AllowPaging="True" AllowSorting="True"
             DataKeyNames="Id"
             AutoGenerateColumns="false">
@@ -19,8 +19,8 @@
                 </div>
             </LayoutTemplate>
             <ItemTemplate runat="server">
-                <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
-                    CssClass="col-sm-3" runat="server">
+                <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>' 
+                    CssClass="col-sm-3 hoveredItem" runat="server" data-id="<%# Container.DataItemIndex %>">
                     <%# Item.Title %>
                 </asp:HyperLink>
                 <asp:Label CssClass="col-sm-7" runat="server">
@@ -42,4 +42,6 @@
             </Fields>
         </asp:DataPager>
     </div>
+    <uc:HoverDetails runat="server" ID="HoverDetails" />
+    <script src="../Controls/HoverDetails/HoverDetails.js"></script>
 </asp:Content>
