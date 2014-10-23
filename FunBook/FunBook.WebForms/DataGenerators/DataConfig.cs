@@ -12,14 +12,14 @@ namespace FunBook.WebForms.DataGenerators
         {
             var context = new FunBookDbContext();
 
-            if (!context.Roles.Any())
-            {
-                (new RolesGenerator()).Generate(context);
-            }
-
             if (!context.Users.Any())
             {
                 (new UsersGenerator()).Generate(context);
+            }
+
+            if (!context.Roles.Any())
+            {
+                (new RolesGenerator()).Generate(context);
             }
 
             if (!context.Jokes.Any())
