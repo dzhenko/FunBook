@@ -12,14 +12,18 @@ namespace FunBook.WebForms.AdminAreaPages
     public partial class ManageItems : System.Web.UI.Page
     {
         FunBookData data;
+
+        public ManageItems()
+        {
+            this.data = FunBookData.Create();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.User == null || !this.User.Identity.IsAuthenticated || !Roles.IsUserInRole("admin"))
-            {
-                Server.Transfer("~/FunAreaPages/Home.aspx", true);
-            }
-
-            this.data = FunBookData.Create();
+            //if (this.User == null || !this.User.Identity.IsAuthenticated || !Roles.IsUserInRole("admin"))
+            //{
+            //    Server.Transfer("~/FunAreaPages/Home.aspx", true);
+            //}
         }
 
         protected void ListView1_Sorting(object sender, ListViewSortEventArgs e)
