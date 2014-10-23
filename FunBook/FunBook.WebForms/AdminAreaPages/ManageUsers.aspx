@@ -9,6 +9,11 @@
         DeleteMethod="ListView1_DeleteItem">
         <LayoutTemplate>
             <div class="container">
+                <div class="row center-block">
+                    <asp:TextBox runat="server" ID="TextBoxSearch" CssClass="form-control col-md-8" />
+                    <asp:LinkButton Text="Search" runat="server" ID="LinkButtonSearch" OnClick="LinkButtonSearch_Click" CssClass="btn btn-lg" />
+                </div>
+
                 <table runat="server" class="table table-hover">
                     <tr runat="server" class="active">
                         <td runat="server">
@@ -75,7 +80,11 @@
         <EmptyDataTemplate>
             <table runat="server">
                 <tr>
-                    <td>No data was returned.</td>
+                    <td class="text-center">
+                        <div class="container">
+                            <h2 class="menu text-center">No users were found.</h2>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </EmptyDataTemplate>
