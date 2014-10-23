@@ -20,10 +20,6 @@ namespace FunBook.WebForms.AdminAreaPages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (this.User == null || !this.User.Identity.IsAuthenticated || !Roles.IsUserInRole("admin"))
-            //{
-            //    Server.Transfer("~/FunAreaPages/Home.aspx", true);
-            //}
         }
 
         protected void ListView1_Sorting(object sender, ListViewSortEventArgs e)
