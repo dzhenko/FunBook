@@ -52,7 +52,11 @@ namespace FunBook.WebForms.AdminAreaPages
             var userStore = new UserStore<User>(new FunBookDbContext());
             var userManager = new UserManager<User>(userStore);
 
-            if (((CheckBox)this.ListView.FindControl("IsAdminCheckBox")).Checked)
+            CheckBox checkbox = (CheckBox)this.ListView.FindControl("IsAdminCheckBox");
+            TextBox textbox = (TextBox)this.ListView.FindControl("TextBoxSearch");
+            var isChecked = checkbox.Checked;
+
+            if (isChecked)
             {
                 userManager.AddToRole(item.Id, "admin");
             }
@@ -97,6 +101,8 @@ namespace FunBook.WebForms.AdminAreaPages
 
             this.data.Users.Delete(item);
             this.data.SaveChanges();
+
+            DataBind();
         }
     }
 }

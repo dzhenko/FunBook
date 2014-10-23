@@ -102,7 +102,7 @@
                     <asp:TextBox ID="EmailTextBox" runat="server" Text='<%#: Item.Email %>' />
                 </td>
                 <td>
-                    <asp:CheckBox ID="IsAdminCheckBox" runat="server" Checked='<%# Eval("IsAdmin") %>' />
+                    <asp:CheckBox ID="IsAdminCheck" runat="server" Checked='<%# Eval("IsAdmin") %>' />
                 </td>
                 <td>
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
