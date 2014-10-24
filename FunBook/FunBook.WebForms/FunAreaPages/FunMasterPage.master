@@ -25,8 +25,9 @@
                 <ContentTemplate>
                     <div class="navbar-right">
                         <input type="hidden" id="SearchBtnStarter" />
-                        <asp:TextBox type="text" AutoPostBack="true" CssClass="form-control col-lg-8" placeholder="Search Fun" runat="server" ID="TbSearch" />
-                        <asp:LinkButton runat="server" OnClick="SearchHyperLink_Click" ID="SearchBtn" CssClass="search-btn" Text="Search"></asp:LinkButton>
+                        <asp:TextBox type="text" AutoPostBack="true" CssClass="form-control search pull-left" placeholder="Search Fun" runat="server" ID="TbSearch" />
+                        <asp:LinkButton runat="server" OnClick="SearchHyperLink_Click" ID="SearchBtn" CssClass="search-btn pull-right" Text="Search"></asp:LinkButton>
+
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
@@ -35,7 +36,7 @@
 
     <div class="container custom-container">
         <div class="row site-map">
-            <asp:SiteMapPath runat="server"></asp:SiteMapPath>
+            <asp:SiteMapPath runat="server" CssClass="blue"></asp:SiteMapPath>
         </div>
         <aside class="categories-menu col-sm-2">
             <strong class="categories-menu-title">Categories:</strong>

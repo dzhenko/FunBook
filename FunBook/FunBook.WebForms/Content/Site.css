@@ -111,8 +111,12 @@ aside {
 }
 
 .navbar-brand {
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+}
+
+.navbar-collapse {
+    padding: 0 !important;
 }
 
 .content-title, .content-empty {
@@ -227,9 +231,8 @@ footer {
     }
 
 #fun-content {
-    padding: 25px 10px 25px 10px;
-    background-color: white;
-    border-radius: 15px;
+    /*padding: 25px 10px 25px 10px;*/
+    background-color: transparent;
 }
 
     #fun-content p {
@@ -243,6 +246,7 @@ footer {
 }
 
     .joke-info ul {
+        margin-top:10px;
         display: inline-block;
     }
 
@@ -402,4 +406,13 @@ footer {
 
 .validationarea span {
     color: #ee3963 !important;
+}
+
+.search {
+    width: 150px !important;
+}
+
+.icon-bar{
+    background-color:#428bd2 !important;
+    color: #428bd2 !important;
 }

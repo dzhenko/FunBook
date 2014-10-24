@@ -28,7 +28,7 @@
                         <img class="carosel-image" src="../Content/Images/Creators/10580767_10204054652960275_6716628473550351430_o.jpg" />
                         <div class="carousel-caption">
                             <a href="https://github.com/epitsin">
-                                <h1 class="pink pull-right">Elena Picin</h1>
+                                <h1 class="pink pull-right">Elena Pitsin</h1>
                             </a>
                         </div>
                     </div>

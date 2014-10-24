@@ -40,21 +40,24 @@ input[type="select"] {
     max-width: 280px;
 }
 
-.center{
-    text-align:center;
-}
-img{
-    border-radius:10px
-}
-.about-funbook h2{
-    color:purple;
+.center {
+    text-align: center;
 }
 
-.about-funbook p,.about-funbook a{
-    font-size:19px
+img {
+    border-radius: 10px;
 }
-.about-funbook ul{
-    list-style-type:none;
+
+.about-funbook h2 {
+    color: purple;
+}
+
+.about-funbook p, .about-funbook a {
+    font-size: 19px;
+}
+
+.about-funbook ul {
+    list-style-type: none;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -69,11 +72,6 @@ img{
 
 .jokes-content {
     padding: 0 20px;
-}
-
-.popular, .recent {
-    display: inline-block;
-    padding: 20px;
 }
 
 a {
@@ -109,17 +107,28 @@ aside {
 
 .categories-menu-title {
     color: #afca57;
+    font-size: 1.3em;
 }
 
 .navbar-brand {
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+}
+
+.navbar-collapse {
+    padding: 0 !important;
 }
 
 .content-title, .content-empty {
     font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
     color: #afca57;
-    margin:5px 5px 2px 5px;
+    margin: 5px 5px 2px 5px;
+}
+
+.content-title-all {
+    font-family: Salsa-Regular,Arial,Helvetica,sans-serif;
+    color: #afca57;
+    font-size: 1.2em;
 }
 
 .sort-link {
@@ -139,21 +148,38 @@ ul.main-menu > li {
     color: white;
 }
 
-    ul.main-menu > li > a {
+    ul.main-menu > li > a, .search-btn {
         color: white;
         font-size: 1.2em;
     }
 
-        ul.main-menu > li > a:hover {
+        ul.main-menu > li > a:hover, .search-btn:hover {
             background-color: rgba(255, 250, 250, 0.55);
+            color: white;
         }
 
+.search-btn {
+    background-color: transparent;
+    margin-top: 10px;
+    display: inline-block;
+}
+
 .custom-container {
-    margin-top: 20px;
+    margin-top: 10px;
+}
+
+.site-map {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: #428bca;
 }
 
 .navItem {
     display: block;
+}
+
+.navbar-right {
+    margin: 3px;
 }
 
 table.items-grid, table.items-grid th, table.items-grid tr, table.items-grid td {
@@ -205,9 +231,8 @@ footer {
     }
 
 #fun-content {
-    padding: 25px 10px 25px 10px;
-    background-color: white;
-    border-radius: 15px;
+    /*padding: 25px 10px 25px 10px;*/
+    background-color: transparent;
 }
 
     #fun-content p {
@@ -221,6 +246,7 @@ footer {
 }
 
     .joke-info ul {
+        margin-top:10px;
         display: inline-block;
     }
 
@@ -228,12 +254,12 @@ footer {
 }
 
     .button a {
-        background-color: #ee3963;
-        color: white;
+        background-color: white;
+        color: #afca57;
     }
 
     .button:hover a:hover {
-        background-color: #ee3963;
+        background-color: white;
     }
 
     .button .badge {
@@ -263,21 +289,30 @@ footer {
 
 #open-link {
     font-size: 17px;
-    background-color: white;
-    color: black ;
+    background-color: transparent;
+    color: black;
     display: block;
     padding: 20px;
-    border-radius: 15px;
+    box-shadow: 0 3px 10px #ee3963;
+    /*border-radius: 15px;*/
     overflow: hidden;
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 
-    #open-link:hover {
+/*#open-link:hover {
         background-color: #ee3963;
         color: white;
-    }
+    }*/
+
+.item-title-block {
+    box-shadow: 0 -3px 10px #ee3963;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 5px;
+}
 
 #headerHolder {
     background-image: url(Images/back.jpg);
@@ -286,39 +321,100 @@ footer {
     min-height: 15em;
 }
 
-<<<<<<< HEAD
-#headerHolder a {
-    background-color: #ee3963;
-    color:#ffffff;
-    margin-right:2em;
-}
-
-#headerHolder a:hover {
-    color:#428bca;
-}
-
-#headerHolder h1 {
-    font-family:'Comic Sans MS', cursive;
-    margin-right:0.5em;
-    font-size: 5em;
-    color: #ee3963;
-}
-
-#headerHolder > div > div > a > h1 > span:hover{
-    color:#428bca;
-}
-=======
     #headerHolder a {
         background-color: #ee3963;
         color: #ffffff;
-        margin-top: 2em;
         margin-right: 2em;
     }
 
+        #headerHolder a:hover {
+            color: #afca57;
+            /*text-shadow: 0 0 10px white;*/
+        }
+
     #headerHolder h1 {
-        font-family: 'Comic Sans MS', cursive;
+        font-family: Salsa-Regular,'Comic Sans MS', cursive;
         margin-right: 0.5em;
         font-size: 5em;
         color: #ee3963;
     }
->>>>>>> e24978b89e2bf6a0badbccf6ec5c6058f0ceb4f4
+
+    #headerHolder > div > div > a > h1 > span:hover {
+        color: #afca57;
+    }
+
+.form-control {
+    width: 281px;
+    margin: 5px;
+}
+
+.nav-pills {
+    margin-bottom: 10px;
+}
+
+.pink {
+    color: #ee3963 !important;
+    font-family: Salsa-Regular,'Comic Sans MS', cursive;
+}
+
+.blue {
+    color: #428bd2 !important;
+    font-family: Salsa-Regular,'Comic Sans MS', cursive;
+}
+
+.middleButtonAdminArea {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#HoverDetailsHolder table td {
+    padding: 0 !important;
+}
+
+#HoverDetailsHolder table div {
+    margin: 0 !important;
+}
+
+#HoverDetailsHolder {
+    position: absolute;
+}
+
+.custom-box {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px #428bd2;
+    background-color: transparent;
+}
+
+.panel-heading {
+    background-color: rgba(239, 246, 242, 0.9);
+}
+
+.panel-body {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+
+.all-items-table-row {
+    border-top: solid 1px lightgray;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+<<<<<<< HEAD
+.validationarea span {
+    color: #ee3963 !important;
+=======
+
+.search {
+    width: 150px !important;
+}
+
+.icon-bar{
+    background-color:#428bd2 !important;
+    color: #428bd2 !important;
+>>>>>>> e560fbf78c7aafbe12f717685947cf30ffc36c3d
+}
