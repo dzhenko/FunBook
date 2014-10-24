@@ -74,7 +74,7 @@
                 <asp:TextBox ID="EmailTextBox" class="form-control" runat="server" Text='<%#: BindItem.Email %>' />
             </td>
             <td>
-                <asp:CheckBox ID="IsAdminCheckBox" OnCheckedChanged="IsAdminCheckBox_CheckedChanged" class="form-control" runat="server" Checked='<%# Eval("IsAdmin") %>' />
+                <asp:CheckBox ID="IsAdminCheckBox" OnCheckedChanged="IsAdminCheckBox_CheckedChanged" runat="server" Checked='<%# Eval("IsAdmin") %>' />
             </td>
             <td>
                 <asp:LinkButton ID="lnkUpdate" CssClass="btn btn-sm btn-success" runat="server" CommandName="Update">Update</asp:LinkButton>
