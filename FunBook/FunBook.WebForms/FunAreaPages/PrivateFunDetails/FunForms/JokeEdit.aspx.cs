@@ -52,8 +52,14 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms
 
         private Joke GetCurrentJoke()
         {
-            var id = Guid.Parse(Request.QueryString["id"]);
-            return data.Jokes.Find(id);
+            var id = Request.QueryString["id"];
+
+            if (string.IsNullOrEmpty(id))
+            {
+                Response.Redirect("~/");
+            }
+
+            return data.Jokes.Find(Guid.Parse(id));
         }
     }
 }

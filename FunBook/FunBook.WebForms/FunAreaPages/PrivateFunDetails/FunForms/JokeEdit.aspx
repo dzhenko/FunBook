@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                    <button class="btn btn-default" runat="server">Cancel</button>
+                    <a  href="/" class="btn btn-default" runat="server">Cancel</a>
                     <asp:LinkButton Text="Submit" runat="server" class="btn btn-primary" OnClick="jokeEdit_Click" />
                 </div>
             </div>

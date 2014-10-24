@@ -52,8 +52,14 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms
 
         private Link GetCurrentLink()
         {
-            var id = Guid.Parse(Request.QueryString["id"]);
-            return data.Links.Find(id);
+            var id = Request.QueryString["id"];
+
+            if (string.IsNullOrEmpty(id))
+            {
+                Response.Redirect("~/");
+            }
+
+            return data.Links.Find(Guid.Parse(id));
         }
     }
 }

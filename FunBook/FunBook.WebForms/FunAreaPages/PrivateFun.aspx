@@ -5,6 +5,8 @@
     CodeBehind="PrivateFun.aspx.cs"
     Inherits="FunBook.WebForms.FunAreaPages.Create" %>
 
+<%@ Register TagPrefix="uc" TagName="ModalWindow" Src="~/Controls/ModalWindow/ModalWindow.ascx" %>
+
 <asp:Content ID="OwnFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <h1 class="blue no-top-margin"><i><%: Context.User.Identity.GetUserName().Split('@')[0]  %>'s </i> fun</h1>
     <ul class="nav nav-tabs">
@@ -192,4 +194,9 @@
             </asp:DataPager>
         </div>
     </div>
+    <asp:TextBox ID="HiddenfieldDeleteType" runat="server" Visible="false"></asp:TextBox>
+    <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
+    <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" OnOKButtonClicked="ModalWindow_OKButtonClicked" 
+        ModalWindowText="Are you sure you want to delete this piece of fun? This action is irreversible!" />
+    <script src="../Controls/ModalWindow/modalWindow.js"></script>
 </asp:Content>

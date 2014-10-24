@@ -25,7 +25,6 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms
                 var picture = GetCurrentLink();
 
                 this.inputTitlePicture.Value = picture.Title;
-                this.urlPic.Value = picture.UrlPath;
 
                 if (picture.IsAnonymous)
                 {
@@ -41,24 +40,24 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms
             var picture = GetCurrentLink();
 
             picture.Title = this.inputTitlePicture.Value;
-            picture.UrlPath = this.urlPic.Value;
             picture.IsAnonymous = this.isAnonymous.Checked;
 
             data.Pictures.Update(picture);
             data.SaveChanges();
-
-            if (FileUploadControl.HasFile)
-            {
-                // TODO:
-            }
 
             this.Response.Redirect("../../PrivateFun.aspx");
         }
 
         private Picture GetCurrentLink()
         {
-            var id = Guid.Parse(Request.QueryString["id"]);
-            return data.Pictures.Find(id);
+            var id = Request.QueryString["id"];
+
+            if (string.IsNullOrEmpty(id))
+            {
+                Response.Redirect("~/");
+            }
+
+            return data.Pictures.Find(Guid.Parse(id));
         }
     }
 }

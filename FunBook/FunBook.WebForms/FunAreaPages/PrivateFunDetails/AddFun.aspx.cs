@@ -24,6 +24,7 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Page.Form.Enctype = "multipart/form-data";
             var data = FunBookData.Create();
             categoriesNames = data.Categories.All().Select(c => c.Name).ToList();
             
@@ -117,7 +118,7 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 		        return;
             }
 
-            if (file.FileName.EndsWith(".jpg") || file.ContentType != "image/jpeg")
+            if (!file.FileName.EndsWith(".jpg") || file.ContentType != "image/jpeg")
             {
                 // invalid file format
                 return;
