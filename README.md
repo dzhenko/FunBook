@@ -18,8 +18,8 @@ Fun book is a simple application, used to create, share, comment, like, and view
 ## [List of Contributors](https://github.com/fast4y/FunBook/graphs/contributors)
 
 ## FunBook - User Interface
-<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/images/1.jpg" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/images/2.jpg" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/images/3.jpg" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/images/4.jpg" /></p>
-<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/images/5.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/Images/1.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/Images/2.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/Images/3.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/Images/4.jpg" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/fast4y/FunBook/master/Images/5.jpg" /></p>
