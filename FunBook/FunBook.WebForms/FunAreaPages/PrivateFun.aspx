@@ -93,7 +93,7 @@
                     <section class="fun-main-container">
                         <p>
                             <asp:LinkButton ID="LinkButton4" OnCommand="LinkButtonLike_Command" CommandArgument="<%# Item.Id %>" runat="server">
-                                <span id="open-link" class="btn btn-default btn-lg btn-block"><%#: Item.Title %></span>
+                                <span id="open-link" ><%#: Item.Title %></span>
                             </asp:LinkButton>
                         </p>
                         <section class="joke-info">
