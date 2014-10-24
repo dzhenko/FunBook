@@ -99,12 +99,12 @@
                         <section class="joke-info">
                             <ul class="nav nav-pills">
                                 <li class="button">
-                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditLink_Command" runat="server">
+                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditLink_Command" runat="server"  CssClass="pink">
                                         Edit
                                     </asp:LinkButton>
                                 </li>
                                 <li class="button">
-                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteLink_Command" runat="server">
+                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteLink_Command" runat="server"  CssClass="pink">
                                         Delete
                                     </asp:LinkButton>
                                 </li>
@@ -158,12 +158,12 @@
                             <section class="joke-info">
                                 <ul class="nav nav-pills">
                                     <li class="button">
-                                        <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditPicture_Command" runat="server">
+                                        <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditPicture_Command" runat="server" CssClass="pink">
                                         Edit
                                         </asp:LinkButton>
                                     </li>
                                     <li class="button">
-                                        <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeletePicture_Command" runat="server">
+                                        <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeletePicture_Command" runat="server" CssClass="pink">
                                         Delete
                                         </asp:LinkButton>
                                     </li>
