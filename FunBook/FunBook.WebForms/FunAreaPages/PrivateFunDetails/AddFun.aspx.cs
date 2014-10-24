@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using FunBook.ImageUpload;
+using System.IO;
 
 namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 {
@@ -38,20 +40,26 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
         protected void RadioButtonJoke_CheckedChanged(object sender, EventArgs e)
         {
-            ShowSelectedDrinks();
+            this.PanelJoke.Visible = true;
+            this.PanelLink.Visible = false;
+            this.PanelPicture.Visible = false;
         }
 
         protected void RadioButtonLink_CheckedChanged(object sender, EventArgs e)
         {
-            ShowSelectedDrinks();
+            this.PanelJoke.Visible = false;
+            this.PanelLink.Visible = true;
+            this.PanelPicture.Visible = false;
         }
 
         protected void RadioButtonPicture_CheckedChanged(object sender, EventArgs e)
         {
-            ShowSelectedDrinks();
+            this.PanelJoke.Visible = false;
+            this.PanelLink.Visible = false;
+            this.PanelPicture.Visible = true;
         }
 
-        protected void jokeSubmit_Click(object sender, EventArgs e)
+        protected void JokeSubmit_Click(object sender, EventArgs e)
         {
             int categoryId = this.DropDownListCategory.SelectedIndex + 1;
             var category = data.Categories.Find(categoryId);
@@ -78,7 +86,7 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             this.Response.Redirect("../PrivateFun.aspx");
         }
 
-        protected void linkSubmit_Click(object sender, EventArgs e)
+        protected void LinkSubmit_Click(object sender, EventArgs e)
         {
             int categoryId = this.DropDownListCategory.SelectedIndex + 1;
             var category = data.Categories.Find(categoryId);
@@ -100,15 +108,40 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             this.Response.Redirect("../PrivateFun.aspx");
         }
 
-        protected void pictureSubmit_Click(object sender, EventArgs e)
+        protected void PictureSubmit_Click(object sender, EventArgs e)
         {
+            var file = this.FileUploadControl.PostedFile;
+            if (file == null)
+	        {
+                // no file
+		        return;
+            }
+
+            if (file.FileName.EndsWith(".jpg") || file.ContentType != "image/jpeg")
+            {
+                // invalid file format
+                return;
+            }
+
+            if (file.ContentLength > 1024 * 1024 * 10)
+            {
+                // invalid file size
+                return;
+            }
+
             int categoryId = this.DropDownListCategory.SelectedIndex + 1;
             var category = data.Categories.Find(categoryId);
+
+            var fileBytes = (new BinaryReader(file.InputStream)).ReadBytes(file.ContentLength);
+
+            var uploader = new TelerikBackendServicesImageUpload();
+            var urlPath = uploader.UrlFromBase64Image(Convert.ToBase64String(fileBytes),
+                                                        category.Name, new string[] {Title});
 
             var picture = new Picture
             {
                 Title = this.inputTitlePicture.Value.ToString(),
-                UrlPath = this.urlPic.Value.ToString(),
+                UrlPath = urlPath,
                 CategoryId = categoryId,
                 Category = category,
                 Created = DateTime.Now,
@@ -121,30 +154,5 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
 
             this.Response.Redirect("../PrivateFun.aspx");
         }
-
-        private void ShowSelectedDrinks()
-        {
-            if (this.RadioButtonJoke.Checked)
-            {
-                this.PanelJoke.Visible = true;
-                this.PanelLink.Visible = false;
-                this.PanelPicture.Visible = false;
-            }
-
-            if (this.RadioButtonLink.Checked)
-            {
-                this.PanelJoke.Visible = false;
-                this.PanelLink.Visible = true;
-                this.PanelPicture.Visible = false;
-            }
-
-            if (this.RadioButtonPicture.Checked)
-            {
-                this.PanelJoke.Visible = false;
-                this.PanelLink.Visible = false;
-                this.PanelPicture.Visible = true;
-            }
-        }
-
     }
 }

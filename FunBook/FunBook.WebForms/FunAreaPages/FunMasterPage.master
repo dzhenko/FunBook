@@ -43,7 +43,7 @@
             <asp:Repeater runat="server" ID="categories" ItemType="FunBook.WebForms.DataModels.FunMasterCategoryItemDataModel">
                 <ItemTemplate>
                     <asp:HyperLink class="navItem" runat="server"
-                        NavigateUrl='<%# "~/FunAreaPages/Content.aspx?search=category&id="+ Item.Id %>'>
+                        NavigateUrl='<%# "~/FunAreaPages/Content.aspx?type=category&id="+ Item.Id %>'>
                         <%#: Item.Name + "(" + Item.Count + ")" %>
                     </asp:HyperLink>
                 </ItemTemplate>
@@ -58,6 +58,8 @@
             </div>
         </div>
         <aside id="tags-container" class="tags-menu col-sm-2">
+            <strong class="categories-menu-title">Tags:</strong>
+            <br />
             <asp:Repeater runat="server" ID="tagsCloud" ItemType="FunBook.WebForms.DataModels.FunMasterTagItemDataModel">
                 <ItemTemplate>
                     <asp:HyperLink class="tagItem" runat="server"
@@ -68,9 +70,6 @@
             </asp:Repeater>
         </aside>
     </div>
-    <script src="../Scripts/tags-cloud.js"></script>
-    <script>
-        $('#SearchBtnStarter > button').on('click', function () { console.log(1) })
-    </script>
+    <script src="../../Scripts/tags-cloud.js"></script>
 </asp:Content>
 

@@ -16,7 +16,7 @@
         <div class="tab-pane fade active in" id="jokesContent">
             <asp:ListView ID="JokesView" runat="server"
                 SelectMethod="JokesView_GetData"
-                ItemType="FunBook.Models.Joke"
+                ItemType="FunBook.WebForms.DataModels.HomeItemDataModel"
                 AllowPaging="True" AllowSorting="True"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false">
@@ -28,11 +28,10 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                 </LayoutTemplate>
                 <ItemTemplate runat="server">
-                    <asp:Label CssClass="item-title" runat="server">
-                <%# Item.Title %>
-                    </asp:Label>
+                    <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
+                            CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                     <asp:Label CssClass="item-text" runat="server">
-                <%# Item.Text %>
+                <%# Item.Content %>
                 <small class="date"><%# Item.Created %></small>
                     </asp:Label>
                 </ItemTemplate>
@@ -51,7 +50,7 @@
         <div class="tab-pane fade" id="linksContent">
             <asp:ListView ID="LinksView" runat="server"
                 SelectMethod="LinksView_GetData"
-                ItemType="FunBook.Models.Link"
+                ItemType="FunBook.WebForms.DataModels.HomeItemDataModel"
                 AllowPaging="True" PageSize="4" AllowSorting="True"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false">
@@ -63,11 +62,10 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                 </LayoutTemplate>
                 <ItemTemplate>
-                    <asp:Label CssClass="item-title" runat="server">
-                <%# Item.Title %>
-                    </asp:Label>
+                    <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
+                            CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                     <asp:Label CssClass="item-text" runat="server">
-                <a href="<%# Item.URL %>"><%# Item.URL %></a>
+                <a href='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'>Click to view link...</a>
                 <small class="date"><%# Item.Created %></small>
                     </asp:Label>
                 </ItemTemplate>
@@ -88,7 +86,7 @@
 
             <asp:ListView ID="PicturesView" runat="server"
                 SelectMethod="PicturesView_GetData"
-                ItemType="FunBook.Models.Picture"
+                ItemType="FunBook.WebForms.DataModels.HomeItemDataModel"
                 AllowPaging="True" PageSize="4" AllowSorting="True"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false">
@@ -100,11 +98,10 @@
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                 </LayoutTemplate>
                 <ItemTemplate>
-                    <asp:Label CssClass="item-title" runat="server">
-                <%# Item.Title %>
-                    </asp:Label>
+                    <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
+                            CssClass="item-title" runat="server"><%# Item.Title %></asp:HyperLink>
                     <asp:Label CssClass="item-text" runat="server">
-               <a href="<%# Item.UrlPath %>"><%# Item.UrlPath %></a>
+               <a href='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'>Click to view image...</a>
                <small class="date"><%# Item.Created %></small>
                     </asp:Label>
                 </ItemTemplate>
