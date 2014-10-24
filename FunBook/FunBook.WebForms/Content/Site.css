@@ -399,3 +399,7 @@ footer {
     margin-top: 5px;
     padding-top: 5px;
 }
+
+.validationarea span {
+    color: #ee3963 !important;
+}

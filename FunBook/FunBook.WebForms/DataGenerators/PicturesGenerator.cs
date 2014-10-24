@@ -39,16 +39,20 @@
                 var hashIndex = file.Item1.IndexOf("#") + 1;
                 var tagString = file.Item1.Substring(hashIndex, file.Item1.IndexOf("#", hashIndex) - hashIndex);
 
+                var title = "Funny pic";
+
                 var picObj = new Picture() 
                 {
                     CategoryId = categoryId,
                     IsAnonymous = true,
-                    Title = tagString,
+                    Title = title,
                     UrlPath = file.Item2,
                     UserId = userId
                 };
 
                 context.Pictures.Add(picObj);
+
+                context.SaveChanges();
 
                 var allTags = tagString.Split();
 

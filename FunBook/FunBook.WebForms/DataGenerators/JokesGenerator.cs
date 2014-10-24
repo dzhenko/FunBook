@@ -68,6 +68,7 @@
                 context.SaveChanges();
             }
 
+            var counter = 0;
             foreach (var kvPair in tagDict)
             {
                 context.Tags.Add(new Tag()
@@ -75,6 +76,12 @@
                     Name = kvPair.Key,
                     Jokes = kvPair.Value
                 });
+                counter++;
+                if (counter > 10)
+                {
+                    counter = 0;
+                    context.SaveChanges();
+                }
             }
 
             context.SaveChanges();

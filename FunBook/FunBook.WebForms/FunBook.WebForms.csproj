@@ -176,6 +176,7 @@
     <Content Include="Content\Images\Creators\10580767_10204054652960275_6716628473550351430_o.jpg" />
     <Content Include="Content\Images\Creators\1506855_10202939380631818_1924950813_n.jpg" />
     <Content Include="Content\Images\Creators\5741004.jpg" />
+    <Content Include="Content\Images\error.jpg" />
     <Content Include="Content\Images\no.png" />
     <Content Include="Content\Images\yes.png" />
     <Content Include="Content\Site.css" />
