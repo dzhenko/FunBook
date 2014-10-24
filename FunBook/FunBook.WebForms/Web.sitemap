@@ -11,6 +11,9 @@
     <siteMapNode title="All" description="All"
    url="~/FunAreaPages/All">
     </siteMapNode>
+    <siteMapNode title="Create Fun" description="Create Fun"
+  url="~/FunAreaPages/PrivateFunDetails/ManageFun">
+    </siteMapNode>
     <siteMapNode title="Content" description="Content"
      url="~/FunAreaPages/Content">
     </siteMapNode>
