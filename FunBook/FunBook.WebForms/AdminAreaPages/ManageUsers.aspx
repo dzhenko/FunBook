@@ -88,7 +88,7 @@
                 <tr>
                     <td class="text-center">
                         <div class="container">
-                            <h2 class="menu text-center">No users were found.</h2>
+                            <h2 class="pink text-center">No users were found.</h2>
                         </div>
                     </td>
                 </tr>

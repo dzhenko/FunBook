@@ -5,6 +5,12 @@
     <siteMapNode title="Admin" description="Home"
       url="~/AdminAreaPages/Home">
     </siteMapNode>
+      <siteMapNode title="Manage Jokes" description="Manage Jokes"
+        url="~/AdminAreaPages/ManageItems">
+      </siteMapNode>
+      <siteMapNode title="Manage Users" description="Manage Jokes"
+        url="~/AdminAreaPages/ManageUsers">
+      </siteMapNode>
     <siteMapNode title="About" description="About"
     url="~/FunAreaPages/About">
     </siteMapNode>
