@@ -6,11 +6,23 @@
     Inherits="FunBook.WebForms.FunAreaPages.Create" %>
 
 <asp:Content ID="OwnFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <h1>Created by <%: Context.User.Identity.GetUserName().Split('@')[0]  %> </h1>
+    <h1 class="blue no-top-margin"><i><%: Context.User.Identity.GetUserName().Split('@')[0]  %>'s </i> fun</h1>
     <ul class="nav nav-tabs">
-        <li class="active" runat="server" id="liJoke"><a href="#home" data-toggle="tab">Jokes</a></li>
-        <li class="" runat="server" id="liLink"><a href="#links" data-toggle="tab">Links</a></li>
-        <li class="" runat="server" id="liPic"><a href="#pics" data-toggle="tab">Pics</a></li>
+        <li class="active" runat="server" id="liJoke">
+            <a href="#home" data-toggle="tab">
+                <h3 class="content-title">Jokes</h3>
+            </a>
+        </li>
+        <li class="" runat="server" id="liLink">
+            <a href="#links" data-toggle="tab">
+                <h3 class="content-title">Links</h3>
+            </a>
+        </li>
+        <li class="" runat="server" id="liPic">
+            <a href="#pics" data-toggle="tab">
+                <h3 class="content-title">Pics</h3>
+            </a>
+        </li>
     </ul>
     <div id="myTabContent" class="tab-content" runat="server">
         <div class="tab-pane fade active in" id="home">
@@ -25,19 +37,18 @@
 
                 <ItemTemplate>
                     <section class="fun-main-container">
-                        <h3><%#: Item.Title %></h3>
-                        <br />
+                       <h4 class="item-title-block blue"><%#: Item.Title %></h4>
                         <asp:LinkButton ID="LinkButtonJokeLink" OnCommand="LinkButtonJoke_Command" CommandArgument="<%# Item.Id %>" runat="server">
                             <p><span id="open-link"><%# Item.Text %></span></p>
                         </asp:LinkButton>
                         <section class="joke-info">
                             <ul class="nav nav-pills">
                                 <li class="button">
-                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditJoke_Command" runat="server">
+                                    <asp:LinkButton ID="LinkButtonEditLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonEditJoke_Command" runat="server" CssClass="pink">
                                         Edit
                                     </asp:LinkButton></li>
                                 <li class="button">
-                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteJoke_Command" runat="server">
+                                    <asp:LinkButton ID="LinkButtonDeleteLink" CommandArgument="<%# Item.Id %>" OnCommand="LinkButtonDeleteJoke_Command" runat="server" CssClass="pink">
                                         Delete
                                     </asp:LinkButton>
                                 </li>
@@ -109,9 +120,9 @@
                 QueryStringField="page">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true" ButtonCssClass="btn btn-primary btn-xs"
-                        ShowNextPageButton="false" ShowPreviousPageButton="false"/>
+                        ShowNextPageButton="false" ShowPreviousPageButton="false" />
                     <asp:NextPreviousPagerField NextPageText="Previous"
-                        ShowNextPageButton="false" ShowPreviousPageButton="true" ButtonCssClass="btn btn-primary btn-xs"/>
+                        ShowNextPageButton="false" ShowPreviousPageButton="true" ButtonCssClass="btn btn-primary btn-xs" />
                     <asp:NumericPagerField />
                     <asp:NextPreviousPagerField NextPageText="Next"
                         ShowNextPageButton="true" ShowPreviousPageButton="false" ButtonCssClass="btn btn-primary btn-xs" />

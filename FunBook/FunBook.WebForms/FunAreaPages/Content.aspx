@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="Content.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.Content" %>
 
 <asp:Content ID="MainItemsContent" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <ul class="nav nav-tabs jokes-content">
+    <ul class="nav nav-tabs">
         <li class="active"><a href="#jokesContent" data-toggle="tab">
             <h3 class="content-title">Jokes</h3>
         </a></li>
@@ -12,7 +12,7 @@
             <h3 class="content-title">Pictures</h3>
         </a></li>
     </ul>
-    <div id="myTabContent" class="tab-content jokes-content">
+    <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade active in" id="jokesContent">
             <asp:ListView ID="JokesView" runat="server"
                 SelectMethod="JokesView_GetData"

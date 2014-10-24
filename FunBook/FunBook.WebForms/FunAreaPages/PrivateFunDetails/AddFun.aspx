@@ -4,8 +4,7 @@
     Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.AddFun" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <div class="container">
-        <asp:UpdatePanel ID="UpdatePanelChooseFun" runat="server" class="managefun-panel-radio" UpdateMode="Conditional">
+       <asp:UpdatePanel ID="UpdatePanelChooseFun" runat="server" class="managefun-panel-radio jokes-content blue" UpdateMode="Conditional">
             <ContentTemplate>
             <asp:RadioButton ID="RadioButtonJoke" runat="server" AutoPostBack="True"
                 Text="Joke" OnCheckedChanged="RadioButtonJoke_CheckedChanged" GroupName="GroupFuns" />
@@ -17,15 +16,15 @@
         </asp:UpdatePanel>
         <br />
 
-        <label for="DropDownListCategory" class="col-lg-2 control-label">Category</label>
-        <asp:DropDownList ID="DropDownListCategory" class="form-control" runat="server"></asp:DropDownList>
+        <label for="DropDownListCategory" class="col-lg-2 control-label blue">Category</label>
+        <asp:DropDownList ID="DropDownListCategory" class="form-control blue" runat="server"></asp:DropDownList>
 
         <asp:UpdatePanel ID="UpdatePanelFunForms" runat="server">
             <ContentTemplate>
-                <asp:Panel ID="PanelJoke" runat="server" Visible="false" class="managefun-panel-radio">
+                <asp:Panel ID="PanelJoke" runat="server" Visible="false" class="managefun-panel-radio blue">
                     <form name="joke-form" class="form-horizontal">
                         <fieldset>
-                            <legend>Joke</legend>
+                            <legend class="blue">Joke</legend>
                             <div class="form-group">
                                 <label for="inputTitleJoke" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
@@ -34,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="jokeText" class="col-lg-2 control-label">Textarea</label>
+                                <label for="jokeText" class="col-lg-2 control-label">Text</label>
                                 <div class="col-lg-10">
                                     <textarea class="form-control" rows="3" id="jokeText" runat="server"></textarea>
                                     <asp:RequiredFieldValidator ControlToValidate="jokeText" Display="Dynamic" runat="server" ErrorMessage="You have to enter at least 3 symbols"></asp:RequiredFieldValidator>
@@ -54,10 +53,10 @@
                     </form>
                 </asp:Panel>
 
-                <asp:Panel ID="PanelLink" runat="server" Visible="false" class="managefun-panel-radio">
+                <asp:Panel ID="PanelLink" runat="server" Visible="false" class="managefun-panel-radio blue">
                     <form name="link-form" class="form-horizontal">
                         <fieldset>
-                            <legend>Link</legend>
+                            <legend class="blue">Link</legend>
                             <div class="form-group">
                                 <label for="inputTitleLink" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
@@ -88,10 +87,10 @@
                     </form>
                 </asp:Panel>
 
-                <asp:Panel ID="PanelPicture" runat="server" Visible="false" class="managefun-panel-radio">
+                <asp:Panel ID="PanelPicture" runat="server" Visible="false" class="managefun-panel-radio blue">
                     <form name="picture-form" class="form-horizontal">
                         <fieldset>
-                            <legend>Picture</legend>
+                            <legend class="blue">Picture</legend>
                             <div class="form-group">
                                 <label for="inputTitlePicture" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
@@ -122,5 +121,4 @@
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
-    </div>
 </asp:Content>

@@ -2,8 +2,8 @@
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="form-horizontal">
-        <fieldset>
-            <legend>Edit Joke</legend>
+        <fieldset class="blue">
+            <legend class="blue">Edit Joke</legend>
             <div class="form-group">
                 <label for="inputTitleJoke" class="col-lg-2 control-label">Title</label>
                 <div class="col-lg-10">

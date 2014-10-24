@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="All.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.All" %>
+
 <%@ Register TagPrefix="uc" TagName="HoverDetails" Src="~/Controls/HoverDetails/HoverDetails.ascx" %>
 <asp:Content ID="ContentAllFun" ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
     <div class="row jokes-content">
@@ -19,14 +20,14 @@
                 </div>
             </LayoutTemplate>
             <ItemTemplate runat="server">
-                <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>' 
-                    CssClass="col-sm-3 hoveredItem" runat="server" data-id="<%# Container.DataItemIndex %>">
+                    <asp:HyperLink NavigateUrl='<%# "PrivateFunDetails/" + Item.DetailsUrl %>'
+                        CssClass="col-sm-3 hoveredItem all-items-table-row" runat="server" data-id="<%# Container.DataItemIndex %>">
                     <%# Item.Title %>
-                </asp:HyperLink>
-                <asp:Label CssClass="col-sm-7" runat="server">
+                    </asp:HyperLink>
+                    <asp:Label CssClass="col-sm-7 all-items-table-row" runat="server">
                 <%# Item.Content.Substring(0, Math.Min(100, Item.Content.Length)) %>...
-                </asp:Label>
-                <asp:Label CssClass="date col-sm-2" runat="server"><%# Item.Created %></asp:Label>
+                    </asp:Label>
+                    <asp:Label CssClass="date col-sm-2 all-items-table-row" runat="server"><%# Item.Created %></asp:Label>
             </ItemTemplate>
             <EmptyDataTemplate runat="server">
                 <h5 class="content-empty">No items available</h5>

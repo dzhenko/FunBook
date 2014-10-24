@@ -74,11 +74,6 @@ img {
     padding: 0 20px;
 }
 
-.popular, .recent {
-    display: inline-block;
-    padding: 5px 0px 20px 20px;
-}
-
 a {
     text-decoration: none;
 }
@@ -255,12 +250,12 @@ footer {
 }
 
     .button a {
-        background-color: #ee3963;
-        color: white;
+        background-color: white;
+        color: #afca57;
     }
 
     .button:hover a:hover {
-        background-color: #ee3963;
+        background-color: white;
     }
 
     .button .badge {
@@ -290,21 +285,30 @@ footer {
 
 #open-link {
     font-size: 17px;
-    background-color: white;
+    background-color: transparent;
     color: black;
     display: block;
     padding: 20px;
-    border-radius: 15px;
+    box-shadow: 0 3px 10px #ee3963;
+    /*border-radius: 15px;*/
     overflow: hidden;
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
 
-    #open-link:hover {
+/*#open-link:hover {
         background-color: #ee3963;
         color: white;
-    }
+    }*/
+
+.item-title-block {
+    box-shadow: 0 -3px 10px #ee3963;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 5px;
+}
 
 #headerHolder {
     background-image: url(Images/back.jpg);
@@ -345,12 +349,12 @@ footer {
 }
 
 .pink {
-    color: #ee3963;
+    color: #ee3963 !important;
     font-family: Salsa-Regular,'Comic Sans MS', cursive;
 }
 
 .blue {
-    color: #428bd2;
+    color: #428bd2 !important;
     font-family: Salsa-Regular,'Comic Sans MS', cursive;
 }
 
@@ -370,6 +374,7 @@ footer {
 #HoverDetailsHolder {
     position: absolute;
 }
+
 .custom-box {
     border-radius: 5px;
     border: none;
@@ -383,4 +388,14 @@ footer {
 
 .panel-body {
     background-color: rgba(255,255,255,0.9);
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+
+.all-items-table-row {
+    border-top: solid 1px lightgray;
+    margin-top: 5px;
+    padding-top: 5px;
 }

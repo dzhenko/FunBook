@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="PictureEdit.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms.PictureEdit" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <fieldset>
-        <legend>Picture</legend>
+    <fieldset class="blue">
+        <legend class="blue">Picture</legend>
         <div class="form-group">
             <label for="inputTitlePicture" class="col-lg-2 control-label">Title</label>
             <div class="col-lg-10">

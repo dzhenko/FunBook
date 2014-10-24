@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FunAreaPages/FunMasterPage.master" AutoEventWireup="true" CodeBehind="LinkEdit.aspx.cs" Inherits="FunBook.WebForms.FunAreaPages.PrivateFunDetails.EditForms.LinkEdit" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderFunArea" runat="server">
-    <fieldset>
-        <legend>Link Eddit</legend>
+    <fieldset class="blue">
+        <legend class="blue">Link Eddit</legend>
         <div class="form-group">
             <label for="inputTitleLink" class="col-lg-2 control-label">Title</label>
             <div class="col-lg-10">

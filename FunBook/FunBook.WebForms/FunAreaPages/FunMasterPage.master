@@ -15,7 +15,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav main-menu">
                 <li><a runat="server" href="~/">Home</a></li>
-                <li><a runat="server" href="~/FunAreaPages/All">All Fun</a></li> 
+                <li><a runat="server" href="~/FunAreaPages/All">All Fun</a></li>
                 <li><a runat="server" href="~/FunAreaPages/PrivateFunDetails/AddFun">Create Fun</a></li>
                 <li><a runat="server" href="~/FunAreaPages/PrivateFun">Manage Fun</a></li>
                 <li><a runat="server" href="~/FunAreaPages/About">About</a></li>
@@ -51,11 +51,10 @@
         </aside>
         <div class="jokes-content col-sm-8">
             <%-- <div class="row">
-                <asp:SiteMapPath ID="SiteMap1" runat="server"></asp:SiteMapPath>
-            </div>--%>
-            <div class="row">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
-            </div>
+            </div>--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderFunArea" runat="server" />
+
         </div>
         <aside id="tags-container" class="tags-menu col-sm-2">
             <strong class="categories-menu-title">Tags:</strong>
