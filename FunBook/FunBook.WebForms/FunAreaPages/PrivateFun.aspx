@@ -56,7 +56,7 @@
                                 </li>
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                 <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
-                                <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                                <%--<li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>--%>
                             </ul>
                         </section>
                     </section>
@@ -110,7 +110,7 @@
                                 </li>
                                 <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                 <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
-                                <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                                <%--<li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>--%>
                             </ul>
                         </section>
                     </section>
@@ -169,7 +169,7 @@
                                     </li>
                                     <li class="button"><a>Views <span class="badge"><%#: Item.Views.Count %></span></a></li>
                                     <li class="button"><a>Category <span class="badge"><%#: Item.Category.Name %></span></a></li>
-                                    <li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>
+                                    <%--<li class="button"><a>Created <span class="badge"><%#: Item.Created %></span></a></li>--%>
                                 </ul>
                             </section>
                         </section>
