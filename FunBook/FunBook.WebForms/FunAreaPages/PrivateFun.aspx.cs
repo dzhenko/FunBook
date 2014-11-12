@@ -29,9 +29,9 @@ namespace FunBook.WebForms.FunAreaPages
 
             var data = FunBookData.Create();
             var id = Context.User.Identity.GetUserId();
-            var jokes = data.Jokes.All().Where(uid => uid.UserId == id).ToList();
-            var links = data.Links.All().Where(uid => uid.UserId == id).ToList();
-            var pics = data.Pictures.All().Where(uid => uid.UserId == id).ToList();
+            var jokes = data.Jokes.All().Where(uid => uid.UserId == id).OrderByDescending(i=>i.Created).ToList();
+            var links = data.Links.All().Where(uid => uid.UserId == id).OrderByDescending(i => i.Created).ToList();
+            var pics = data.Pictures.All().Where(uid => uid.UserId == id).OrderByDescending(i => i.Created).ToList();
 
             if (jokes.Count == 0)
             {

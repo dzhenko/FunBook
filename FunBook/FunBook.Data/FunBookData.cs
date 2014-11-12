@@ -94,7 +94,14 @@
 
         public void SaveChanges()
         {
+            try
+            {
             this.context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private IRepository<T> GetRepository<T>() where T : class

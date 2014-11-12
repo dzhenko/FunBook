@@ -134,10 +134,9 @@ namespace FunBook.WebForms.FunAreaPages.PrivateFunDetails
             var category = data.Categories.Find(categoryId);
 
             var fileBytes = (new BinaryReader(file.InputStream)).ReadBytes(file.ContentLength);
-
+            var base64 = Convert.ToBase64String(fileBytes);
             var uploader = new TelerikBackendServicesImageUpload();
-            var urlPath = uploader.UrlFromBase64Image(Convert.ToBase64String(fileBytes),
-                                                        category.Name, new string[] {Title});
+            var urlPath = uploader.UrlFromBase64Image(base64, category.Name, new string[] {Title});
 
             var picture = new Picture
             {
